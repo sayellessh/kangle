@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+<!-- constants js -->
+<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+
+	</head>
+    <body>
+		<div class="wrapper">
+			<header>
+				<h3>Upload Assets</h3>
+			</header>
+			<div class="content content-thumb">
+				<div class="change-thumb">
+					<div class="change-thumb-label">FileName: <b></b></div>
+					<div class="change-thumb-img">
+						<img src="" alt=""/>
+						<input type="file" value="" name="thumbnail" id="change-thumb"/>
+						<div class="change-thumb-icon">
+							<span class="fa fa-pencil"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+<script type="text/javascript" src="js/properties.js"></script>
+<script type="text/javascript" src="js/asset_detail.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+
+            var href = window.location.href;
+            href = href.substr(href.indexOf('?') + 1, href.length);
+            var nAry = href.split('_');
+            var IsUnassign = nAry[1];
+            var stagingId = nAry[0];
+
+        properties.init(userId, stagingId, IsUnassign);
+        properties.getAssetDetails();
+        assetDetail.userId = userId;
+        assetDetail.assetId = stagingId;
+        assetDetail.isUnAssign = (IsUnassign == 'Y' ? true : false);
+        $('.change-thumb-icon span').bind('click',function(){
+        	assetDetail.chooseThumbnailAndUpload();
+        });
+        	
+    });
+</script>
+</body>
+</html>

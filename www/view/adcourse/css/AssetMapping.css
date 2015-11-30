@@ -1,0 +1,157 @@
+﻿.highlight {
+    background-color: #37A6CD;
+    color: white;
+}
+.clsWidget .clsDvHeader {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: #eee;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 5px;
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0) inset, -1px -1px 1px rgba(0, 0, 0, 0) inset;
+    height: 30px;
+    line-height: 30px;
+}
+.clsWidget .clsDvHeader .heading {
+    border-bottom: 5px solid #37a6cd;
+    color: #222;
+    font-family: "Raleway",sans-serif;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+    text-shadow: none;
+    text-transform: uppercase;
+    float: left;
+    font-size: 8pt;
+}
+.clsSeparator {
+    display: block;
+    padding: 5px 0;
+}
+
+.clsCourseSurText {
+    background-color: #5cb85c;
+    border: 1px solid green;
+    color: white;
+    font-size: 15px;
+    margin-top: 1%;
+    min-height: 25px;
+    overflow: auto;
+}
+.listInputGroup {
+    text-align: left;
+    background-color: #FFFFFF;
+    border: none;
+}
+
+    .listInputGroup label,
+    #dvAssetsMappings label {
+        font-weight: normal;
+        margin-bottom: 0;
+        height: 16px;
+    }
+#dvCategoryList label,
+#dvTagList label {
+    overflow: hidden;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    width: 170px;
+}
+
+.clsDvFiltered {
+    clear: both;
+    float: left;
+    padding: 10px;
+}
+
+.filtered {
+    background-color: #37A6CD;
+    border-radius: 10px;
+    float: left;
+    padding: 0 10px;
+    color: #FFF;
+    margin: 5px;
+}
+    .filtered .fa {
+        cursor: pointer;
+    }
+    .filtered.category {
+        background-color: #37A6CD;
+    }
+    .filtered.tag {
+        background-color: #888;
+    }
+
+.asset-name {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 24px;
+    overflow: hidden;
+    padding: 0 5px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+.clsDvCenter {
+    text-align: center;
+    width: 100%;
+}
+.btn-primary, .btn-primary:link, .btn-primary:visited, .btn-primary:active, .btn-primary:hover {
+    color: white !important;
+}
+.thumbnail > img {
+    height: 145px;
+    width: 211px;
+}
+.course-asset.open span.ticker {
+    display: block;
+}
+.course-asset span.ticker {
+    box-sizing: border-box;
+    color: #349933;
+    display: none;
+    font-size: 30px;
+    position: absolute;
+    right: -2px;
+    text-shadow: 2px 2px 4px white;
+    top: -1px;
+}
+.course-asset.open {
+    background-color: #efefef;
+    position: relative;
+}
+.clear-all-div a {
+    color: #37a6cd;
+}
+.clear-all-div a:hover, 
+.clear-all-div a:visited,
+.clear-all-div a:active,
+.clear-all-div a:link {
+    color: #37a6cd;
+    text-decoration: none;
+}
+.am-big-font {
+    font-size: 20px;
+}
+#dvCourseContent h1, h2, h3, h4, h5, h6 {
+    color: #575655;
+    font-family: "Raleway",sans-serif;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 0 0 10px;
+}
+
+.input-group #txtSectionName {
+    margin: 0px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+.mandatory-sign {
+    color: red;
+}

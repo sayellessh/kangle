@@ -1,0 +1,248 @@
+* {
+	font-family: tahoma, fantasy, arial, times new roman;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #E9E9E9;
+}
+
+.header .head-container {
+	background-color: #0054A5;
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 2;
+	/*background: url("/Images/back_rpt.png") repeat-x scroll left bottom #fff;
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+    height: 45px;
+    padding: 5px 0;*/
+}
+.header .head-menu,
+.head-menu {
+	background-color: #f3f1f2;
+    border-bottom: 1px solid #787677;
+    box-shadow: 0 1px 10px 0 #787677;
+    height: 40px;
+    margin-top: 60px;
+    position: fixed;
+    width: 100%;
+	z-index: 2;
+}
+#body .wrapper .fieldset {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    left: 50%;
+    margin-left: -451.5px;
+    margin-top: -180px;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 900px;
+}
+#body .wrapper .fieldset .field-wrapper {
+	float: left;
+	cursor: pointer;
+	margin-right: 60px;
+}
+#body .wrapper .fieldset .field-wrapper:last-child {
+	margin-right: 0px;
+}
+
+#body .wrapper .fieldset .fields {
+	border: 5px solid #BDBEC0;
+	width: 250px; 
+	height: 350px;
+	float: left;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	box-shadow: 1px 20px 15px 3px #b3b3b3;
+	background-size: cover;
+}
+
+#body .wrapper .fieldset .field-wrapper .field-label {
+	color: #0C1B2E;
+	font-size: 20px;
+	font-family: tahoma, fantasy, arial, times new roman;
+	font-weight: bold;
+	clear: both;
+}
+/*html changes*/
+
+/*header section*/
+header {
+	height: 40px;
+	background: #fff url('../../online/images/back_rpt.png') repeat-x left bottom;
+	text-align: center;
+	padding: 5px 5px;
+	position: fixed;
+	width: 100%;
+	z-index: 9;
+	top:0px;
+}
+header ul {
+	width: auto;
+	display: inline-block;
+}
+header ul.header-menu {
+    float: right;
+    margin-right: 10px;
+    padding: 0px 5px;
+    margin-top: 4px;
+    /* border: 1px solid #efefef; */
+    border-width: 0px 1px;
+}
+header ul li {
+	display: inline-block;
+	position: relative;
+	width: 35px;
+	height: 32px;
+}
+header ul li a {
+	display: block;
+	font-size: 32px;
+	/* delete */
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+header ul li a.fa {
+	font-size: 30px;
+	color: #052A47;
+    line-height: 32px;
+}
+header ul li a.fa.fa-home {
+    /* font-size: 24px; */
+}
+header .logo {
+    float: left;
+    cursor: pointer;
+    /*width: 80px;
+    height: 45px;*/
+}
+header .logo a {
+    width: 100px;
+    height: 45px;
+    display: block;
+    /*background: url('../../../online/images/Mobile_logo.png') no-repeat top left;
+    background-size: auto 45px;*/
+}
+
+.notf-count{
+    border-radius: 12px;
+    color: #fff;
+    height: 18px;
+    position: absolute;
+    right: -4px;
+    background: #FF6000;
+    text-align: center;
+    top: -2px;
+    line-height: 18px;
+    width: 18px;
+    font-size: 12px;
+    border: 2px solid #fff;
+    display: none;
+}
+
+/*header section course*/
+
+.dp-header {
+    height: 40px;
+}
+#headersection-settings-arrow-div {
+    top: 36px;
+}
+#headersection-settings-arrow-div ul {
+    padding: 0px;
+}
+
+#dvUserName {
+    line-height: 19px;
+    margin: 5px;
+}
+ul#menunavigator li span {
+    border-radius: 12px;
+    color: #fff;
+    height: 18px;
+    position: absolute;
+    right: 0px;
+    background: #FF6000;
+    text-align: center;
+    top: -2px;
+    line-height: 16px;
+    width: 18px;
+    font-size: 11px;
+    border: 2px solid #fff;
+    display:none;
+}
+/**/
+.footer {
+    background-color: #bababa;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+.footer * {
+	padding: 0px;
+	margin: 0px;
+}
+.footer p {
+	padding: 0px 20px;
+}
+
+/*#dvCourseDetails {
+    background-color: #f2f0f1;
+    height: 200px;
+    margin: 15px;
+    padding-top: 15px;
+}*/
+
+@media screen and (max-width: 950px) {
+
+	#body .wrapper .fieldset {
+		margin-left: -335.5px;
+		margin-top: -130px;
+		width: 675px;
+	}
+	
+	#body .wrapper .fieldset .field-wrapper {
+		margin-right: 35px;
+	}
+	#body .wrapper .fieldset .fields {
+		width: 190px;
+		height: 275px;
+	}
+	
+	#body .wrapper .fieldset .field-wrapper .field-label {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .icon-home {
+        display: none;
+    }
+}
+
+#dvCourseDetails .action-buttons {
+    margin-top: -50px;
+}
+
+@media screen and (max-width: 480px) {
+    #dvCourseDetails {
+         height: 200px; 
+    }
+        #dvCourseDetails .action-buttons {
+            margin-top: 10px;
+        }        
+}
+
+#menunavigator {
+    margin: 4px;
+}
+
+    #menunavigator li a {
+        text-decoration: none;
+        color: black;
+    }

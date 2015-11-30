@@ -1,0 +1,43 @@
+﻿#courseSections {
+    padding-top: 10px;
+}
+.dvCourseSections {
+    text-align: center;
+}
+.dvCourseSectionsStatus {
+    padding: 5px;
+    margin: 10px;
+}
+    .dvCourseSectionsStatus > span {
+        font-weight: bold;
+    }
+@media screen and (min-width: 1024px) {
+    #courseSections {
+        margin: 0 auto;
+        width: 960px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #printCertificate {
+        clear: both;
+    }
+}
+
+.item_div {
+    margin: 0;
+    padding-top: 0 !important;
+}
+
+#courseSectionsTable th {
+    background-color: #0054a5;
+    border: medium none;
+    color: white;
+    font-family: "oswaldlight";
+    font-size: 19px;
+    font-weight: normal;
+}
+
+#courseSectionsTable th {
+    font-family: "oswaldlight";
+}

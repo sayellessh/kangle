@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Notification Hub</title>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link href="../online/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../online/footer.css" rel="stylesheet" />
+        <link href="css/NotificationHub.css" rel="stylesheet" />
+        
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+        <script src="../MeetingPlayer/JS/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../Rxbook/js/RxBook/restHandler.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../Rxbook/js/RxBook/rxBookInit.js"></script>
+        <script src="../Rxbook/js/RxBook/Services.js"></script>
+        <script src="../online/js/elCommon.js"></script>
+        <script src="js/NotificationHub.js"></script>
+        
+    </head>
+    <body>
+    	<div class="header" id="headersection">
+            <div class="navbar-fixed-top dp-header">
+                <div class="logo" onclick="window.location.href='../homePage.html'"></div>
+                <ul id="menunavigator" class="pull-left1">
+                	<li class="pull-right" ><p id="homepage" class="fa fa-home"></p></li>
+                    <li class="pull-right" ><p id="refreshpage" class="fa fa-refresh"></p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" id="container">
+            <h2>
+                <span class="fa fa-angle-left" id="back">&nbsp;</span>
+                <label>Notification Hub</label>
+                <a class="icon-filter" href="#" title="Filter">
+                    <span class="fa fa-filter" onclick="return false;"></span>
+                </a>
+            </h2>
+            <div class="notificationContainer">
+                <!-- <div class="empty">No new notifications available.</div> -->
+            </div>
+        </div>
+        <div class="loading"><div class="img"></div></div>
+        
+        <script>
+            var companylogo_g = "";
+            document.addEventListener("deviceready", function() {
+            //$(function() {
+                companylogo_g = window.localStorage.getItem('companyLogoUrl');
+                rxBookInit.defaults.userId = window.localStorage.getItem('userId');
+                Services.defaults.companyId = window.localStorage.getItem('companyId');
+                Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+                rxBookInit.enableCurUserInfo(function (data) {
+                    $("#dvUserName").html(Services.defaults.displayName.toProperCase());
+                    $('.logo').css({
+                        'background-image': 'url(' + companylogo_g + ')',
+                        'background-position': '0% 50%',
+                        'background-repeat': 'no-repeat',
+                        'background-size': '100%'
+                    });
+                    footerdiv($('body'));
+                    notificationHub.init();
+                }, false);
+                $('#back').unbind('click').bind('click',function(){
+                    window.location.href = '../homePage.html';
+                });
+                $('h2 label').unbind('click').bind('click',function(){
+                	window.location.href = '../homePage.html';
+                });
+                $('#homepage').unbind('click').bind('click',function(){
+                    window.location.href = '../homePage.html';
+                });
+                $('#refreshpage').unbind('click').bind('click',function(){
+                    window.location.reload();
+                });
+            });
+        </script>
+    </body>
+</html>

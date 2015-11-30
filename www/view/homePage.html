@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Kangle</title>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    
+    <script type="text/javascript" charset="utf-8" src="online/js/constants.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+	<script src="../jquery/jquery-1.9.1.min.js"></script> 
+	  
+    <!--<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>-->
+    <link href="online/fonts/fonts.css" rel="stylesheet" media="screen"/>  
+    <link href="online/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="homepage.css" rel="stylesheet" />
+<!--     <link href="online/Style.css" rel="stylesheet" media="screen" /> -->
+    <link rel="stylesheet" href="online/ArrowPopup.css" />
+	<link rel="stylesheet" href="ProgressBar.css" />
+	
+	<script type="text/javascript" charset="utf-8" src="online/js/azureHandler.js"></script>
+	<script type="text/javascript" src="eLearningAPP.js"></script>
+	<script type="text/javascript" src="eLearningOfflineAPP.js"></script>
+	<script src="Rxbook/js/RxBook/restHandler.js"></script>
+	<script src="MeetingPlayer/JS/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="~/Scripts/RxBook/restHandler.js" type="text/javascript" charset="utf-8"></script>-->
+	
+	<script type="text/javascript" charset="utf-8" src="online/js/ArrowPopup.js"></script>
+	
+	<!-- settings -->
+	<script type="text/javascript" charset="utf-8" src="homeSettings.js"></script>
+	
+	<script src="Rxbook/js/RxBook/Services.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8" src="online/js/pgwbrowser.min.js"></script>
+	<script src="Rxbook/js/RxBook/jquery.nicescroll.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="online/footer.css" rel="stylesheet" />
+	<!-- helper -->
+	<script type="text/javascript" src="Mycustomertable.js"></script>
+	<script type="text/javascript" src="Mycustomer.js"></script>
+	
+	<script type="text/javascript" src="notificationhub/js/NotificationHub.js"></script>
+        <script type="text/javascript" src="../helper/Helper.js"></script>
+        <link rel="stylesheet" href="../helper/Helper.css" />
+	<style>
+		.toast {
+			display: none !important;
+		}
+		header nav ul{
+			padding-right:5px;
+		}
+	</style>
+</head>
+<body>
+<div id="body">
+    <!-- Top header portion -->
+    <header>
+        <div id="hdr-wrap">
+            <!-- <nav>
+                <ul>
+                    <li class="seperator"></li>
+                    <!--<li><a href="#" title="Friend Requests"><span class="fa fa-user"></span></a></li>-->
+                    <!--<li><a href="#" title="Notifications"><span class="fa fa-weixin "></span><span class="notf-count"></span></a></li>
+                    <li class="seperator"></li>
+                    <li class="profile-name"><a href="#" title=""></a></li>
+                    <li class="seperator"></li>
+                    <!-- <li class="icon-settings"><a href="#" title="Settings"><span class="fa fa-gear"></span></a></li>-->
+                <!-- </ul>
+            </nav>-->
+            <nav>
+                <ul>
+                    <!-- <li class="seperator"></li> -->
+                    <!-- <li class="notifybell" style="display: block;" id="" ><a class="fa fa-bell"></a></li> -->
+                    <!-- <li id="asset" style="display: block;"><a href="login.html" title="admin"><span class="fa fa-gears"></span></a></li> -->
+                    <li id="assetUpload" style="display: none;"><a href="#" title="admin"><span class="fa fa-plus"></span></a></li>
+                    <li class="" id="helpanytime" style="display:block;"><a title="question-circle"><span class="fa fa-question-circle "></span></a></li>
+                    <li class="Notificationbell" style="display:block;"><a href="#" title="Notifications"><span class="fa fa-bell "></span><span class="notificationhub-count" style="display:none;"></span></a></li> 
+                    <!-- <li class="Notifications" style="display:none;"><a href="#" title="Notifications"><span class="fa fa-weixin "></span><span class="notf-count"></span></a></li> -->
+                    <!-- <li class="seperator"></li> -->
+                    <li class="profile_img"><a href="Rxbook/UserProfile.Mobile.html"><img class="image" id="user_img" src="" /></a></li>
+                    <li class="profile-name"><a href="Rxbook/UserProfile.Mobile.html" title=""></a></li>
+                    <li id="pop-settings" ><a href="#" title="changepassword"><span class="fa fa-ellipsis-v"></span></a></li>
+                    <!-- <li class="seperator"></li>-->
+                    <!-- <li id="logout" style="display:none;"><a href="#" title="logout"><span class="fa fa-power-off"></span></a></li> -->
+                </ul>
+                <div class="company_logo"><a href="#" class="cmpnylogo"></a></div>
+                <div class="k-logo" style="">
+                    <a href="#"></a></div>
+            </nav>
+        </div>
+    </header>
+    <!-- Content Portion -->
+    <section id="content">
+        <div id="left">
+            <ul class="main-menu">
+                <li class="menu-asset" style="display:none;"><a href="#" title="My Library">Asset Library</a></li>
+                <li class="menu-social" style="display:none;"><a href="#" title="Enterprises Social">Enterprises Social</a></li>
+                <li class="menu-online" style="display:none;"><a href="#" title="Online Meetings">Online Meetings<span class="meet-count" style="display:none;"></span></a></li>
+                <!--<li class="menu-survey"><a href="#" title="Surveys">Surveys</a></li>-->
+                <!-- <li class="menu-Knowd"><a href="#" title="Knowledge Evaluation">Course<br />Evaluation</a></li> -->
+                <li class="menu-Knowd" style="display:none;"><a href="#" title="Knowledge Evaluation">My Courses<span class="course-count" style="display:none;"></span></a></li>
+                <li class="menu-Knowd1" style="display:none;"><a href="#" title="Knowledge Evaluation">My Courses<span class="course-count" style="display:none;"></span></a></li>
+            </ul>
+        </div>
+        <!-- content -->
+        <div id="right" style="display:none;">
+    	<h2>Social Feeds</h2>
+    	<div id="activity-ilst">
+        
+    	</div>
+		</div>
+        <!-- End of content-->
+    </section>
+    <div id="app_version" style="display:none;">
+			<div id="pop_content">
+                         <div class="overlay"></div><!--overlay-->
+                          	
+                           <div class="pop_text">
+                           <div class="pop_text_inner">
+								<!--<h2>Please go to the playstore</h2>-->
+								<h2 style="display:block;">A New version of Kangle is available , please click on ‘Goto Playstore’</h2>
+								<h3 style="display:none;">Now you will be navigated to play store within few seconds, click on update button to update new version.</h3>
+								<input type="submit" class="ok" id="play_store" value="Goto Playstore" style="background-color:#48A10C; color:#fff;"/>
+								<input type="submit" class="ok" id="set" value="Exit"/>
+								
+                               
+                      
+                                </div><!--pop text inner-->
+                           </div><!--pop text-->
+                        </div>
+	</div>
+
+
+</div>
+<script src="Rxbook/js/RxBook/rxBookInit.js"></script> 
+<script src="errorPage.js" type="text/javascript" charset="utf-8"></script>
+<script src="homepage.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+var helperadmin = false;
+document.addEventListener("deviceready",function(){
+	eLearningAPP.currentUser = window.localStorage.getItem('user');
+	eLearningAPP.currentUser = JSON.parse(eLearningAPP.currentUser);
+	Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+	Services.defaults.userId = window.localStorage.getItem('userId');
+	Services.defaults.companyId = window.localStorage.getItem('companyId');
+	
+	footerdiv($('body'));
+	
+	checkNetworkConnection(function(){
+		heightWindow();
+		checkversionnumber();
+    },function(){
+        $("#app_version").css("display","none");
+    });
+	
+	//heightWindow();
+	//checkversionnumber();
+	
+	setting.init();
+	var userId = window.localStorage.getItem('userId');
+	var helpdiv = window.localStorage.getItem("homehelp");
+	var mycustomers = window.localStorage.getItem("myCustomers");
+	if(mycustomers == null || mycustomers == '') {
+		getMyCustomers();
+		window.localStorage.setItem("myCustomers",1);
+	}
+	
+	Services.checkKangleUserMenuAccess(userId, function(data) {
+		if(data >= 1) {
+            helperadmin = true;
+    	}
+    }, function() {});
+    if(helpdiv == null || helpdiv == '') {
+        if(helperadmin){
+          assetHelpadmin.showHelpText();
+        } else {
+          assetHelp.showHelpText();
+        }
+        window.localStorage.setItem("homehelp",1);
+    }
+	
+	//window.localStorage.setItem('localUserInfo', null);
+    $('#right #activity-ilst').niceScroll();
+    page.init(Services.defaults.userId, Services.defaults.subdomainName);
+    getCmpnyConfig();
+    insertUserTrack(PAGE_NAMES.home, function(d) { }, function(e) { });
+    
+    $('.menu-asset').bind('click',function(){
+    	if(coreNET.isConnected()){
+    		window.location.href = 'eLearningOnline.html?currentUser=' + encodeURIComponent(window.localStorage.getItem('user'));
+    	} else {
+    		window.location.href = 'eLearningOffline.html';
+    	}
+    });
+    
+    $('.menu-social').bind('click',function(){
+    	if(coreNET.isConnected()){
+    		window.location.href = 'Rxbook/Index.Mobile.html';
+    	} else {
+    		alert(resource.networkMessage.noNetwork);
+    	}
+    });
+    
+    $('.menu-online').bind('click',function(){
+    	if(coreNET.isConnected()){
+    		window.location.href = 'MeetingPlayer/MeetingHome.html';
+    	} else {
+    		alert(resource.networkMessage.noNetwork);
+    	}
+    });
+
+	$('.menu-Knowd').bind('click',function(){
+		    if(coreNET.isConnected()){
+		    	window.location.href = 'Course/course_home.html';
+		    } else {
+		    	alert(resource.networkMessage.noNetwork);
+		    }
+		});
+	$('.menu-Knowd1').bind('click',function(){
+	    if(coreNET.isConnected()){
+	    	window.location.href = 'adcourse/UserAdCourseDetails.html';
+	    } else {
+	    	alert(resource.networkMessage.noNetwork);
+	    }
+	});
+	
+	$('header nav li.profile-name a').bind('click',function(){
+		if(!coreNET.isConnected()) {
+			alert(resource.networkMessage.noNetwork);
+			return false;
+	    }
+	});
+	
+	$('header nav li.profile_img a').bind('click',function(){
+		if(!coreNET.isConnected()) {
+			alert(resource.networkMessage.noNetwork);
+			return false;
+	    }
+	});
+	
+	$('.Notificationbell').bind('click',function(){
+		if(coreNET.isConnected()){
+			window.location.href = "notificationhub/Notificationhub.html";
+		} else {
+			alert(resource.networkMessage.noNetwork);
+		}
+	});
+	}, false);
+		
+	$('#helpanytime').bind('click',function(){
+		if(helperadmin){
+            assetHelpadmin.showHelpText();
+            getMyCustomers();
+        } else {
+            assetHelp.showHelpText();
+        }
+	});
+	$("#set").click(function(){
+		 navigator.app.exitApp();
+	});
+	$("#play_store").click(function(){
+		$(".pop_text_inner h2").css("display","none");
+		$(".pop_text_inner h3").css("display","block");
+		$("#play_store").css("display","none");
+		$("#set").css("display","none");
+		setTimeout(function(){
+			$(".pop_text_inner h2").css("display","none");
+			navigator.app.exitApp();
+			$("#pop_content").fadeOut();
+			window.open("https://play.google.com/store/apps/details?id=com.swaas.Kwire&hl=en","_system");
+			//window.location.href="https://play.google.com/store/apps/details?id=com.swaas.Kwire&hl=en";
+		}, 10000);
+	});
+
+</script>
+</body>
+</html>
+

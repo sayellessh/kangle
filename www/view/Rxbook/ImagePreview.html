@@ -1,0 +1,19 @@
+<html>
+<head>
+<script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+</script>
+</head>
+<body id="body">
+<script>
+/* var elem = document.createElement("img");
+elem.setAttribute("src", getParameterByName("image"));
+document.getElementById("body").appendChild(elem); */
+</script>
+</body>
+</html>

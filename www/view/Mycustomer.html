@@ -1,0 +1,148 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MyCustomer</title>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <link rel="stylesheet" href="online/font-awesome/font-awesome.css" type="text/css" media="screen" />
+    <link href="online/fonts/fonts.css" rel="stylesheet" />
+    <link href="HeaderLayoutCommon.css" rel="stylesheet" />
+    <link href="online/ArrowPopup.css" rel="stylesheet" />
+    <link href="Mycustomer.css" rel="stylesheet" />
+    <link href="Assetupload/css/select2.css" rel="stylesheet" />
+    <link href="online/footer.css" rel="stylesheet" />
+    
+    <!-- cordova, jquery js -->
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script src="../jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="online/js/constants.js"></script>
+    <script type="text/javascript" src="Rxbook/js/RxBook/restHandler.js"></script>
+    <script type="text/javascript" src="Rxbook/js/RxBook/Services.js"></script>
+    <script type="text/javascript" src="online/js/ArrowPopup.js"></script>
+    <script type="text/javascript" src="Assetupload/js/select2.js"></script>
+    <script type="text/javascript" src="online/js/elCommon.js"></script>
+    <script type="text/javascript" src="Rxbook/js/RxBook/rxBookInit.js"></script>
+    <script type="text/javascript" src="Mycustomertable.js"></script>
+    <script type="text/javascript" src="Mycustomer.js"></script>
+<style>
+	#homepage {
+		font-size: 30px !important;
+	}
+</style>
+</head>
+<body id="body">
+    <div class="header" id="headersection">
+        <div class="navbar-fixed-top dp-header">
+            <div class="logo" onclick="window.location.href='homePage.html'"></div>
+            <ul id="menunavigator" class="pull-left1">
+            	<li class="pull-right" ><p id="homepage" class="fa fa-home" onclick="window.location.href='homePage.html'"></p></li>
+            </ul>
+        </div>
+    </div>
+<!--    <form name="changepassword" action="#" method="post" > //onsubmit="save();return false;">-->
+<div class="change_password">
+    <ul class="tabselect">
+        <li class="tab active" id="user_add">Add Customer</li>
+        <li class="tab" id="user_edit">Edit Customer</li>
+    </ul>
+    <!-- <div class="bannertop" id="add_user">Add user</div>-->
+    <div class="passwordcontents" id="new_user">
+        <div class="password">
+            <!-- <div class="labelName" id="first_name">* First name :</div>-->
+            <input class="textarea" id="fname" placeholder="First Name" maxlength="100" />
+        </div>
+        <div class="password">
+            <!-- <div class="labelName" id="email_id">* Email Id :</div>-->
+            <input class="textarea" id="email" placeholder="Email" maxlength="100" />
+        </div>
+        <div class="password">
+            <!-- <div class="labelName" id="last_name">Last Name :</div>-->
+            <input class="textarea" id="lname" placeholder="Last Name" maxlength="100" />
+        </div>
+        <div class="password">
+            <!-- <div class="labelName" id="phone_no">Phone No :</div>-->
+            <input class="textarea" id="phno" placeholder="Phone" maxlength="16" tabindex="0"/>
+        </div>
+        <div class="password">
+            <div class="labelName" id="catogry">* Category :</div>
+            <select class="textarea" id="catg">
+            </select>
+        </div>
+        <div class="password" id="speclity" style="display:none;">
+            <div class="labelName" id="spclity">Speciality :</div>
+            <select class="textarea" id="spec">
+            </select>
+        </div>
+        <div class="password">
+			<input type="text" name="browser" class="area" placeholder="Location" maxlength="100" tabindex="0" />
+            <ul class="custlocation" style="width:100%; max-height:150px; overflow:auto; display:none;">
+            </ul>
+        </div>
+        <div>
+            <!-- <input type="checkbox" id="checkstatus" name="Active" value="true" checked="checked" style="float:left;margin-right:10px;margin-left:20px;" /> Active -->
+            <span id="cancel"><button class="cancel" type="submit">Cancel</button></span>
+            <span id="save"><button class="save" type="submit">Save</button></span>
+        </div>
+    </div>
+<!-- <div class="bannertop" id="edit_user" style="display: none;">Edit user</div>-->
+    <div class="passwordcontents" id="old_user" style="display: none;">
+        <div class="editlist" id="myusers" style="display:none;">
+        <div class="bannertopedit" id="my_customers">My Customers</div>
+            <ul class="editmyusers">
+            </ul>
+        </div>
+        <div class="editlist" id="otherusers" style="display:none;">
+        <div class="bannertopedit" id="other_customers">Other Customers</div>
+            <ul class="editotherusers">
+            </ul>
+        </div>
+        <div class="norecords" style="display:none; background-color: #fff;height: 40px; border-radius: 5px; margin: 10px;text-align: center;font-size: 18px;">
+        	<span style="display: block;padding-top: 11px;">No records found</span>
+        </div>
+<!--    <div>
+            <span id="cancel"><button class="cancel" type="submit">Cancel</button></span>
+            <span id="save"><button class="save" type="submit">Save</button></span>
+        </div>-->
+    </div>
+</div>
+<script>
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+    Services.defaults.userId = window.localStorage.getItem('userId');
+    Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+    Services.defaults.companyId = window.localStorage.getItem('companyId');
+    
+    var companyLogoUrl = window.localStorage.getItem("companyLogoUrl");
+    if(companyLogoUrl === undefined || companyLogoUrl === '' || companyLogoUrl === null)
+        companyLogoUrl = '';
+    $('.header .logo').css({'background-image':'url('+companyLogoUrl+')',
+                            'background-position': '0% 50%',
+                            'background-repeat': 'no-repeat',
+                            'background-size': '100%'});
+    $('#user_add').bind('click', function(){
+        $('#user_add').addClass('active');
+        $('#user_edit').removeClass('active');
+        $('#new_user').show();
+        $('#old_user').hide();
+        
+    });
+    $('#user_edit').bind('click', function() {
+        $('#user_add').removeClass('active');
+        $('#user_edit').addClass('active');
+        $('#new_user').hide();
+        $('#old_user').show();
+    });
+        mycustomer.init();
+
+    $('#save').bind('click',function(){
+        submitCustomerShareForm();
+    });
+    $('#cancel').bind('click',function(){
+        window.location.href = 'homePage.html';
+    });
+
+};
+</script>
+
+</body>
+</html>

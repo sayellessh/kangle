@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+        <link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+        <link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+        
+        
+		<!--<link type="text/css" rel="stylesheet" href="/Content/AssetMobile/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/Content/AssetMobile/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/Content/AssetMobile/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="/Content/AssetMobile/page.css" media="screen" /> -->
+
+		<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+		
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+        
+	</head>
+    <body>
+
+<div class="wrapper">
+    <header>
+        <div class="fa fa-chevron-left"></div>
+		<h3>Share with Customers</h3>
+	</header>
+	<div class="content">
+        <h2 class="block-title"></h2>
+		<div class="filter-block">
+			<a href="#" id="customer-share" class="au-btn au-btn-block" title="Speciality Based Sharing">
+				<span class="au-btn-inn">
+					<span class="au-label">Speciality Based Sharing</span>
+				</span>
+			</a>
+            <a href="#" id="individual-share" class="au-btn au-btn-block" title="Individual Sharing">
+				<span class="au-btn-inn">
+					<span class="au-label">Individual Sharing</span>
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+	var href = window.location.href;
+    var shareProperty = href.substr(href.indexOf('?') + 1, href.length);
+
+    $(document).ready(function () {
+        var details = JSON.parse(window.localStorage.getItem('user'));
+
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.usercode = details.userCode;
+        Services.defaults.userId = window.localStorage.getItem('userId');
+        Services.defaults.companyCode = details.companyCode;
+        Services.defaults.regionCode = details.regionCode;
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        
+        $(".fa-chevron-left").bind("click", function (e) {
+            window.history.back();
+            return false;
+        });
+        $('.filter-block a#customer-share').unbind("click").bind("click", function (e) {
+            window.location.href = "CustomerShare.Mobile.html?" + shareProperty;
+            return false;
+        });
+        $('.filter-block a#individual-share').unbind("click").bind("click", function (e) {
+            window.location.href = "IndividualShare.mobile.html?" + shareProperty;
+            return false;
+        });
+    });
+</script>

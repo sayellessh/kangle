@@ -1,0 +1,122 @@
+.arrow-wrapper {
+	position: absolute;
+	display: block;
+	width: 200px;
+	/*top: 70px;*/
+    top:48px;
+	right: 5px;
+	font: 14px 'robotolight', arial, helvetica, sans-serif;
+}
+
+.arrow-wrapper:after {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #000000;
+	border-width: 10px;
+}
+
+.arrow-container {
+	background: black;
+	border-radius: 5px;
+}
+
+.arrow-container a {
+	text-decoration: none;
+	color: white;
+}
+
+.arrow-container a:hover {
+	text-decoration: underline;
+}
+
+.arrow-content > ul {
+	list-style: none;
+}
+
+.arrow-content > ul > li {
+	list-style: none;
+	padding: 12px 5px 2px 5px;
+}
+
+.arrow-content > ul > li:last-child {
+	padding-bottom: 11px;
+}
+
+.arrow-content > ul > li.separator {
+	border-bottom: 1px solid #666c78;
+}
+
+.arrow-offline {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -96px;
+	padding-left: 30px !important;
+}
+.arrow-online {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -133px;
+	padding-left: 30px !important;
+}
+.arrow-exit {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 4px -167px;
+	padding-left: 30px !important;
+}
+
+.arrow-register {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -204px;
+	padding-left: 30px !important;
+}
+
+.arrow-format {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px 11px;
+	padding-left: 30px !important;
+}
+
+.arrow-upgrade {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -277px;
+	padding-left: 30px !important;
+}
+
+.arrow-sync {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -241px;
+	padding-left: 30px !important;
+}
+
+.arrow-profile {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -60px;
+	padding-left: 30px !important;
+}
+
+.arrow-wire {
+	background-image: url("../images/imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -312px;
+	padding-left: 30px !important;
+}
+
+@media screen and (min-width: 240px) and (max-width: 767px) {
+    
+    .arrow-wrapper:after {
+        left: 55%;
+    }
+}

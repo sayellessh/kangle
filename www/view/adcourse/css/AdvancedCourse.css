@@ -1,0 +1,314 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700); /*!
+ 
+/*!
+ *
+ *  Project:  GLYPHICONS HALFLINGS
+ *  Author:   Jan Kovarik - www.glyphicons.com
+ *  Twitter:  @jankovarik
+ *
+ */
+
+
+
+/*body {
+    font-family: 'Open Sans',sans-serif;
+    background: #fff url(../images/pattern1.png) repeat;
+    font-size: 10pt;
+    padding-bottom: 35px;
+}*/
+
+
+/** course css **/
+#dvTotalQues {
+    padding: 10px 10px 0px;
+}
+#question-block {
+	padding: 10px;
+}
+.question {
+	background: #fff;
+	padding: 5px;
+	font-size: 12px;
+	margin-bottom: 10px;
+	color: #333;
+}
+.question.question-alt {
+    display: none;
+}
+.question h3 {
+	font-size: 16px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+.question-text {
+	font-weight: bold;
+}
+.question-text, 
+.question-desc {
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+
+.ques-thumb {
+    max-width: 100%;
+}
+.question .checkbox,
+.question .radio,
+.question .clstxtAnswers {
+	margin-bottom: 5px;
+}
+
+.question textarea {
+	width: 100%;
+	height: 75px;
+	max-width: 400px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 1px solid #efefef;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.question .radio,
+.question .checkbox {
+    margin-top: 10px;
+}
+.question .radio input,
+.question .checkbox input {
+    margin: 2px 10px 0px;
+    float: left; 
+}
+#submit-course-test {
+	line-height: 40px;
+	width: 120px;
+	height: 40px;
+	background-color: #428bca;
+	color: #fff;
+	margin: 10px 0px;
+	border: 1px solid #357ebd;
+}
+
+/* result page */
+#dvViewCourse {
+	padding: 10px;
+}
+#dvViewCourse * {
+}
+/*#dvReportUserName,
+#dvExamDate {
+	font-size: 16px;
+	line-height: 24px;
+	color: #222;	
+	text-align: center;
+    margin-bottom: 10px;
+}*/
+#dvExamDate {
+	font-size: 14px;
+}
+div.table {
+	width: 100%;
+	margin: 10px 0px;
+	background-color: #fff;
+}
+div.row {
+	height: 30px;
+	border-bottom: 1px solid #f2f2f2;
+}
+div.row .col {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 60%;
+    font-size: 14px;
+    font-family: "oswaldlight", Arial;
+}
+div.row-hdr .col {
+	background-color: blue;
+	color: #fff;
+	border: none;
+    font-family: "oswaldregular";
+}
+div.row .col:first-child {
+	width: 10%;
+}
+div.row .col:last-child {
+	width: 30%;
+}
+div.row.srow {
+    background-color: #428bca;
+}
+div.row .col.col-attem {
+    width: 5%;
+}
+div.row .col.col-sname {
+    width: 50%;
+}
+div.row .col.col-aname {
+    width: 45%;
+}
+div.row .col.col-sresult {
+    width: 20%;
+}
+div.row .col.col-saction {
+    width: 20%;
+}
+div.row .col-action {
+    background-color: #428bca;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    line-height: normal;
+    margin-top: 3px;
+    padding: 5px;
+    text-decoration: none;
+}
+.answer-correct {
+    background-color: #38b577;
+    border: 0.5px solid #fff;
+    border-radius: 5px;
+    color: white;
+    padding: 2px 5px;
+}
+.answer-wrong {
+    background-color: #ed1b24;
+    border: 0.5px solid #fff;
+    border-radius: 5px;
+    color: white;
+    padding: 2px 5px;
+}
+.col-sresult .answer-correct,
+.col-sresult .answer-wrong {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin-top: 2px;
+    width: 40px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+.a-btn {
+	border: 0px;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+}
+#dvViewHeader .table {
+    margin: 0px;
+}
+#dvCourseDetails .col-md-7 {
+	width: 68%;
+	float: left;
+	clear: both;
+	padding-bottom: 10px;
+}
+#dvCourseDetails .col-md-5 {
+	width: 85px;
+	float: left;
+	padding-bottom: 10px;
+}
+#dvCourseDetails p {
+    margin: 0px;
+}
+#pInfo {
+	clear: both;
+	margin: 10px 0px;		
+}
+.report .row {
+	border: none;
+}
+.report .row-action {
+	border-bottom: 1px solid #f2f2f2;
+	text-align: center;
+}
+.row-action a {
+	margin-left: 5px;
+	margin-top: 0px;
+	float: none;
+}
+.col.empty {
+	padding: 10px 0px;
+}
+.report .col.empty,
+.report .col.empty * {
+	float: none;
+	text-align: center;
+} 
+.report .row-empty {
+	height: auto;
+}
+.action-buttons {
+    clear: both;
+}
+
+
+@media screen and (max-width: 400px) {
+    .msgAlert {
+        margin-left: -157px;
+        top: 100px;
+        width: 315px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    #dvMainChoice {
+        width: 410px;
+    }
+
+    #dvChoices {
+        width: 500px;
+    }
+}
+
+
+@media screen and (max-width: 445px) {
+    #dvMainChoice {
+        width: 300px;
+    }
+}
+
+@media (min-width: 240px) and (max-width: 767px) {
+    .clsQuestionText {
+        padding: 0px;
+        font-weight: bold;
+    }
+    #tblSurQuestion {
+        margin-top: 10px;
+    }
+    .clsQuestViewDesc {
+        padding: 0px;
+    }
+
+    .clsAnswers {
+        padding: 0px;
+    }
+
+    .clsDvPage {
+        text-align: center;
+    }
+
+    #btnViewSubmit {
+        display: block;
+        margin: 10px auto 5px;
+        width: 70px;
+        padding: 2px 0;
+    }
+
+    .alert {
+        padding: 0px;
+    }
+}
+
+#dvCourseDetails table th,
+#dvViewHeader table th {
+    background-color: #0054a5;
+    border: medium none;
+    color: white;
+    font-family: "oswaldlight";
+    font-size: 19px;
+    font-weight: normal;
+}
+
+#dvCourseDetails table th {
+    font-family: "oswaldlight";
+}

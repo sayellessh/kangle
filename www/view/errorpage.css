@@ -1,0 +1,57 @@
+/*** Changepassword page styles ***/
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+}
+.content {
+    background-color: rgba(245, 245, 245, 0.952941);
+    width:250px;
+    height:40px;
+    padding:5px;
+}
+.main{
+    background-color: rgba(245, 245, 245, 0.952941);
+    width:260px;
+    border:15px solid #e5e5e5;
+    top:50%;
+    left:50%;
+    margin: -120px 0px 0px -130px;
+    position:absolute;
+}
+.labelName {
+    float:left;
+    position:relatve;
+    font-size:12px;
+    padding:10px;
+}
+.subdiv {
+    background-color: #e5e5e5;
+    width:260px;
+}
+.text{
+	display:block; 
+	float:left; 
+	padding-top: 5px; 
+	padding-left: 10px;
+}
+#symbol {
+	display:block; 
+	font-size:25px; 
+	float:left; 
+	color:#CD1F21;
+}
+#retry {
+    display:block;
+    float:right;
+    width:70px;
+    height:30px;
+    padding-right:20px;
+    padding-bottom:10px;
+}
+.retry{
+	width:70px; 
+	height:30px;
+	background-color: #b3c833;
+}

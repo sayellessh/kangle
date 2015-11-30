@@ -1,0 +1,222 @@
+﻿/*Course List*/
+.clspg {
+    padding-top: 2px;
+    text-align: right;
+}
+
+.clsTotal {
+    margin-right: 10px;
+}
+
+.clsPre, .clsNext {
+    padding: 5px 7px;
+}
+
+.clsPgChange {
+    margin-right: 8px;
+    margin-top: 3px;
+    padding: 4px;
+}
+
+.clsDivSearch {
+    float: left;
+    padding-top: 7px;
+    padding-left: 3px;
+    padding-right: 10px;
+}
+
+.clstxtSearch {
+    border-radius: 0px !important;
+    border: 1px solid rgb(187, 187, 187) !important;
+    box-shadow: none;
+    margin-right: 10px;
+}
+
+.clsbtnSearch {
+    border-radius: 0px;
+    background-color: rgb(92, 156, 204)!important;
+    border: 1px solid rgb(92, 156, 204)!important;
+    margin-top: 5px!important;
+    margin-left: 0px!important;
+    padding: 3px 5px!important;
+}
+/*Course List*/
+
+/*Question Page*/
+input {
+    width: auto;
+}
+
+.clsAnswers {
+    margin-bottom: 1%;
+}
+
+    .clsAnswers input {
+        margin-right: 1%;
+    }
+
+.clsMainQuestion {
+    margin-bottom: 1%;
+}
+
+.clsQuestionText {
+    font-weight: bold;
+}
+
+.clstxtAnswers,
+.clsQuesDesc,
+.autoQuestions,
+.clsCourseDesc {
+    height: 70px !important;
+}
+
+.clsDvQuesAction {
+    margin-right: 1%;
+    height: 30px;
+    color: white;
+}
+
+.spnMand {
+    color: red;
+    margin-left: 1%;
+}
+
+#tblCourseQuestions {
+    width: 100%;
+}
+
+#dvAddNewQues .form-group {
+    overflow: auto;
+}
+
+#dvAddNewQues {
+    margin-top: 1%;
+}
+
+.clsAddAns {
+    color: #3071a9;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+}
+
+.tdAnswer {
+    width: 50%;
+}
+
+.clsOverflowAuto {
+    overflow: auto;
+}
+
+.clsRemoveAns {
+    color: #3071a9;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+}
+
+.clsMoveUpAns {
+    color: #3071a9;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+}
+
+.clsMoveDownAns {
+    color: #3071a9;
+    cursor: pointer;
+    float: left;
+    width: 25px;
+}
+
+#dvQuestionContent {
+    font-size: 12px !important;
+    min-height: 300px;
+}
+
+#dvQuestionContent input, textarea {
+    border-radius: 0px !important;
+}
+
+.clsCourseSurText {
+    margin-top: 1%;
+    font-size: 15px;
+    overflow: auto;
+    min-height: 25px;
+    color: white;
+    border: 1px solid green;
+    background-color: #5cb85c;
+}
+
+.clsQImg {
+    padding-left: 15px !important;
+}
+
+.cls_display_none {
+    display: none!important;
+}
+
+.clstxtAnswers, .clsQuesDesc, .autoQuestions, .clsCourseDesc {
+    height: 70px !important;
+}
+
+#tblAnswers tr {
+    border-bottom: medium none !important;
+    border-top: medium none !important;
+    padding-bottom: 3px;
+}
+
+#tblAnswers tr td {
+    border-top: medium none !important;
+    vertical-align: middle;
+}
+
+.clsQuesAction {
+    position: absolute;
+}
+
+.tdQuesFirst {
+    width: 1%;
+}
+
+.tdQuesSec {
+    width: 95%;
+}
+
+.tdQuesSecond {
+    width: 70%;
+}
+
+.tdQuesThird {
+    width: 30%;
+}
+
+.btn-primary, .btn-primary:link, .btn-primary:visited, .btn-primary:active, .btn-primary:hover {
+    color: white !important;
+}
+
+a:link, a:visited, a:active, a:hover {
+    /*line-height: 0px!important;*/
+}
+
+#tblCourseQuestions tr {
+    border-bottom: 1px solid #0173ba;
+}
+
+.clsbtnAddQuestion {
+    margin-top: 2%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    text-align: right;
+}
+
+#tblCourseQuestions tr td {
+    padding-top: 1%;
+    vertical-align: top;
+}
+
+#lnkQuestImg {
+    cursor: pointer;
+}
+
+/*Question Page*/

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Analytics</title>
+    <!--<meta name="viewport" content="width=device-width" />-->
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">  -->
+        <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <!-- cordova, jquery js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+    	<!-- <script src="../jquery/jquery-1.9.1.min.js"></script> -->
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="../online/footer.css" rel="stylesheet" />
+    <link href="css/responsive.css" media="screen" rel="stylesheet"/>
+    
+    <script src="JS/jquery.min.js"></script>
+    <script src="../Rxbook/js/RxBook/restHandler.js"></script>
+    <script src="JS/common.js"></script>
+</head>
+<body>
+    <div id="meeting-analytics">
+        <div id="content">
+            <div id="analytics-title">
+                <h2></h2>
+                <a href="MeetingHome.html" title="close" class="btn btn-close fa fa-times-circle"></a>
+            </div>
+            <div id="analytics-report">
+                <div class="meeting-desc">
+                    <!--<h3></h3>
+                    <p class="date"></p>
+                    <p class="desc"></p>
+                    <div class="agenda"><pre></pre></div>-->
+                    <div class="field">
+                        <div class="label">Meeting Name:</div>
+                        <div class="value name"></div>
+                    </div>
+                    <div class="field">
+                        <div class="label">Current Status:</div>
+                        <div class="value status"></div>
+                    </div>
+                    <div class="field">
+                        <div class="label">Meeting time:</div>
+                        <div class="value date"></div>                        
+                    </div>
+                    <div class="field field-below">
+                        <div class="label">Description:</div>
+                        <div class="value desc"></div>
+                    </div>
+                    <div class="field field-below">
+                        <div class="label">Agenda:</div>
+                        <div class="value agenda"><pre></pre></div>
+                    </div>
+                </div>
+                <h3 class="title-blk">Participants Reports</h3>
+                <div class="meeting-attend">
+                    <div class="attend-block">
+                        <h4>Actual Participants</h4>
+                        <p class="actual-part"></p>
+                    </div>
+                    <div class="attend-block">
+                        <h4>Attended Participants</h4>
+                        <p class="attend-part"></p>
+                    </div>
+                </div>
+                <div class="meeting-partc-list">
+                    <div class="meet-grid grid-memb">
+                        <div class="meet-grid-hdr">
+                            <div class="meet-grid-col col-name">Participant Name</div>
+                            <div class="meet-grid-col col-stat">Status</div>
+                            <div class="meet-grid-col col-time">Joined Time</div>
+                        </div>
+                        <!--<div class="meet-grid-row">
+                            <div class="meet-grid-col col-name">Nagaraju</div>
+                            <div class="meet-grid-col col-stat col-join">Joined</div>
+                        </div>
+                        <div class="meet-grid-row">
+                            <div class="meet-grid-col col-name">Senthil</div>
+                            <div class="meet-grid-col col-stat">Idle</div>
+                        </div>-->
+                    </div>
+                </div>
+                <h3 class="title-blk">Meeting Materials Report</h3>
+                
+                <div class="meeting-partc-list">
+                    <div class="meet-grid grid-slides">
+                        <div class="meet-grid-hdr">
+                            <div class="meet-grid-col col-name">Slide Name</div>
+                            <div class="meet-grid-col col-stat">Duration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+
+        </div>
+    </div>
+    <div id="loader-img">
+        <!-- <img src="bxslider/images/bx_loader.gif" />  -->
+         <img src="bxslider/images/loader_new.gif" /> 
+    </div>
+    <script type="text/javascript">
+        
+    </script>
+    <script src="JS/services.js"></script>
+    <script src="JS/CreateMeeting.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        	footerdiv($('body'));
+        		var userObj = {
+            		UserId: window.localStorage.getItem('userId'),
+                    Company_Id: window.localStorage.getItem('comapnyId'),
+                    sudDomainName:  window.localStorage.getItem('domainName')
+                };
+                common.init(userObj);
+                analytics.init();
+        });
+    </script>
+</body>
+</html>

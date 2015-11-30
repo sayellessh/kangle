@@ -1,0 +1,64 @@
+.error {
+	padding: 5px;
+	background-color: #DDD;
+	border-radius: 10px;
+}
+.error,
+.error * {
+	font-size: 18px;
+}
+.error p {
+	padding-left: 26px;
+}
+.error span {
+	color: rgb(196, 23, 23);
+	position: absolute;
+}
+
+.footer {
+    line-height: 18px;
+    position: fixed;
+    bottom: 0px;
+    background: #BBBBBB;
+    height: 20px;
+    width: 100%;
+    z-index: 99;
+    left:0px;
+    right:0px;
+    overflow:hidden;
+}
+    .footer p {
+    	float:right;
+        font-size: 14px;
+        font-family: arial;
+        font-style: italic;
+        line-height: 22px;
+        color: #474747;
+        text-align: right;
+        position: static;
+        bottom: 0px;
+        width:75%;
+        padding-right: 10px !important;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin: 0px 0px 0px;
+    }
+
+ .footer p span {
+     font-style: normal;
+     text-decoration: underline;
+ }
+#support{
+	float:left;
+	width:60px;
+	margin: 2px;
+}
+#mail{
+	float:left;
+	width: 100%;
+}
+
+#numbr{
+	float:left;
+	width: 100%;
+}

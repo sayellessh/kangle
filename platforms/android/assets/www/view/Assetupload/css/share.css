@@ -1,0 +1,54 @@
+﻿    .list-cont {
+        padding-bottom: 75px;
+    }
+    .speciality-list li {
+        height: auto;
+    }
+    
+.inn-spl span.name {
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+}
+.inn-spl span {
+    display: block;
+    height: 18px;
+    line-height: 14px;
+}
+    .form-save-btn {
+        background-color: #1e88e5;
+        border: 1px solid #D8D6D6;
+        color: white;
+        cursor: pointer;
+        padding: 10px 5px;
+        width: 50%;
+    }
+    .form-cancel-btn {
+        background-color: #FFFFFF;
+        border: 1px solid #D8D6D6;
+        color: black;
+        cursor: pointer;
+        padding: 10px 5px;
+        float: left;
+        width: 50%;
+    }
+
+    .fixed-button {
+        position: fixed;
+        width: 100%;
+        display: block;
+        bottom: 0px;
+    }
+    .form-block.block-check.fixed-check {
+        background-color: white;
+    }
+    .form-block.fixed-check {
+        margin-bottom: 0px;
+    }
+    .fixed-check {
+        position: fixed;
+        width: 100%;
+        display: block;
+        bottom: 40px;
+    }

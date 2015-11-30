@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>Course Test</title>
+	<meta name="description" content="">
+	<meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+	
+	<link href="../online/font-awesome/font-awesome.css" rel="stylesheet" media="screen"/>
+    <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+	<link href="css/course.css" rel="stylesheet" media="screen"/>
+	<link href="../online/footer.css" rel="stylesheet" />
+	
+	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/json-path.js"></script>
+	<script type="text/javascript" src="../online/js/constants.js"></script>
+	<script type="text/javascript" src="../Rxbook/js/RxBook/restHandler.js"></script>
+	<script type="text/javascript" src="js/ajaxHandler.js"></script>
+	<script type="text/javascript" src="../eLearningAPP.js"></script>
+    <script type="text/javascript" src="../online/js/ArrowPopup.js"></script>
+    
+    <!-- settings -->
+    <script type="text/javascript" src="js/settings.js"></script>
+    
+    <script type="text/javascript" src="../Rxbook/js/RxBook/Services.js"></script>
+    <script type="text/javascript" src="../Rxbook/js/RxBook/mobile.js"></script>
+	<script type="text/javascript" src="js/course_service.js"></script>
+	<script type="text/javascript" src="../Rxbook/js/RxBook/rxBookInit.js"></script>
+	<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+	<style>
+		#page-home-arrow-div.arrow-wrapper{
+            z-index: 99;
+        }
+        #page-settings-arrow-div.arrow-wrapper{
+            z-index: 99;
+        }
+	</style>
+</head>
+<body style="background-color: #f9f9f9;">
+
+	 <div id="page">
+		<header>
+			<div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+			<ul class="header-menu">
+				<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                <li class="pull-right newfontsize" id="Notificationbell" ><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                <li class="pull-right newfontsize"><a class="fa fa-home" id="pop-home" style="" href="#"></a></li>
+				<li class="pull-right newfontsize" id="" ><a class="fa fa-question-circle"></a></li>
+				<!-- <li class="menu-asset"><a href="" title="Asset Library" class="fa fa-book"></a></li>
+				<li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li> -->
+			</ul>
+		</header>
+		<div class="sub-wrapper" style="display:none;">
+            <div id="nav_list"><img style="height: 38px; margin-left: 5px" src="../online/images/Kanglelogo.png"></div>
+        </div>
+		<div id="content">
+			<div id="dvViewCourse">
+		        <div class="col-lg-12 clsPaddingNone clearfix">
+		            <div id="dvCourseName" class="col-md-12 dv-big-head"></div>
+		            <div class="clearfix"></div>
+		            <div id="dvReportUserName" class="col-md-12 dv-big-head"></div>
+		        </div>
+		        <div class="col-lg-12 report" id="dvViewHeader">
+		        
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<div class="loading"><div class="img"></div></div>
+	<script type="text/javascript" src="js/course_file.js"></script>
+	<script type="text/javascript" src="js/course_report.js"></script>
+	<script type="text/javascript" src="../online/js/kaHeader.js"></script>
+	<script type="text/javascript">
+		/* Services.defaults.userId = 22;//window.localStorage.getItem('userId');
+		Services.defaults.companyId = 1;//window.localStorage.getItem('companyId');
+		Services.defaults.subdomainName = 'swaas.kangle.me';//window.localStorage.getItem('domainName');
+		
+		rxBookInit.enableCurUserInfo(function(){
+			Services.defaults.companyId = 1;
+			Services.defaults.subdomainName = 'swaas.kangle.me';
+			$(document).ready(function(){
+				resultHeader.init();
+			});
+		}); 
+		 */
+		app.showLoading();
+		footerdiv($('body'));
+		setting.init();
+		Services.defaults.companyId =  window.localStorage.getItem('companyId');
+		Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+		rxBookInit.enableCurUserInfo(function(){
+			app.hideLoading();
+			Services.defaults.companyId = window.localStorage.getItem('companyId');
+			Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+			document.addEventListener('deviceready', function() {
+				kaHeader.startCommonThread();
+				resultHeader.init();
+				$('#Notificationbell').bind('click',function(){
+					window.location.href = "../notificationhub/Notificationhub.html";
+				});
+			}, false);
+		}, function(){
+			app.hideLoading();
+		});
+	</script>
+</body>
+</html>

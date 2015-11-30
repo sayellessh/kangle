@@ -1,0 +1,130 @@
+﻿
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.min.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+
+		<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+		
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+        
+	</head>
+    <body>
+    
+    
+<link href="~/Content/AssetMobile/share.css" rel="stylesheet" />
+<div class="wrapper">
+    <header></header>
+    <div class="content list-cont">
+        <div class="list-result">
+			<div class="list-result-inn">
+				<div class="result-label">Showing:</div>
+				<div class="result-filter"><span>Filtered Results</span><span class="filter-close fa fa-close" style="margin-left: 10px;"></span></div>
+				<div class="result-select select-all">Show only selected customers</div>
+			</div>
+		</div>
+        <div class="speciality-header">
+            <span>Customers</span>
+            <span class="select select-all">Select all</span>
+        </div>
+        <ul class="speciality-list"> 
+            
+        </ul>
+    </div>
+    <div class="form-block block-check fixed-check" id="retain-asset-block-check" style="padding: 10px;">
+        <label class="input-check">
+            <input type="checkbox" name="retainuser" id="retain-asset" checked/>
+            <label for="retain-asset">Retain assets</label>
+        </label>
+    </div>
+    <div class="block-submit fixed-button" id="submit-cancel">
+        <input type="button" value="Cancel" class="form-cancel-btn" id="cancel-btn" onclick="window.history.back();'"/>
+        <input type="button" value="Share" class="form-save-btn" id="share-btn"/>
+    </div>
+</div>
+
+<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>
+
+
+<script src="js/properties.js"></script>
+<script type="text/javascript" src="js/individualShare.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+    	var details = JSON.parse(window.localStorage.getItem('user'));
+        
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.usercode = details.userCode;
+        Services.defaults.userId = window.localStorage.getItem('userId');
+        Services.defaults.companyCode = details.companyCode;
+        Services.defaults.regionCode = details.regionCode;
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+
+		var href = window.location.href;
+        href = href.substr(href.indexOf('?') + 1, href.length);
+        var nAry = href.split('_');
+        var Unassign = nAry[1];
+        var assetId = nAry[0];
+        
+        var isUnassign = Unassign, assetid = assetId;
+        share.init(assetid, isUnassign);
+        
+        $(".result-select").unbind().bind("click", function (e) {
+            var listSelectedElements = $(".speciality-list li input:checked");
+            if (listSelectedElements.length == 0) {
+                alert('Please choose atleast one asset');
+            }
+            if ($(this).hasClass('select-all')) {
+                $(this).text('Show all customers');
+                $(".speciality-list li").hide();
+                $($(".speciality-list li input:checked").parents("li")).show();
+                $(this).removeClass('select-all');
+            } else {
+                $(this).addClass('select-all');
+                $(this).text('Show only selected customers');
+                $(".speciality-list li").show();
+            }
+        });
+        $("#cancel-btn").bind("click", function(e) {
+            if(isUnassign == 'Y') {
+                window.location.href = "UnAssignedAssets.Mobile.html";
+            } else {
+                window.location.href = "AssignedAssets.Mobile.html";
+            }
+        });
+        $("#share-btn").bind("click", function (e) {
+            share.onDoneBtnClick();
+        });
+        $(".filter-close").bind("click", function (e) {
+            share.getCustomers(null, null, 0, null, null);
+            $(".list-cont").removeClass("show-result");
+        });
+
+    });
+</script>

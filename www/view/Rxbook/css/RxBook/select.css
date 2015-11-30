@@ -1,0 +1,71 @@
+/*
+<div class="mselect">
+    <ul class="mselect-options">
+        <li class="mselect-header">
+            <input type="text" name="search-option" value="" placeholder="Search.."/>
+            <a href="#" title="Save" class="fa fa-ok"></a>
+        </li>
+        <li class="mselect-option selected">Urologstist</li>
+        <li class="mselect-option selected">General Physician</li>
+        <li class="mselect-option">Cardiologist </li>
+        <li class="mselect-option">Immunologist</li>
+        <li class="mselect-option">Orthologist</li>
+    </ul>
+</div>
+*/
+
+.mselect {
+  background-color: #fff;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  position: fixed;
+  width: 90%;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  margin: -125px 0px 0px -45%;
+  z-index: 999;
+  display: none;
+}
+.mselect-options {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.mselect-header,
+.mselect-options li {
+  height: 40px;
+  padding-right: 40px;
+  padding-left: 10px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  line-height: 40px;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+}
+.mselect-header a {
+  position: absolute;
+  right: 5px;
+  display: block;
+  width: 40px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  height: 30px;
+  text-decoration: none;
+  background-color: darkslateblue;
+  color: #fff;
+  margin-top: 5px;
+}
+.mselect-header input {
+  border: 0px;
+  height: 30px;
+  margin-top: 5px;
+  float: left;
+  width: 90%;
+}
+.mselect-options li.selected {
+  background: url('/Images/RxBook/tick.png') no-repeat 96% center;
+  background-size: 16px 16px;
+}

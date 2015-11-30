@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+<!-- constants js -->
+<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+
+	</head>
+    <body>
+	<div class="wrapper">
+		<header>
+			<h3>FileProperties</h3>
+		</header>
+		<div class="content prop-cont">
+			<form action="#" method="post">
+				<div class="form-block">
+					<div class="form-label">File Name</div>
+					<div class="input-group">
+						<input type="text" value="" name="filename"/>
+						<span class="input-btn">.jpeg</span>
+					</div>
+				</div>
+				<div class="form-block">
+					<div class="form-label">Category</div>
+					<div class="form-select">
+						<select name="category">
+							<option value="tag1">Tag 1</option>
+							<option value="tag1">Tag 2</option>
+							<option value="tag1">Tag 3</option>
+							<option value="tag1">Tag 4</option>
+						</select>
+						<span class="select-btn"><span class="fa fa-chevron-down"></span></span>	
+					</div>
+				</div>
+				<div class="form-block">
+					<div class="form-label">Description</div>
+					<textarea name="description" value=""></textarea>
+				</div>
+				<div class="form-block">
+					<div class="form-label">Tags</div>
+					<div class="form-select">
+						<select name="tags">
+							<option value="tag1">Tag 1</option>
+							<option value="tag1">Tag 2</option>
+							<option value="tag1">Tag 3</option>
+							<option value="tag1">Tag 4</option>
+						</select>
+					</div>
+					<p class="select-note"><em>Example: Communication skills, Leadership</em></p>
+				</div>
+				<div class="form-block">
+					<div class="form-label">Expiry Date</div>
+					<div class="input-group">
+						<input type="date" value="" name="expirydate"/>
+						<span class="input-btn"><span class="fa fa-calendar"></span></span>
+					</div>
+				</div>
+					
+				<div class="form-block block-check">
+					<label class="input-check">
+						<input type="checkbox" name="" value=""/>
+						<span class="check-icon"></span>
+						Allow People to download this asset
+					</label>
+					<label class="input-check">
+						<input type="checkbox" name="" value=""/>
+						<span class="check-icon"></span>
+						Allow People to share this file with customers
+					</label>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>

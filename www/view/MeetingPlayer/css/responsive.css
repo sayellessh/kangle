@@ -1,0 +1,208 @@
+/** Media queries **/
+@media screen and (max-width: 1023px) {
+    #meeting-block {
+        width: 100%;
+        padding-left: 50px;
+        padding-right: 10px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+    #meeting-block .col-menu {
+        float: none;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+    #meeting-block .col-content {
+        width: 100%;
+    }
+    .meeting-form {
+        padding: 0px 15px;
+    }
+    .meeting-status {
+        padding-left: 38px;
+    }
+
+    /*** Meetings js ***/
+    ul.current-list li {
+        margin: 0px 10px;
+    }
+    ul.current-list li div {
+        display: block;
+        float: none;
+        width: 100%;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .meeting-list .meeting-status a.join-btn {
+        float: none;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .owner-act {
+        padding-bottom: 0px;
+        height: 28px;
+        padding-left: 38px;
+    }
+    .owner-act .add-link,
+    .owner-act a.stat-btn {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    #meeting-analytics {
+        width: 95%;
+    }
+    #analytics-title h2 {
+        font-size: 14px;
+    }
+    .field {
+        margin-bottom: 5px;
+    }
+    .field:after,
+    .field:before {
+        display: table;
+        content: "";
+    }
+    .field:after {
+        clear: both;
+    }
+    .field .value {
+        max-width: 500px;
+        width: auto;
+    }
+    .date div {
+        margin-top: 5px;
+    }
+    .date div b {
+        display: block;
+    }
+    .title-blk {
+        clear: both;
+    }
+}
+@media screen and (max-width: 600px) {
+    .grid-memb {
+        width: 270px;
+    }
+    
+    .attend-block,
+    .attend-block:last-child {
+        float: none;
+        margin-right: 0px;
+        margin: 0px auto;
+    }
+    .meeting-attend {
+        width: auto;
+        height: auto;
+    }
+    .meet-grid-hdr {
+        display:none;
+    }
+    .meet-grid-row {
+        height: auto;
+    }
+    .meet-grid-col {
+        display: block;
+        float: none;
+    }
+}
+@media screen and (max-width: 767px) {
+    .meeting-form .form-control,
+    .meeting-form .form-row {
+        float: none;
+    }
+    .meeting-form .form-row > label,
+    .meeting-form label {
+        float: none;
+        display: block;
+    }
+    .meeting-form textarea,
+    .meeting-form .form-control input {
+        float: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    .meeting-form .row-submit {
+        padding-left: 0px;
+    }
+    .meeting-form .success,
+    .upload-msg {
+        padding-left: 0px;
+        padding-bottom: 10px;
+    }
+    .tab-content {
+        padding-top: 0px;
+    }
+    .meeting-status a {
+        float: left;
+        margin-top: 10px;
+    }
+    .accepted-status {
+        padding-top: 10px;
+    }
+    ul.tabs li a {
+        font-size: 12px;
+    }
+    .success-msg {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .meeting-form textarea,
+    .meeting-form .form-control input {
+        min-width: 100%;
+        width: 100%;
+        float: none;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+    .meeting-form .form-control .input-check {
+        width: auto;
+        min-width: inherit;
+        margin-bottom: 0px;
+        float: left;
+    }
+    .meeting-form .form-row .form-control label {
+        float: left;
+        line-height: 28px;
+    }
+    .select2-container {
+        width: 100%;
+    }
+
+    .meeting-form .form-row label {
+        width: 100%;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .col-content h2.title, .col-content h3.title {
+        font-size: 16px;
+        padding: 7px 14px;
+    }
+    .meeting-form select {
+        width: 100%;
+    }
+    .meeting-form .form-radio input {
+        width: auto; 
+        min-width: initial;
+    }
+    .form-grid {
+        width: auto;
+    }
+    .form-grid-row:before,
+    .form-grid-row:after {
+        display: table;
+        content: "";
+    }
+    .form-grid-row:after {
+        clear: both;
+    }
+}

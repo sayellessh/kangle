@@ -1,0 +1,220 @@
+b {
+    font-weight: bold;
+}
+
+.arrow-wrapper {
+	position: fixed;
+	display: block;
+	width: 200px;
+	/*top: 70px;*/
+    top:48px;
+	/*right: 5px;*/
+	font: 14px 'robotolight', arial, helvetica, sans-serif;
+    z-index:9;
+}
+
+.arrow-wrapper:after {
+	bottom: 100%;
+	/*left: 50%;*/
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: fixed;
+	pointer-events: none;
+	border-color: rgba(0, 0, 0, 0);
+	border-bottom-color: #000000;
+	border-width: 10px;
+    top: 30px;
+}
+
+.arrow-container {
+	background: black;
+	border-radius: 5px;
+}
+
+.arrow-content-title {
+    padding: 6px;
+    font-weight: bold;
+    color: #FFF;
+    border-bottom: 1px solid #888;
+}
+
+.request {
+    color: #FFF;
+    height: 70px;
+}
+
+    .request > img {
+        float: left;
+        width: 70px;
+        height: 70px;
+        border: 1px solid white;
+        border-radius: 3px;
+    }
+
+    .request > div.message {
+        float: left;
+        margin-left: 5px;
+        width: 75%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        font-weight: bold;
+    }
+    .request > div.suffix {
+        float: left;
+        font-style: italic;
+        width: 100px;
+    }
+    .request > div.actions {
+        float: right;
+    }
+
+        .request > div.actions a:hover {
+            text-decoration: none;
+        }
+
+    .request > div.description {
+        width: 75%;
+        height: 70px;
+        float: left;
+        margin-left: 5px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: break-all;
+        font-size: 17px;
+    }
+
+.ap-notification > li:hover {
+    cursor: pointer;
+    background-color: #223B51;
+}
+.ap-actions{
+	height:280px;
+	overflow-y:auto;
+}
+
+.arrow-content > ul > li {
+    border-bottom: 1px solid white;
+}
+.arrow-content > ul > li:last-child {
+    border-bottom: none;
+}
+
+.notf-accept-btn {
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    background-color: #00A650;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 34px !important;
+    text-align: center;
+}
+.notf-reject-btn {
+    margin: 5px;
+    width: 35px;
+    height: 35px;
+    float: left;
+    background-color: #F80205;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 34px !important;
+    text-align: center;
+}
+
+.arrow-container a {
+	text-decoration: none;
+	color: white;
+}
+
+.arrow-container a:hover {
+    color: white;
+	text-decoration: underline;
+}
+
+.arrow-content > ul {
+	list-style: none;
+}
+
+.arrow-content > ul > li {
+	list-style: none;
+	padding: 11px 5px 10px 5px;
+}
+
+.arrow-content > ul > li:last-child {
+	padding-bottom: 11px;
+}
+
+.arrow-content > ul > li.separator {
+	border-bottom: 1px solid #666c78;
+}
+
+.arrow-offline {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -96px;
+	padding-left: 30px !important;
+}
+
+.arrow-exit {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -167px;
+	padding-left: 30px !important;
+}
+
+.arrow-register {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -204px;
+	padding-left: 30px !important;
+}
+
+.arrow-format {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px 11px;
+	padding-left: 30px !important;
+}
+
+.arrow-upgrade {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -277px;
+	padding-left: 30px !important;
+}
+
+.arrow-sync {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -241px;
+	padding-left: 30px !important;
+}
+
+.arrow-profile {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -60px;
+	padding-left: 30px !important;
+}
+
+.arrow-wire {
+	background-image: url("imgs/Sprite.png");
+	background-repeat: no-repeat;
+	background-position: 5px -312px;
+	padding-left: 30px !important;
+}
+
+.ap-empty {
+    color: window;
+    padding: 10px;
+    text-align: center;
+}

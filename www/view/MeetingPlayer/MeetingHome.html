@@ -1,0 +1,155 @@
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Meeting Player Home</title>
+        <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <link rel="stylesheet" href="../online/font-awesome/font-awesome.css" type="text/css" media="screen" />
+        <link href="../online/fonts/fonts.css" rel="stylesheet" />
+        <link href="css/HeaderLayoutCommon.css" rel="stylesheet" />
+        <link href="../online/ArrowPopup.css" rel="stylesheet" />
+        <link href="css/homestyle.css" rel="stylesheet" media="screen" />
+        <link href="css/fullcalendar.css" rel="stylesheet" media="screen" />
+        <link href="css/select2.css" rel="stylesheet" />
+        <link href="../online/footer.css" rel="stylesheet" />
+        
+        <!-- cordova, jquery js -->
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+		<script type="text/javascript" src="JS/jquery.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../online/js/pgwbrowser.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+        <!-- <script src="../jquery/jquery-1.9.1.min.js"></script> -->
+	
+        <script type="text/javascript" src="JS/restHandler.js"></script>
+        <script type="text/javascript" src="JS/common.js"></script>
+        <script type="text/javascript" src="JS/services.js"></script>
+        <script type="text/javascript" src="../online/js/kaHeader.js"></script>
+        <script type="text/javascript" src="../online/js/elCommon.js"></script>
+        <script type="text/javascript" src="../online/js/ArrowPopup.js"></script>
+        <!-- settings -->
+        <script type="text/javascript" src="JS/meetingSettings.js"></script>
+        
+        <script type="text/javascript" src="JS/home.js"></script>
+        <script type="text/javascript" src="JS/moment.min.js"></script>
+        <script type="text/javascript" src="JS/jquery-scrollspy.js"></script>
+        <script type="text/javascript" src="../Rxbook/js/RxBook/jquery.nicescroll.min.js"></script>
+        <script type="text/javascript" src="JS/fullcalendar.js"></script>
+        <script type="text/javascript" src="JS/select2.js"></script>
+        <script type="text/javascript" src="JS/jquery.touchSwipe.min.js"></script>
+        <script type="text/javascript" src="JS/mobilejquery.touchSwipe.min.js"></script>
+        
+        <!-- helper -->
+        <script type="text/javascript" src="../../helper/Helper.js"></script>
+        <link rel="stylesheet" href="../../helper/Helper.css" />
+       
+        <style type="text/css">
+            /*home style*/
+			.meeting-header {
+				border-radius: 5px 5px 0px 0px;
+			}
+            .meeting-header ul li a span{
+                padding-top:10px;
+            }
+            #body-home-arrow-div.arrow-wrapper{
+            	z-index: 99999;
+	       }
+	       #body-settings-arrow-div.arrow-wrapper{
+	           z-index: 99999;
+	       }
+		</style>
+    </head>
+    <body id="body">
+         <div class="header" id="headersection">
+            <div class="navbar-fixed-top dp-header">
+                <div class="logo" onclick="window.location.href='../homePage.html'"></div>
+                <ul id="menunavigator" class="pull-left1">
+                	<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                    <li class="pull-right newfontsize" id="Notificationbell" ><a class="fa fa-bell"><span class="notificationhub-count" style="display:none;"></span></a></li>
+                    <li class="pull-right newfontsize"><a class="fa fa-home" id="" style="" href="../homePage.html"></a></li>
+                    <li class="pull-right newfontsize" id="helpanytime" ><a class="fa fa-question-circle"></a></li>
+                    <!-- <li class="pull-right icon-home"><p class="name" id="dvUserName"></p></li>
+                    <li class="pull-right"><a id="messages" class="fa fa-weixin" href="#" title="Messages"></a><span class="notf-count" id="messagesCount"></span></li>
+                    <li class="pull-right"><a id="bookshelf" class="fa fa-book" href="#" title="Asset Library"></a></li> -->
+                </ul>
+            </div>
+        </div>
+        <!--<header>
+			<div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+			<ul class="header-menu">
+				<li class="menu-asset"><a href="" title="Asset Library" class="fa fa-book"></a></li>
+				<li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li>
+			</ul>
+		</header>-->
+        
+        <div class="meeting-overview">
+            <div class="meeting-header">
+                <!-- <ul>
+                    <li><a href="UploadFiles.html" title="upload files"><span class="fa fa-upload"></span></a></li>
+                    <li><a href="CreateMeeting.html" title="upload files"><span class="fa fa-plus"></span></a></li>
+                </ul> -->
+            </div>
+            <div class="meeting-calendar">
+                            
+            </div>
+            <div class="meeting-list">
+                <div class="meeting-section">
+                    <h3></h3>
+                    <ul class="list-cont">
+                        <li class="no-record">Loading...</li>		
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="loader-img">
+            <img src="bxslider/images/loader_new.gif" />
+        </div>
+
+<script type="text/javascript">
+document.addEventListener("deviceready", function() {
+    footerdiv($('body'));
+    setting.init();
+    var helpdiv = window.localStorage.getItem("meetinghelp");
+	if(helpdiv == null || helpdiv == ''){
+		assetHelp.showHelpText();
+		window.localStorage.setItem("meetinghelp",1);
+	}
+    
+      var userId = window.localStorage.getItem('userId');
+      Services.defaults = {};
+      Services.defaults.userId = userId;
+      Services.defaults.sudDomainName = window.localStorage.getItem('domainName');
+      Services.defaults.companyId = window.localStorage.getItem('companyId');
+      
+      
+      var userName = window.localStorage.getItem("userName"),
+      companyLogoUrl = window.localStorage.getItem('companyLogoUrl');
+       
+        $("#dvUserName").html(userName.toProperCase());
+        $("#dvUserName").bind('click',function(){
+            window.location.href = '../Rxbook/UserProfile.Mobile.html';
+        });
+      //$('.logo').css({ 'background-image': 'url("' + companyLogoUrl + '")', 'background-size': '100% 100%', 'background-repeat': 'no-repeat' });
+      $('.logo').css({'background-image':'url('+companyLogoUrl+')',
+                'background-position': '0% 50%',
+                'background-repeat': 'no-repeat',
+                'background-size': '100%'});
+      kaHeader.startCommonThread();
+      meetingHome.init();
+                  
+      insertUserTrack(PAGE_NAMES.meeting, function(d) { }, function(e) { });
+                  
+        $('#messages').bind('click',function(){
+                window.location.href = '../Rxbook/Index.Mobile.html';
+        });
+        $('#bookshelf').bind('click',function(){
+            window.location.href = '../eLearningOnline.html?currentUser=' + encodeURIComponent(window.localStorage.getItem('user'));
+        });
+        $('#helpanytime').bind('click',function(){
+			assetHelp.showHelpText();
+        });
+        $('#Notificationbell').bind('click',function(){
+			window.location.href = "../notificationhub/Notificationhub.html";
+		});
+});
+</script>
+</body>
+</html>

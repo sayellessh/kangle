@@ -1,0 +1,1060 @@
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600&subset=latin,latin-ext);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,700); /*!
+ 
+/*!
+ *
+ *  Project:  GLYPHICONS HALFLINGS
+ *  Author:   Jan Kovarik - www.glyphicons.com
+ *  Twitter:  @jankovarik
+ *
+ */
+
+
+
+/*body cls_nomargin_nopadding
+    font-family: 'Open Sans',sans-serif;
+    background: #fff url(../images/pattern1.png) repeat;
+    font-size: 10pt;
+    padding-bottom: 35px;
+}*/
+
+*, a:focus {
+    outline: none!important;
+}
+
+#dvCourseContent h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway',sans-serif;
+    margin: 0 0 10px;
+    line-height: 40px;
+    font-weight: 700;
+    color: #575655;
+}
+
+
+.clsSeparator {
+    padding: 5px 0;
+    display: block;
+}
+
+    .clsSeparator.bottom {
+        padding: 0 0 10px;
+    }
+
+    .clsSeparator.top {
+        padding: 10px 0 0;
+    }
+
+hr {
+    border-top-color: #cbcccd;
+    margin: 10px 0;
+}
+
+    hr.clsSeparator {
+        padding: 0!important;
+    }
+
+
+
+
+.text-primary {
+    color: #37a6cd;
+}
+
+
+
+#dvCourseContent input, textarea {
+    border-radius: 0px !important;
+    border-color: #d8d9da !important;
+}
+
+#dvCourseContent.heading-buttons h1, .heading-buttons h2, .heading-buttons h3, .heading-buttons h4, .heading-buttons h5, .heading-buttons h6 {
+    display: inline-block;
+    line-height: 40px;
+    margin: 0 10px;
+}
+
+
+
+
+#dvQuestionContent {
+    min-height: 300px;
+}
+
+.clsAddAns {
+    width: 25px;
+    /*height: 25px;*/
+    /*background: url('../../Images/DocPorch/add.png') no-repeat;*/
+    float: left;
+    cursor: pointer;
+    color: #3071a9;
+}
+
+.clsRemoveAns {
+    width: 25px;
+    /*height: 25px;
+    background: url('../../Images/DocPorch/remove.png') no-repeat;*/
+    float: left;
+    cursor: pointer;
+    color: #3071a9;
+}
+
+.clsMoveUpAns {
+    width: 25px;
+    /*height: 25px;*/
+    /*background: url('../../Images/DocPorch/add.png') no-repeat;*/
+    float: left;
+    cursor: pointer;
+    color: #3071a9;
+}
+
+.clsMoveDownAns {
+    width: 25px;
+    /*height: 25px;
+    background: url('../../Images/DocPorch/remove.png') no-repeat;*/
+    float: left;
+    cursor: pointer;
+    color: #3071a9;
+}
+
+#tblAnswers tr {
+    padding-bottom: 3px;
+}
+
+    #tblAnswers tr td {
+        border-top: none !important;
+        vertical-align: middle;
+    }
+
+.clsbtnAddQuestion {
+    text-align: right;
+    /*border: 1px dotted #0173BA;*/
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 2%;
+}
+
+#dvTabs {
+    overflow: auto;
+}
+
+#tblCourseQuestions {
+    width: 100%;
+}
+
+    #tblCourseQuestions tr {
+        /*border-bottom: 1px solid #E62B1E;*/
+        border-bottom: 1px solid #0173BA;
+    }
+
+        #tblCourseQuestions tr td {
+            vertical-align: top;
+            padding-top: 1%;
+        }
+
+.clsAnswers {
+    margin-bottom: 1%;
+}
+
+    .clsAnswers input {
+        margin-right: 1%;
+    }
+
+    .clsAnswers textarea {
+        /*width: 50%;*/
+    }
+
+
+.clsMainQuestion {
+    margin-bottom: 1%;
+}
+
+.clsQuestionText {
+    font-weight: bold;
+    /*margin-bottom: 1%;*/
+}
+
+#dvAddNewQues {
+    margin-top: 1%;
+}
+
+    #dvAddNewQues .form-group {
+        overflow: auto;
+    }
+
+.clstxtAnswers,
+.clsQuesDesc,
+.autoQuestions,
+.clsCourseDesc {
+    height: 70px !important;
+}
+
+
+
+.nav > li > a {
+    padding: 8px 8px !important;
+}
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none !important;
+        /*background-color: #eee !important;*/
+        background-color: inherit !important;
+        color: white !important;
+    }
+
+
+.clsDvQuesAction {
+    margin-right: 1%;
+    height: 30px;
+    color: white;
+}
+
+#tblAnswers tr {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.tdQuesFirst {
+    width: 1%;
+}
+
+.tdQuesSecond {
+    width: 70%;
+}
+
+.tdQuesThird {
+    width: 30%;
+}
+
+.clsQuesAction {
+    position: absolute;
+    /*width: 35%;*/
+}
+
+#tblSurQuestion {
+    width: 100%;
+}
+
+    #tblSurQuestion tr {
+        /*border-bottom: 1px solid #E62B1E;*/
+        border-bottom: 1px solid #0173BA;
+    }
+
+        #tblSurQuestion tr td {
+            vertical-align: top;
+            padding-top: 1%;
+        }
+
+
+
+.clsMainQuestion {
+    margin-bottom: 1%;
+}
+
+.clsQuestionText {
+    /*margin-bottom: 1%;*/
+}
+
+.clsDvQuesAction {
+    margin-right: 1%;
+    height: 30px;
+    color: white;
+}
+
+#tblAnswers tr {
+    border-top: none !important;
+    border-bottom: none !important;
+}
+
+.tdQuesFirst {
+    width: 1%;
+}
+
+.tdQuesSecond {
+    width: 70%;
+}
+
+.tdQuesThird {
+    width: 30%;
+}
+
+.clsQuesAction {
+    position: absolute;
+    /*width: 35%;*/
+}
+
+#dvCourseName {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#dvViewMid {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    background-color: #efefef;
+}
+
+.spnMand {
+    color: red;
+    margin-left: 1%;
+}
+
+#dvViewAction {
+    margin-bottom: 2%;
+    padding-left: 5%;
+    margin-top: 1%;
+}
+
+#dvViewCourse {
+    /*overflow: auto;*/
+}
+
+#dvMapView {
+    overflow: auto;
+}
+
+#dvAddNewAsset {
+    overflow: auto;
+}
+
+
+#dvPub {
+    margin-top: 2%;
+}
+
+#dvAddNewAsset {
+    overflow: auto;
+}
+
+#dvSurQuesImgPreview {
+    height: 300px;
+    overflow: auto;
+    width: 100%;
+}
+
+#dvModalBodyQuesPre {
+    /*width: 100%;
+    height: 400px;
+    overflow: auto;*/
+}
+
+.clsQuestImgView {
+}
+
+    .clsQuestImgView img {
+        min-height: 50px;
+        max-height: 100px;
+    }
+
+.clsQuestViewDesc {
+    font-size: 12px;
+    /*color: #C4C0C0;*/
+    margin-bottom: 1%;
+}
+
+#dvImgSurImg {
+    min-height: 50px;
+    max-height: 150px;
+}
+
+#dvInst {
+    color: red;
+    padding-left: 5%;
+}
+
+#dvPageInfo {
+    /*text-align: right;*/
+}
+
+.clsResponseSuccessMsg {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    text-align: center;
+    font-size: 15px;
+}
+
+
+.clsCourseSurText {
+    margin-top: 1%;
+    /* font-weight: bold; */
+    font-size: 15px;
+    overflow: auto;
+    /* background-color: rgb(8, 83, 8); */
+    min-height: 25px;
+    color: white;
+    border: 1px solid green;
+    background-color: #5cb85c;
+}
+
+#dvPubInstruction {
+    font-size: 14px;
+    /* color: #66663A; */
+    margin-bottom: 1%;
+}
+
+.clsSurPubSuccMsg {
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    font-size: 15px;
+}
+
+
+.clsSurImgPreview {
+    margin-top: 2%;
+}
+
+/*.task-config {
+    background-color: #0173BA;
+    color: white;
+}*/
+
+.clsSettings {
+    font-size: 20px;
+}
+
+.task-config a .fa {
+    margin-right: 1%;
+}
+
+
+.active-full-circle {
+    background-color: #37a6cd;
+    /*border: 3px solid #333;*/
+    height: 45px;
+    width: 45px;
+    -moz-border-radius: 75px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-right: 2%;
+}
+
+.inactive-full-circle {
+    background-color: #ddd;
+    /*border: 3px solid #333;*/
+    height: 45px;
+    width: 45px;
+    -moz-border-radius: 75px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    color: rgb(128, 122, 122);
+    text-align: center;
+    margin-right: 2%;
+}
+
+.clsSpnNumber {
+    font-size: 17px;
+    width: 100%;
+}
+
+.clsSpnNumbertext {
+    font-size: 10px;
+    margin-top: -25%;
+}
+
+.clsRoundMain {
+    min-height: 50px;
+}
+
+.clsRoundHead {
+    height: 27px !important;
+}
+
+.clsRoundheadtext {
+    /*text-transform: uppercase;*/
+    color: rgb(128, 122, 122);
+    text-shadow: none;
+    padding: 0;
+    margin: 0;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.tdQuesSec {
+    width: 95%;
+}
+
+#dvQuestionContent input, textarea {
+    border-radius: 0px !important;
+}
+
+.clsCompLogo {
+    min-height: 50px;
+    max-height: 150px;
+}
+
+input {
+    width: auto;
+}
+/*.btn {
+    border-radius: 0px !important;
+}*/
+
+.clsOverflowAuto {
+    overflow: auto;
+}
+
+
+#tdESurHeadSDesc {
+    width: 20%;
+}
+
+input, textarea, select {
+    border-radius: 0px !important;
+}
+
+#dvAssetSelection {
+    max-height: 400px;
+    overflow: auto;
+}
+
+
+.fa:after {
+    margin-right: 2% !important;
+}
+
+#dvSurResponseView {
+    font-size: 12px !important;
+}
+
+#dvQuestionContent {
+    font-size: 12px !important;
+}
+
+#dvCoursePubContent {
+    font-size: 12px !important;
+}
+
+#dvPreview {
+    margin-top: 2%;
+}
+
+
+.full-circle {
+    background-color: #35A9EC;
+    /*border: 3px solid #333;*/
+    height: 35px;
+    width: 35px;
+    -moz-border-radius: 75px;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    color: white;
+    text-align: center;
+    margin-right: 2%;
+}
+
+.clsStatusText {
+    text-align: left;
+}
+
+.clsQuestionSpnRound {
+    width: 42px;
+    height: 42px;
+    display: block;
+    text-align: center;
+    line-height: 3.3;
+    /*margin-bottom: 15px;*/
+    border: 2px solid #00ADEF;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    /*background-color: #80CC28;*/
+}
+
+.clsAnsSpnRound {
+    width: 42px;
+    height: 42px;
+    display: block;
+    text-align: center;
+    line-height: 3.3;
+    /*margin-bottom: 15px;*/
+    border: 2px solid #00ADEF;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    /*background-color: #00ADEF;*/
+}
+
+
+.clsDvPage {
+    text-align: right;
+    margin-right: 3%;
+}
+
+.clsFloatRight {
+    float: right;
+}
+
+#dvStatusRound {
+    margin-top: 2%;
+}
+
+#dvQuesPagePer {
+    margin-top: 2%;
+}
+
+
+#dvQ {
+    text-align: right;
+}
+
+#txtCourseImage {
+    display: none;
+}
+
+#dvEFilter {
+    overflow: auto;
+}
+
+#txtQuesImage {
+    display: none !important;
+}
+
+.clsQImg {
+    /*padding-right: 15px !important;*/
+    padding-left: 15px !important;
+}
+
+.clsReadOnlyText {
+    background-color: white !important;
+}
+
+#lnkQuestImg {
+    cursor: pointer;
+}
+
+    #lnkQuestImg:hover {
+        text-decoration: underline;
+    }
+
+.tdAnswer {
+    width: 50%;
+}
+
+.circles-text {
+    font-size: 10px !important;
+}
+
+#dvViewHeader {
+    overflow: auto;
+}
+
+#dvQuesSuccessInfo {
+    margin-top: 1%;
+}
+
+/*divya style*/
+#dvViewQuestions .clsQuestImgView .thumbnail {
+    width: auto;
+    height: auto;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#dvSurResponseView #imgComLogo {
+    width: auto;
+    height: auto;
+    max-width: 200px;
+    max-height: 100px;
+}
+
+#dvViewHeader .img_left {
+    width: 30%;
+}
+
+#dvViewHeader .count_right {
+    width: 70%;
+}
+
+    #dvViewHeader .count_right #dvPageInfo, #dvViewHeader .count_right #dvStatusRound {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+
+#dvStatusRound span {
+    margin: auto;
+}
+
+#dvStatusRound .clsStatusText {
+    text-align: center;
+}
+
+#dvStatusRound .circle {
+    text-align: center;
+}
+
+#dvQuesPagePer {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 240px) and (max-width: 767px) {
+
+    /*header part*/
+    .parma_header {
+        float: left;
+        width: 100px;
+        padding-left: 0px;
+    }
+
+        .parma_header .logo {
+            background-size: 80px 30px;
+            height: 42px;
+            margin: 8px 10px 0;
+            width: 100px;
+        }
+
+    .parma_div .cls_topbannericons {
+        font-size: 16px;
+    }
+
+    .parma_div .nav-pills {
+        padding-top: 10px;
+        float: right;
+    }
+
+        .parma_div .nav-pills li a, .parma_div .nav-pills li a:hover {
+            padding: 5px;
+            margin-left: 6px;
+        }
+
+    .parma_div .notification {
+        font-size: 10px;
+        height: 54%;
+        right: -6px;
+        top: -2px;
+        width: 62%;
+    }
+
+    .parma_div .cls_dv_user_info {
+        line-height: 26px;
+    }
+
+        .parma_div .cls_dv_user_info .user_email {
+            display: none;
+        }
+
+    .parma_div .nav-pills > li + li {
+        margin-left: 0px;
+    }
+
+    /* alert*/
+    .dropdown-menu {
+        left: auto;
+        right: -97px;
+    }
+
+        .dropdown-menu .cls_dv_Alert {
+            max-width: 235px;
+        }
+
+    .chat {
+        width: 230px !important;
+        height: 300px !important;
+    }
+
+    .cls_dv_alert_header {
+        padding: 6px !important;
+    }
+
+    .clsMainQuestion .div_inner {
+        padding: 0 0 0 5px;
+    }
+
+    .clsQuestionText {
+        padding: 0px;
+        font-weight: bold;
+    }
+
+
+    #dvViewHeader .img_left {
+        width: auto;
+    }
+
+    #dvViewHeader .count_right {
+        width: auto;
+    }
+
+    #dvSurResponseView #imgComLogo {
+        margin: auto;
+    }
+
+    #dvStatusRound .status_inner {
+        margin-bottom: 15px;
+    }
+
+    .page_div {
+        padding: 0px;
+    }
+
+    #dvQ {
+        width: 80%;
+    }
+
+    #dvViewMid, #dvViewMid > div {
+        padding: 0px;
+    }
+
+    #dvCourseName {
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    #dvImgSurImg {
+        margin: auto;
+        max-height: 150px;
+        min-height: 50px;
+        width: auto;
+    }
+
+    #dvSurImage {
+        margin: 5px 0;
+    }
+
+    #dvViewQuestions {
+        padding: 0px;
+    }
+
+    .clsQuestImgView {
+        padding: 0px;
+    }
+
+    #tblSurQuestion {
+        margin-top: 10px;
+    }
+
+    .clsQuestViewDesc {
+        padding: 0px;
+    }
+
+    .clsAnswers {
+        padding: 0px;
+    }
+
+    .clsDvPage {
+        text-align: center;
+    }
+
+    #btnViewSubmit {
+        display: block;
+        margin: 10px auto 5px;
+        width: 70px;
+        padding: 2px 0;
+    }
+
+    .alert {
+        padding: 0px;
+    }
+}
+
+
+.clsPageBlock {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+#dvCourseRight {
+    min-height: 700px;
+}
+
+.listInputGroup {
+    text-align: left;
+    background-color: #FFFFFF;
+    border: none;
+}
+
+    .listInputGroup label,
+    #dvAssetsMappings label {
+        font-weight: normal;
+        padding-left: 5px;
+    }
+
+.am-big-font {
+    /*border-bottom: 3px solid #575655;*/
+    font-size: 20px;
+}
+
+.clear-all-div {
+    color: #37a6cd;
+    text-align: right;
+}
+.clear-all-div a {
+    color: #37a6cd;
+}
+    .clear-all-div a:hover {
+        text-decoration: none;
+    }
+    
+.clsDvFiltered {
+    color: black;
+}
+.filtered {
+    background-color: #37A6CD;
+    border-radius: 10px;
+    float: left;
+    padding: 0 10px;
+    color: #FFF;
+    margin-left: 10px;
+}
+    .filtered .fa {
+        cursor: pointer;
+    }
+    .filtered.category {
+        background-color: #37A6CD;
+    }
+    .filtered.tag {
+        background-color: #888;
+    }
+.clsDvCenter a {
+    color: #FFF;
+}
+.clsDvCenter {
+    text-align: center;
+    width: 100%;
+}
+
+.thumbnail > img {
+    height: 145px;
+    width: 211px;
+}
+.highlight {
+    background-color: #37A6CD;
+    color: white;
+}
+
+@media screen and (max-width: 400px) {
+    .msgAlert {
+        margin-left: -157px;
+        top: 100px;
+        width: 315px;
+    }
+}
+
+@media screen and (max-width: 570px) {
+    #dvMainChoice {
+        width: 410px;
+    }
+
+    #dvChoices {
+        width: 500px;
+    }
+}
+
+
+@media screen and (max-width: 445px) {
+    #dvMainChoice {
+        width: 300px;
+    }
+}
+
+.course-asset.open {
+    background-color: #efefef;
+    position: relative;
+}
+
+.course-asset.open span.ticker {
+    display: block;
+}
+.course-asset span.ticker {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    right: -2px;
+    text-shadow: 2px 2px 4px white;
+    top: -1px;
+    color: #349933;
+    font-size: 30px;
+}
+.asset-name {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+}
+.custom-caption {
+    padding: 9px 0 !important;
+}
+
+.btn-primary,
+.btn-primary:link, .btn-primary:visited,
+.btn-primary:active, .btn-primary:hover {
+    color: white !important;
+}
+
+.tagClass {
+    background-image: url("/images/97-tag.png");
+    background-position: 1px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    border: 1px solid;
+    border-radius: 5px;
+    float: left;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding: 0 10px 0 25px;
+}
+
+.margin-ten {
+    margin-left: 10px;
+}
+
+/* for popup */
+.popup_overlay .close a,
+.popup_overlay .close a:active,
+.popup_overlay .close a:hover,
+.popup_overlay .close a:visited {
+    text-decoration: none;
+}
+#dvAssetsPopup {
+    width: 800px;
+    height: 400px;
+}
+
+#dvAssetsTitle {
+    background-color: white;
+    color: black;
+}
+#dvAssets {
+    padding: 10px;
+    max-height: 355px;
+    overflow: auto;
+}
+
+.popup-wrapper {
+    width: 800px;
+    height: 400px;
+    background-color: #FFF;
+    padding: 10px;
+    text-align: center;
+}
+.popup-wrapper .asset {
+    width: 105px;
+    height: 150px;
+    display: inline-block;
+}
+.popup-wrapper .desc {
+    text-align: center;
+}
+    .popup-wrapper .desc p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        height: 20px;
+        white-space: nowrap;
+    }
+
+#dvAssets ol {
+    padding-left: 30px;
+}
+.popup-wrapper .question {
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 10px;
+    text-align: left;
+}

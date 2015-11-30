@@ -1,0 +1,114 @@
+.rx-tab #page .side {
+    width: 100%;
+    left: 0px !important;
+    top: 0px;
+}
+.rx-tab #page {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.rx-tab .side-menu.left {
+    display: none;
+}
+.rx-tab #main {
+    left: auto !important;
+}
+
+#content {
+    padding: 0px;
+    padding-top: 55px;
+}
+.side ul {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+.side .tab-list {
+    height: 75px;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+}
+.clsFieldLabel {
+	font-size: 15px;
+	color: #5454A0;
+	background-color: #eee;
+	padding: 5px;
+}
+.side .tab-list ul {
+	background-color: #3b5998;
+    border-bottom: 1px solid #373e4d;;
+    padding: 0px;
+    margin: 0px;
+    height: 48px;
+}
+.side .tab-list ul li {
+    float: left;
+    border-bottom: none;
+    padding: 4px;
+	text-align: center;
+	/*border-right: 1px solid #576b95;*/
+	width: 25%;
+	box-sizing: border-box;
+}
+.side .tab-list ul li a.top-btn {
+	color: white;
+}
+.side .tab-list ul li.active {
+    background-color: #24365E;
+}
+.side .tab-list ul li.active a {
+	color: white;
+}
+/*.side .tab-list ul li:last-child {
+    padding: 0px;
+    float: right;
+    border-right: none;
+}
+.side .tab-list ul li:last-child a {
+    font-size: 12px;
+}*/
+.side .tab-list ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+.loadprogress {
+	font-size: 20px;
+	text-align: center;
+	color: black;
+	height: 50px;
+	line-height: 48px;
+}
+
+.friends-icon {
+	background-image: url("../../images/RxBook/Friends.png");
+	height: 40px;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: center;
+}
+.private-group-icon {
+	background-image: url("../../images/RxBook/Private_Group.png");
+	height: 40px;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: center;
+}
+.public-group-icon {
+	background-image: url("../../images/RxBook/Public_Group.png");
+	height: 40px;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: center;
+}
+.add-group-icon {
+	background-image: url("../../images/RxBook/Add-Group.png");
+	height: 40px;
+	display: block;
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+	background-position: center;
+}

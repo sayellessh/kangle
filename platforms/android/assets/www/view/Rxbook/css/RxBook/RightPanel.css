@@ -1,0 +1,206 @@
+/*** Side menu ***/
+.side {
+	/*background: #373e4d;*/
+	background-color: white;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	min-height: 100%;
+	overflow: hidden;
+	z-index: 5;
+}
+.side.left {
+	left: -250px;
+}
+.side.right {
+	right: -300px;
+    width:300px;
+}
+.side ul {
+	/*padding-top: 10px;*/
+	padding-bottom: 10px;
+	list-style: none;
+}
+.side.left ul li.active a{
+	background: #4c5565;
+}
+.side .sub-menu {
+	overflow: hidden;
+	padding: 0px 10px;
+	margin: 5px 0px;
+	background-color: #2D83BA;
+}
+.side .sub-menu li:last-child {
+	border-bottom: 0px;
+}
+.side .sub-menu li.disabled a {
+	color: #aaa;
+}
+.side ul li {
+	border-bottom: 1px solid #EEE;
+}
+.side ul li.jobs,
+.side ul li.events,
+.side ul li.polls {
+	display: none;
+}
+.side ul li img{
+	float: left;
+    height: 40px;
+    max-width: 100%;
+    margin-right:5px;
+}
+.side ul li.profileName p{
+	line-height:20px;
+	min-height: 10px;
+}
+.side ul li.profileName{
+	background: #232937;
+	padding: 8px 0 12px;
+}
+
+.side .friend-list ul li a {
+	display: block;
+	text-decoration: none;
+	color: #888;
+	font-size: 14px;
+	line-height: 36px;
+	padding-left: 10px;
+	height: 35px;
+}
+.side .friend-list ul li a.top-btn {
+	color: #fff;
+}
+.side ul li a span{
+	font-size:20px;
+	margin-right:10px;
+}
+.side ul li a span.topic-count {
+	background: #5890ff;
+    border-radius: 20px;
+    color: #fff;
+    display: none;
+    float: right;
+    border: 1px solid #0054a5;
+    font-size: 14px;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 12px;
+    padding: 2px 10px;
+}
+.side.right ul li a span.topic-count {
+	margin-top: 9px;
+}
+.side ul li a:hover {
+	color: #d9d9d9;
+}
+.side ul li.profileName a:hover{
+	background: #232937;
+}
+.side .sub-menu li a:hover{
+	background-color: #2D83BA;
+}
+.side h2 {
+	font-size: 14px;
+	line-height: 45px;
+	border-bottom: 1px solid #293F54;
+	color: #fff;
+	padding-left: 7px;
+}
+.side h2 a.top-btn,
+a.top-btn {
+	display: inline-block;
+	background-color:#0B6196;
+	color: #fff;
+	padding:0px 10px;
+	line-height: 28px;
+	font-size: 12px;
+	margin-top: 8px;
+	margin-right: 10px;
+	float: right;
+	cursor: pointer;
+	text-decoration: none;
+}
+.side .friend-list {
+	padding: 0px;
+	padding-top: 80px;
+	list-style: none;
+}
+.side .friend-list li {
+	list-style: none;
+	padding-left: 5px;
+}
+.side .friend-list span.friend-img {
+	display: inline-block;
+	float: left;
+	padding-top: 6px;
+}
+.side .friend-list span.friend-name {
+	font-size: 12px;
+	line-height: 36px;
+	padding-left: 10px;
+	color: #000;
+    display:inline-block;
+    width:60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+    height: 52px;
+}
+.side .friend-list span.friend-name.name-disable {
+	color: #999;
+}
+.side .friend-list img {
+	width: 42px;
+	height: 42px;
+	float: left;
+	border-radius: 100%;
+}
+.side .btn { margin-left: 7px; }
+.side-menu {
+	width: 32px;
+	height: 32px;
+}
+.side-menu a {
+	display: block;
+	/* delete */
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-decoration: none;
+	line-height: 30px;
+}
+.side-menu a.fa {
+	font-size: 25px;
+}
+.side-menu.left {
+	float: left;
+    width: 16px;
+    padding-top: 3px;
+}
+.side-menu.left .fa {
+    color: #757575;
+    font-size: 32px;
+    line-height: 45px;
+}
+.side-menu.right {
+	float: right;
+    margin-top: 6px;
+}
+.side-menu.right .fa {
+    color: #052A47;
+    line-height: 32px;
+    font-size: 22px;
+}
+.side-menu-title {
+    line-height: 24px;
+    font-size: 12px;
+    color: #fff; 
+    background-color: #4c5565;
+    padding-left: 10px;
+}
+/*bookshelf view*/
+.side ul li.bookshelf a,
+.side ul li.bookshelf a:hover {
+    background-color: #4285f4;
+}

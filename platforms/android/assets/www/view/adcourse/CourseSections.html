@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>Kangle</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        
+        <link href="../online/fonts/fonts.css" rel="stylesheet" />
+        <link href="css/UserAdCourseDetails.css" rel="stylesheet" />
+        <link href="css/CourseCommon.css" rel="stylesheet" />
+        <link href="css/CourseSections.css" rel="stylesheet" />
+        <link href="css/bootstrap.table.css" rel="stylesheet" />
+<!--         <link href="../Course/css/player.css" rel="stylesheet" /> -->
+        <link href="../Rxbook/css/RxBook/bxslider/jquery.bxslider.css" rel="stylesheet" />
+        <link href="../online/footer.css" rel="stylesheet" />
+        <link href="../online/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../online/ArrowPopup.css" rel="stylesheet" />
+        <link href="css/HeaderLayoutCommon.css" rel="stylesheet" />
+
+
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../online/js/constants.js"></script>
+        <script src="../Rxbook/js/RxBook/restHandler.js"></script>        
+        <script src="../eLearningAPP.js"></script>
+        <script src="../Rxbook/js/RxBook/Services.js"></script>
+        <script src="js/AdCourse_Service.js"></script>
+		<script src="../Rxbook/js/RxBook/rxBookInit.js"></script>
+		<script src="../Rxbook/js/RxBook/ajaxHandler.js"></script>
+		<script src="../online/js/ArrowPopup.js"></script>
+		
+		<!-- settings -->
+    	<script src="js/adcourseSettings.js"></script>
+		
+		<script src="../online/js/AjaxGlobalHandler.js"></script>
+		<script src="js/jquery.highlight-4.closure.js"></script>
+		<script src="../Course/bxslider/jquery.bxslider.min.js"></script>
+<!-- 		<script src="../Course/js/course_player.js"></script> -->
+		<script type="text/javascript" charset="utf-8" src="../online/js/kaHeader.js"></script>
+		<script src="../Rxbook/js/RxBook/mobile.js"></script>
+		<script src="../online/js/elCommon.js"></script>
+		<script src="js/CourseSections.js"></script>
+        <script src="../Course/js/course_file.js"></script>
+        
+        <!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+		
+        <script type="text/javascript" src="../../GlobalPlayer/GlobalPlayer.js"></script>
+    	<link href="../../GlobalPlayer/GlobalPlayer.css" rel="stylesheet" media="screen"/>
+    	
+    	<style>
+    	#body-home-arrow-div.arrow-wrapper{
+            z-index: 99999;
+        }
+        #body-settings-arrow-div.arrow-wrapper{
+            z-index: 99999;
+        }
+    	</style>
+    </head>
+    <body>
+        <div id="body">
+            <header>
+                <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                <ul class="header-menu">
+                	<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+	                <li class="pull-right newfontsize" id="Notificationbell" ><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+	                <li class="pull-right newfontsize"><a class="fa fa-home" id="pop-home" style="" href="#"></a></li>
+                    <li class="pull-right newfontsize" id="" ><a class="fa fa-question-circle"></a></li>
+                    <!-- <li class="menu-asset"><a href="#" title="Asset Library" class="fa fa-book"></a></li>
+                    <li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li> -->
+                </ul>
+            </header>
+            <div class="sub-wrapper" style="display:none;">
+                <div id="nav_list"><img style="height: 38px; margin-left: 5px" src="../online/images/Kanglelogo.png"></div>
+            </div>
+            <div class="wrapper">
+            <!-- CourseSections Start-->
+            <div id="courseSections">
+                <div class="dvCourseName">
+                    <div class="dvCourseHeader"><span class="bold">Course Name: </span>Loading...</div>
+                </div>
+                <div class="dvCourseSections">
+                    Sections
+                </div>
+                <div class="dvCourseSectionTable">
+                <div class="table-responsive">
+                    <table id="courseSectionsTable" class="table">
+                        <tr>
+                            <th>SNo.</th>
+                            <th>Section Name</th>
+                            <th>No of assets</th>
+                            <th>Pass %</th>
+                            <th>Test Status</th>
+                            <th>Action</th>
+                            <th>&nbsp;</th>
+                            <th style="text-align: center;">&nbsp;&nbsp;Assets</th>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <div class="dvCourseSectionsStatus">
+                    <span>Test Status: </span>
+                    <span id="courseStatus">Loading...</span>
+                </div>
+                <div class="dvCourseSectionsStatus" style="height: 100px;">
+                    <span id="courseStatusDone" style="float: right;"><a href="UserAdCourseDetails.html" class="a-btn">Done</a></span>
+                <!--<span id="courseBack" style="float: right;"><a href="UserAdCourseDetails.html" class="a-btn">Back</a></span>
+                 /* commented printcertificate */   
+                 <span id="printCertificate" style="float: right;"><a href="#print" class="a-btn">Print Certificate</a></span> -->
+                </div>
+            </div>
+            </div>
+        </div>
+
+<!-- CourseSections end-->
+<script>
+var userId = window.localStorage.getItem('userId');
+var companyId = window.localStorage.getItem('companyId');
+
+Services.defaults.userId = userId;
+Services.defaults.companyId = companyId;
+var courseId = rxBookInit.parse('courseId');
+var publishId = rxBookInit.parse('publishId');
+
+document.addEventListener('deviceready', function() {        
+        courseSections.init(userId, companyId, courseId, publishId);
+
+        /*common for adcourse*/
+        footerdiv($('body'));
+        Services.defaults.companyId =  window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        setting.init();
+        companyLogo_div();
+        kaHeader.startCommonThread();
+        rxBookInit.enableCurUserInfo(function(){
+        	return false;
+        },function(){
+        });
+        $('#Notificationbell').bind('click',function(){
+			window.location.href = "../notificationhub/Notificationhub.html";
+		});
+    });
+    </script>
+    </body>
+</html>

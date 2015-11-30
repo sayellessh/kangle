@@ -1,0 +1,357 @@
+/* Version 7 */
+body {
+	padding: 0px;
+	margin: 0px;
+}
+    body.s-player-open {
+        overflow: hidden;
+        height: 10px;
+    }
+    body.s-player-open * {
+      z-index: 99;
+    }
+.s-player {
+    position: fixed;
+}
+body.s-player-open .s-player * {
+    font-size: 14px;
+    z-index: 999;
+}
+.s-player *,
+.s-player *::before,
+.s-player *::after {
+    box-sizing: initial;
+}
+.s-player .s-player-header {
+	width: 100%;
+/* 	width: 130px; */
+	position: fixed;
+	top: 0px;
+	background: linear-gradient(#F0F0F0, #DFDFDF) #DFDFDF;
+	background-color: #DFDFDF;
+}
+.s-player .s-player-header img {
+	height: 39px;
+	width: 115px;
+	top: 0px;
+}
+.s-player .s-player-header h3 {
+	margin: 0px;
+}
+.s-player .s-player-container {
+    background: linear-gradient(#222222, #333333, #555555, #444444) repeat scroll 0 0 #444444;
+    background-color: #444444;
+    height: 302px;
+    margin-top: 40px;
+    overflow: auto;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+}
+
+    .s-player .s-player-container .empty {
+        width: 100%;
+        text-align: center;
+        margin-top: 150px;
+        font-size: 25px;
+        color: #BBBBBB;
+    }
+    .s-player .s-player-container.s-noscroll {
+        overflow: hidden;
+    }
+
+    .s-player .s-player-container iframe,
+    .s-player .s-player-container video {
+        width: 100%;
+        height: 100%;
+    }
+.s-player .s-player-container .s-player-element {
+    border: 1px solid #555;
+    box-shadow: 1px 1px 13px 0;
+    margin: 0px auto;
+    max-width: 900px;
+    min-width: 300px;
+    z-index: 9;
+    position: relative;
+    text-align: center;
+}
+    .s-player .s-player-container .s-player-element .zoom-player {
+        display: block;
+        position: absolute;
+        opacity: 0.3;
+        width: 100%;
+        right: 0px;
+        /*top: -5px;*/
+        text-align: center;
+    }
+        .s-player .s-player-container .s-player-element .zoom-player a {
+            padding: 0px 10px;
+            font-size: 30px;
+            background-color: #888;
+            text-decoration: none;
+            color: black;
+        }
+    /*.s-player .s-player-container .s-player-element:hover .zoom-player,
+    .s-player .s-player-container .s-player-element:active .zoom-player,
+    .s-player .s-player-container .s-player-element:focus .zoom-player {
+        display: block;
+        color: #888;
+
+    }*/
+.s-player .s-player-container .s-player-element img {
+    width: 100%;
+    background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_10.gif) center no-repeat #fff;
+    min-height: 150px;
+}
+
+    .s-player .s-player-container .s-player-element.slide {
+        overflow: hidden;
+        min-width: initial;
+        max-width: initial;
+    }
+
+    .s-player .s-player-container .s-player-slide {
+        position: absolute;
+        color: white;
+        top: 0px;
+        width: 128px;
+        height: 100%;
+        opacity: 0.3;
+        cursor: pointer;
+        z-index: 99;
+        width: 55px;
+    }
+        .s-player .s-player-container .s-player-slide.left:hover,
+        .s-player .s-player-container .s-player-slide.right:hover {
+            opacity: 0.5;
+        }
+
+        .s-player .s-player-container .s-player-slide.left {
+            left: 0px;
+            background: url("imgs/back.png") center no-repeat #fff;
+        }
+        .s-player .s-player-container .s-player-slide.right {
+            right: 0px;
+            background: url("imgs/next.png") center no-repeat #fff;
+        }
+.s-player .s-player-tray {
+    background-color: #ddd;
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
+    bottom: 0;
+    height: 150px;
+/*     margin-bottom: 20px; */
+    position: fixed;
+    width: 100%;
+}
+.s-player .s-player-tray .s-player-close .player-close-btn {
+    background-image: url("imgs/UniversalBackButton.png");
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+    .s-player .s-player-tray .s-player-tray-wrapper {
+        width: 220px;
+        position: absolute;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin-left: 50px;
+        height: 140px;
+    }
+    .s-player .s-player-tray .s-player-tray-container {
+        /*padding: 10px;
+        overflow: auto;
+        height: 59px;*/
+        height: 130px;
+        margin: 0;
+        overflow: auto;
+        padding: 10px;
+    }
+    .s-player .s-player-tray .s-player-tray-element {
+        /*width: 60px;
+        height: 65px;
+        margin-right: 10px;
+        float: left;
+        padding: 2px;
+        cursor: pointer;*/
+        cursor: pointer;
+        float: left;
+        height: 105px;
+        list-style: outside none none;
+        margin-right: 5px;
+        padding: 2px;
+        width: 105px;
+        /* TRANSITION */
+        -webkit-transition: background 1s;
+        -moz-transition: background 1s;
+        -o-transition: background 1s;
+        transition: background 1s;
+    }
+    .s-player .s-player-tray .s-player-tray-element:hover {
+        background: linear-gradient(#555555, #777777, #777888, #888888) repeat scroll #888888;
+        color: white;
+        /* TRANSITION */
+        -webkit-transition: background 1s;
+        -moz-transition: background 1s;
+        -o-transition: background 1s;
+        transition: background 1s;
+    }
+    .s-player .s-player-tray .s-player-tray-element:hover p {
+        color: white;
+    }
+        .s-player .s-player-tray .s-player-tray-element.active {
+            background-color: #177EE5;
+            color: white;
+        }
+            .s-player .s-player-tray .s-player-tray-element.active p {
+                color: white;
+            }
+        .s-player .s-player-tray .s-player-tray-element img {
+            /*width: 60px;
+            height: 50px;*/
+            height: 85px;
+            width: 105px;
+        }
+        .s-player .s-player-tray .s-player-tray-element p {
+            color: black;
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-break: break-all;
+            font-size: 10px;
+        }
+.s-player .s-player-footer {
+    background-color: #dddddd;
+    bottom: 0;
+    height: 18px;
+    padding: 5px 5px 0;
+    position: fixed;
+    width: 100%;
+}
+
+.s-player .s-player-tray-minimize {
+    position: absolute;
+    text-align: center;
+    top: -16px;
+    width: 100%;
+}
+.s-player .s-player-tray-minimize a,
+.s-player .s-player-tray-minimize a:hover,
+.s-player .s-player-tray-minimize a:active {
+    background-color: #ddd;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: black;
+    padding: 0 10px;
+    text-decoration: none;
+	font-family: 'Trebuchet MS';
+	border: 1px solid #888;
+	border-bottom: none;
+}
+.s-player .s-player-rightelem {
+	float: left; 
+	width: 150px;
+	overflow: auto;
+	position: fixed;
+	background-color: white;
+	border-left: 1px solid #888;
+	padding: 2px;
+    z-index: 999;
+    top: 40px;
+}
+.s-player .s-player-thumbnail {
+    padding: 3px;
+	margin-bottom: 5px;
+	border: 1px solid #888;
+    cursor: pointer;
+}
+.s-player .s-player-thumbnail > img {
+    width: 100%;
+    background: url(http://smallenvelop.com/wp-content/uploads/2014/08/Preloader_10.gif) center no-repeat #fff;
+}
+.s-player .s-player-thumbnail p {
+    margin: 0;
+    text-align: center;
+}
+.s-player .s-player-thumbnail.s-player-btnshowmore {
+    border: medium none;
+}
+    .s-player .s-player-thumbnail.s-player-btnshowmore p {
+        margin-bottom: 10px; 
+        background-color: #888; 
+        padding: 5px; 
+        color: white;
+    }
+.s-player .s-player-close {
+	float: left;
+	width: 150px;
+	height: 100%;
+	margin-top: 60px;
+	margin-left: 10px;
+}
+#btnShowMore > a {
+    background: none repeat scroll 0 0 black;
+    color: white;
+    float: left;
+    margin-bottom: 20px;
+    padding: 5px;
+    width: 123px;
+}
+.s-player-header label {
+    float: right;
+    padding: 15px 1px 0 0;
+}
+.s-player-header select {
+    float: right;
+    margin-top:10px;
+}
+
+    .s-player-header select option {
+        padding: 10px;
+    }
+        .s-player-header select option:hover {
+            background-color: #E3E3E3;
+            color: white;
+        }
+
+.s-player-hint {
+    background-color: #E3E3E3;
+    padding: 10px;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    top: 45px;
+}
+    .s-player-hint label {
+        display: block;
+    }
+.s-player-hint-close {
+    background-color: #1d1f21;
+    color: white;
+    display: block;
+    float: right;
+    margin-top: 10px;
+    padding: 5px;
+    text-align: right;
+    text-decoration: none;
+}
+.arrow-up {
+	border-bottom: 15px solid #e5e5e5;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    height: 0;
+    position: absolute;
+    right: 20px;
+    top: -5px;
+    width: 0;
+}
+@media screen and (max-width: 900px) {
+	.s-player .s-player-rightelem {
+		display: none;
+	}
+}

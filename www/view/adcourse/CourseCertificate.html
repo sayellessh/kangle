@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Kangle</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+        
+        
+        <link href="../online/footer.css" rel="stylesheet" />
+        <link href="css/HeaderLayoutCommon.css" rel="stylesheet"/>
+        <link href="css/CourseCertificate.css" rel="stylesheet" />
+        <link href="../online/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="../Course/css/player.css" rel="stylesheet" />
+        <link href="../online/ArrowPopup.css" rel="stylesheet" />
+        
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <script type="text/javascript" src="../../jquery/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../online/js/constants.js"></script>
+        <script src="../Rxbook/js/RxBook/restHandler.js"></script>
+        
+        <script type="text/javascript" src="../eLearningAPP.js"></script>
+        <script src="../Rxbook/js/RxBook/Services.js"></script>
+        <script src="../Rxbook/js/RxBook/rxBookInit.js"></script>
+        <script src="js/AdCourse_Service.js"></script>
+        <script src="../Rxbook/js/RxBook/ajaxHandler.js"></script>
+        <script src="../online/js/AjaxGlobalHandler.js"></script>
+        <script src="js/jquery.highlight-4.closure.js"></script>
+        <script src="../online/js/ArrowPopup.js"></script>
+        
+        <!-- settings -->
+    	<script src="js/adcourseSettings.js"></script>
+        
+        <script type="text/javascript" charset="utf-8" src="../online/js/kaHeader.js"></script>
+
+        <script src="js/CourseCertificate.js"></script>
+        <script src="../online/js/elCommon.js"></script>
+
+		<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+		
+        <style>
+            /*courseCertificate html style */
+            #nav_list {
+                display: none;
+            }
+            #body-home-arrow-div.arrow-wrapper{
+            	z-index: 99999;
+	        }
+	        #body-settings-arrow-div.arrow-wrapper{
+	            z-index: 99999;
+	        }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <header>
+                <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                <ul class="header-menu">
+                	<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+	                <li class="pull-right newfontsize" id="Notificationbell" ><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+	                <li class="pull-right newfontsize"><a class="fa fa-home" id="pop-home" style="" href="#"></a></li>
+                    <li class="pull-right newfontsize" id="" ><a class="fa fa-question-circle"></a></li>
+                    <!-- <li class="menu-asset"><a href="#" title="Asset Library" class="fa fa-book"></a></li>
+                    <li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li> -->
+                </ul>
+            </header>
+            <div class="sub-wrapper" style="display:none;">
+                <div id="nav_list"><img style="height: 38px; margin-left: 5px" src="../online/images/Kanglelogo.png"></div>
+            </div>
+            <div class="wrapper">
+<!-- CourseCertificate Start-->
+                <div style="text-align: right; padding-right: 20px;" id="buttonsDiv" class="certificate-wrapper">
+                    <div class="certificate-container" style="background: none; border: none;">
+                        <input type="button" onclick="window.location.href='UserAdCourseDetails.html'" class="a-btn" value="Done">
+                        <input type="button" class="a-btn" id="printCertificate" value="Print Certificate">
+                    </div>
+                </div>
+
+                <div class="certificate-wrapper" id="dvcertificate">
+                    <div class="certificate-container">
+                        <div class="stamp stamp-pass">
+                            <img style="width: 160px;" src="../Course/images/Certified.png"></div>
+                        <div class="certificate-company-logo">
+                            <img src="" id="companyLogo">
+                        </div>
+                        <div class="certificate-company-title">
+                            Certificate of Completion
+                        </div>
+                        <div class="certificate-italic certificate-start">
+                            This is to certify that <b id="certificateUserName">Loading...</b> has completed <b id="courseName" style="padding: 10px;">Loading...</b> on <b id="courseDate">Loading...</b>
+                        </div>
+                        <div class="certificate-end">
+                            Congratulations!
+                        </div>
+                        <div class="certificate-company-name" id="companyName">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+<!-- CourseCertificate end-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //fnSetSettingsGear();
+                          
+            /*common for adcourse*/
+            footerdiv($('body'));
+            setting.init();
+            companyLogo_div();
+                          
+          var companyLogo = window.localStorage.getItem("companyLogoUrl");
+          //var user = JSON.parse(window.localStorage.getItem('user'));
+          //var userName = user.userName;
+          //Services.defaults.isHiDoctorCustomer = ;
+          //if(clientLogoURL_g === undefined || clientLogoURL_g === '' || clientLogoURL_g === null)
+          //clientLogoURL_g = '';
+            $('#companyLogo').attr('src',companyLogo);
+                          
+            rxBookInit.defaults.userId = window.localStorage.getItem('userId');
+            Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+            Services.defaults.companyId =  window.localStorage.getItem('companyId');
+            
+            
+            AjaxGlobalHandler.Initiate();
+            rxBookInit.enableCurUserInfo(function (data) {
+                //fnSetFooter($('body'));
+            }, false);
+                          
+            $('#printCertificate').bind('click', function(e) {
+                  window.print();
+            });
+            $('#Notificationbell').bind('click',function(){
+    			window.location.href = "../notificationhub/Notificationhub.html";
+    		});
+            companyId = window.localStorage.getItem('companyId');
+                          
+            courseUserAssignmentId =  rxBookInit.parse('cuaid');
+            courseCertificate.getCourseCentification(companyId, courseUserAssignmentId);
+        });
+    </script>
+</body>
+</html>
+

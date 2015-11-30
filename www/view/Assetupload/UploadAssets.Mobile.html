@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+        <style>
+            .list-items li{
+                float: none;
+                margin: 0px !important;
+                width: auto !important;
+            }
+        </style>
+	</head>
+    <body>
+		<div class="wrapper">
+			<header>
+        <!--  @*<h3 style="float: left; ">Assigned Assets</h3>
+				<ul style="float: right; ">
+					<li style="float: left; width: 30px; text-align: center">
+						<form action="#" method="post" id="upload-file" style="position: relative;">
+							<input type="file" value="" name="filename" multiple style="opacity: 0; position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"/>
+							<span class="fa fa-plus"></span>
+						</form>
+                    </li>
+					<li id="upload-file-btn" style="float: left; width: 30px; text-align: center"><span class="fa fa-upload"></span></li>
+                </ul>*@-->
+			</header>
+			<div class="content">
+                <div class="lineheading" style="padding: 10px; text-align: center; font-size: 14px; line-height: 22px; font-family:OpenSansSemiBold;"></div>
+				<div class="upload-head">File Name <span class="fa fa-trash del-list"></span></div>
+				<div class="upload-head upload-result">Uploading files...</div>
+				<ul class="list-items upload-list-items">
+					<div class="no-result" style="padding: 10px; background: #fff; font-size:15px; border: 1px solid rgb(191, 191, 191)">Please choose one or more files to upload</div>
+				</ul>
+				<ul class="list-items upload-prog-list-items">
+					<div class="no-result" style="padding: 10px; background: #fff; font-size:15px; border: 1px solid rgb(191, 191, 191)">Please choose one or more files to upload</div>
+				</ul>
+			</div>
+		</div>
+		<div class="loader-image">
+            <img src="images/loader_new.gif" />    
+        </div>
+        <div class="file-format" style="padding-left:12px; font-size:14px;">Supported file: jpg, jpeg, ppt, pptx, xls, xlsx, png, bmp, gif, mp4, pdf, doc, docx, zip</div>
+<script src="js/upload_list.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var details = JSON.parse(window.localStorage.getItem('user'));
+        var userCode = details.userCode,
+            userId = window.localStorage.getItem('userId');
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+
+        uploadList.init(userId);
+    });
+</script>    
+</body>
+</html>

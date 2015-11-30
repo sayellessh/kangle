@@ -1,0 +1,202 @@
+    * {
+	
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #E9E9E9;
+    font-family: tahoma, fantasy, arial, times new roman;
+}
+
+.header .head-container {
+	background-color: #0054A5;
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 2;
+	/*background: url("/Images/back_rpt.png") repeat-x scroll left bottom #fff;
+    box-shadow: 0 3px 8px -2px rgba(0, 0, 0, 0.4);
+    height: 45px;
+    padding: 5px 0;*/
+}
+.header .head-menu,
+.head-menu {
+	background-color: #f3f1f2;
+    border-bottom: 1px solid #787677;
+    box-shadow: 0 1px 10px 0 #787677;
+    height: 40px;
+    margin-top: 60px;
+    position: fixed;
+    width: 100%;
+	z-index: 2;
+}
+#body .wrapper .fieldset {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    left: 50%;
+    margin-left: -451.5px;
+    margin-top: -180px;
+    padding: 0;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 900px;
+}
+#body .wrapper .fieldset .field-wrapper {
+	float: left;
+	cursor: pointer;
+	margin-right: 60px;
+}
+#body .wrapper .fieldset .field-wrapper:last-child {
+	margin-right: 0px;
+}
+
+#body .wrapper .fieldset .fields {
+	border: 5px solid #BDBEC0;
+	width: 250px; 
+	height: 350px;
+	float: left;
+	border-radius: 5px;
+	margin-bottom: 25px;
+	box-shadow: 1px 20px 15px 3px #b3b3b3;
+	background-size: cover;
+}
+
+#body .wrapper .fieldset .field-wrapper .field-label {
+	color: #0C1B2E;
+	font-size: 20px;
+	font-family: tahoma, fantasy, arial, times new roman;
+	font-weight: bold;
+	clear: both;
+}
+.footer {
+    background-color: #bababa;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+.footer * {
+	padding: 0px;
+	margin: 0px;
+}
+.footer p {
+	padding: 0px 20px;
+}
+
+/*#dvCourseDetails {
+    background-color: #f2f0f1;
+    height: 200px;
+    margin: 15px;
+    padding-top: 15px;
+}*/
+
+/*new style*/
+.logo {
+    display: inline-block;
+    width: 115px;
+    height: 45px;
+}
+.dp-header {
+    height: 45px;
+    padding-top: 5px;
+}
+#headersection {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 99999;
+    background-color: #fff;
+}
+#headersection-settings-arrow-div {
+    top: 36px;
+}
+#headersection-settings-arrow-div ul {
+    padding: 0px;
+}
+#dvUserName {
+    line-height: 19px;
+    margin: 5px;
+}
+#headersection ul{
+    float:right;
+}
+#headersection ul li{
+    padding:5px !important;
+}
+#headersection ul li a {
+    font-size:32px;
+}
+#headersection ul li p{
+    font-size:16px;
+}
+ul#menunavigator li span {
+    border-radius: 12px;
+    color: #fff;
+    height: 18px;
+    position: absolute;
+    right: 20px;
+    background: #FF6000;
+    text-align: center;
+    top: 7px;
+    line-height: 18px;
+    width: 18px;
+    font-size: 12px;
+    border: 2px solid #fff;
+    display:none;
+}
+
+/*new style*/
+
+
+@media screen and (max-width: 950px) {
+
+	#body .wrapper .fieldset {
+		margin-left: -335.5px;
+		margin-top: -130px;
+		width: 675px;
+	}
+	
+	#body .wrapper .fieldset .field-wrapper {
+		margin-right: 35px;
+	}
+	#body .wrapper .fieldset .fields {
+		width: 190px;
+		height: 275px;
+	}
+	
+	#body .wrapper .fieldset .field-wrapper .field-label {
+		font-size: 14px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .icon-home {
+        display: none;
+    }
+    ul#menunavigator li span {
+        right: 20px !important;
+    }
+}
+
+#dvCourseDetails .action-buttons {
+    margin-top: -50px;
+}
+
+@media screen and (max-width: 480px) {
+    #dvCourseDetails {
+        height: 550px;
+    }
+        #dvCourseDetails .action-buttons {
+            margin-top: 10px;
+        }        
+}
+
+#menunavigator {
+    margin: 4px;
+}
+
+    #menunavigator li a {
+        text-decoration: none;
+        color: black;
+    }

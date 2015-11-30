@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rxbook</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    
+    <link href="css/RxBook/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="css/RxBook/mobile.css" type="text/css" media="screen" charset="utf-8" />
+    <link rel="stylesheet" href="../online/footer.css" />
+    <!-- helper -->
+    <link rel="stylesheet" href="../../helper/Helper.css" />
+</head>
+
+<body id="mainBody">
+    <div id="page">
+        <div id="main">
+            <header>
+                <div class="side-menu left" style="display:none;"><a href="LeftPanel.html" title="" class="fa fa-bars fa-ellipsis-v"></a></div>
+                <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                <ul class="header-menu">
+                    <li id="helpanytime"><a class="fa fa-question-circle"></a></li>
+                    <li id="" ><a class="fa fa-home" href="../homePage.html"></a></li>
+                    <li id="Notificationbell"><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                    <!-- <li>
+						<a href="#" title="menu" class="fa fa-user"></a>
+						<span id="notf-count"></span>
+					</li> -->
+					<li>
+						<a href="RightPanel.Friends.html" title="menu" class="fa fa-weixin"></a>
+						<span id="msg-count"></span>
+					</li>
+					<li id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                </ul>
+            </header>
+            
+            <!--content-->
+            <div id="content">
+            <div class="post-wrapper">
+                <div class="post-header">
+                    <label>Update</label>
+                </div>
+                <div class="post-field" id="post-text">
+                    <div class="post-textarea">
+                        <textarea name="newpost" id="create-post" cols="30" rows="2" placeholder="What's on your mind?"></textarea>
+                    </div>
+                    <div class="post-uploaded-files"></div>
+                    <div class="form-fields">
+                        <div class="form-btn">
+                            <form action="../../Attachment/FileUpload" method="post" id="file-upload">
+                                <div class="file-upload" style="opacity: 0">
+                                    <input type="hidden" name="companyId" id="companyId"/>
+                                    <input type="hidden" name="userId" id="userId"/>
+                                    <input type="file" name="filename" id="post-file" />
+                                </div>
+                            </form>
+                            <a id="add-camera" class="fa fa-camera thumbnail-btn"></a>
+                            <a id="add-image" class="fa fa-file-image-o thumbnail-btn"></a>
+                            <a id="add-video" class="fa fa-film thumbnail-btn"></a>
+                            <input id="add-post" type="button" class="post-submit-btn" value="Send" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="posts-view"></div>
+            <a href="#" class="btn btn-smore" title="show more">Show More</a>
+       </div>
+       <!-- end of content-->
+       </div>
+       <div class="loading"><div class="img"></div></div>
+    </div>
+    
+    <script src="../../cordova.js"></script>
+	<script src="../../jquery/jquery-1.9.1.min.js"></script>
+	<!--constants Js -->
+	<script type="text/javascript" charset="utf-8" src="../online/js/pgwbrowser.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+	
+	<script src="js/RxBook/restHandler.js"></script>
+	<script src="js/RxBook/ajaxHandler.js"></script>
+	<script src="js/RxBook/jquery.form.js"></script>
+	<script src="js/RxBook/Services.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/RxBook/rxBookInit.js"></script>
+	<script src="js/RxBook/autolink.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+	
+	<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+	<!-- helper -->
+        <script type="text/javascript" src="../../helper/Helper.js"></script>
+	<script src="js/RxBook/mobile.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script src="js/RxBook/mRxMain.js"></script>
+	
+        
+	<script type="text/javascript">
+	    function fnBindCss() {
+	        var page = window.location.pathname;
+	        page = (page.charAt(page.length - 1) == '/' ? page.substr(0, page.length - 1) : page);
+	        
+	        if (page == "/RxBook") {
+	            $("#mainBody").addClass("page-home")
+	        }
+	        else {
+	            if ($("#mainBody").hasClass("page-home")) {
+	                $("#mainBody").removeClass("page-home")
+	            }
+	        }
+	    }
+	
+	    document.addEventListener('deviceready', function() {
+	        footerdiv($('body'));
+	        rxBookInit.defaults.userId = rxBookInit.parse('userId');
+	        Services.defaults.companyId =  window.localStorage.getItem('companyId');
+			Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+	        rxBookInit.enableCurUserInfo(function(){ 
+	        	rxHome.init(); 
+	        	app.init(); 
+	        	var helpdiv = window.localStorage.getItem("rxbookhelp");
+	        	if(helpdiv == null || helpdiv == ''){
+	        		assetHelp.showHelpText();
+	        		window.localStorage.setItem("rxbookhelp",1);
+	        	}
+	        	insertUserTrack(PAGE_NAMES.social, function(d) { }, function(e) { });
+	        }, function(e){ 
+	        	rxHome.bindUserErrorFeed(rxHome.el, networkProblemError);
+	        });
+	        $('#helpanytime').bind('click',function(){
+	        	assetHelp.showHelpText();
+	        });
+	        $('#Notificationbell').bind('click',function(){
+	    		window.location.href = "../notificationhub/Notificationhub.html";
+	    	});
+	        fnBindCss();
+	    }, function() { });
+	</script>
+</body>
+</html>

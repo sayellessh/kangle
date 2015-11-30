@@ -1,0 +1,33 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <style>
+        .center-screen {
+            text-align: center;
+            font-size: 30px;
+            
+            width: 350px;
+            height: 100px;
+            
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            
+            margin-top: -50px;
+            margin-left: -150px;
+            transform: translate(-50%, -50%);
+        }
+        
+        @media screen and (max-width:1023){
+        	font-size: 15px;
+        } 
+    </style>
+</head>
+<body>
+    
+    <div class="center-screen">
+        <label> Error connecting to server </label>
+        <button onclick="window.location.href='login.html';">Retry</button>
+    </div>
+</body>
+</html>

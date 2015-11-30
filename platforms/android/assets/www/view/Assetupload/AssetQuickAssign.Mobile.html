@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+<!-- constants js -->
+<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+
+		<style type="text/css">
+			body {
+				background: #fff;
+			}
+		</style>
+	</head>
+    <body>
+		<div class="wrapper">
+			<header>
+			</header>
+			<div class="content">
+				<div class="form-block" style="background: none; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none;">
+					<div class="form-label"><b>Select Users</b></div>
+					<div class="form-select select-tags" style="min-height: 30px; height: auto;">
+						<select name="list-users" id="select-users" multiple></select>
+					</div>
+				</div>
+				<div class="form-block block-check" style="padding: 10px;">
+					<label class="input-check">
+						<input type="checkbox" name="retain-users" id="retain-user" checked/>
+						<label for="retain-user">Retain Previous assigned users</label>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>
+<script type="text/javascript" src="js/quickassign.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var details = JSON.parse(window.localStorage.getItem('user'));
+        var userCode = details.userCode,
+            userId = window.localStorage.getItem('userId'),
+            companyCode = details.companyCode;
+            //stagingId = '@ViewBag.AssetId',
+            //isUnassign = '@ViewBag.IsUnassign';
+
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.userId = userId;
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        Services.defaults.userCode = userCode;
+        Services.defaults.companyCode = companyCode;
+        Services.defaults.regionCode = details.regionCode;
+        
+        var href = window.location.href;
+        href = href.substr(href.indexOf('?') + 1, href.length);
+        var nAry = href.split('_');
+        var isUnassign = nAry[1];
+        var stagingId = nAry[0];
+                      
+        quickAssign.init(userId, isUnassign, stagingId);
+        if(isUnassign == 'Y') {
+           $('.input-check').css('display','none');
+        } else {
+           $('.input-check').css('display','block');
+        }
+    });
+</script>

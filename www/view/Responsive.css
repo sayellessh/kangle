@@ -1,0 +1,483 @@
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+	.page .desc-cont {
+		max-width: 335px;
+	}
+	.asset-detail .desc-right h2 {
+		font-size: 28px;
+	}
+	.asset-detail .desc-right span {
+		font-size: 16px;
+	}
+	.asset-detail .desc-cont-tags ul li a {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	.page.page-full {
+		
+	}
+}
+@media screen and (max-width: 1099px) {
+	.page .desc-cont {
+		margin-top: 0px;
+	}
+	.asset-detail .desc-left {
+		width: 292px;
+		float: left;
+		margin: 0px auto;
+	}
+	.asset-detail .desc-right {
+		clear: both;
+		margin: 0px auto;
+		float: left;
+	}
+    .asset-detail .desc-right .asset-action {
+        padding-top: 10px;
+    }
+	.asset-action .action-left { width: 100%; }
+	.asset-action .action-right { width: 100%; }
+	.action-left .asset-like, .action-left p , .action-left .asset-rate { 
+		float: left;	
+	}
+	.action-left p, .action-left .asset-rate {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		padding: 0px 10px;
+	}
+	.action-left p { padding-left: 0px; padding-top: 5px; }
+	.comment-box form { width: 77%; }
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .right-sec {
+        padding-left: 0px;
+        float: none;
+	}
+    .right-sec .asset-holder {
+        background-position: center 8px;
+    }
+	.asset-detail .desc-image,
+    .asset-detail .desc-left,
+	.asset-detail .desc-right {
+		float: none; 
+	}
+    .asset-action {
+        padding-bottom: 10px;
+    }
+    .asset-detail .desc-cont {
+        float: none;
+        clear: both;
+        margin: 0 auto;
+    }
+    .asset-detail .desc-cont-tags ul li {
+        display: inline-block;
+        float: none;
+    }
+    .right-sec ul.asset-list li {
+        margin-right: 5%;
+    }
+    .asset-detail .desc-cont-tlft {
+        width: 89%;
+    }
+    .action-left p, .action-left .asset-rate {
+        margin-top: 25px;
+    }
+}
+
+@media screen and (min-width: 1121px) and (max-width: 1239px) {
+    .right-sec {
+        padding-right: 0px;
+    }
+    .asset-holder {
+        text-align: left;
+        background-position: center top;
+    }
+    .right-sec ul.asset-list {
+        text-align: left;
+        padding-bottom: 11px;
+        padding-left: 0px; 
+        padding-right: 0px;
+        text-align: center;
+    }
+    .right-sec ul.asset-list li {
+        float: none; 
+        margin: 0px;
+        margin-top: 38px ;
+        display: inline-block;
+        margin-bottom: 31px;
+        margin-right: 4%;
+    }
+    /*.right-sec ul.asset-list li.asset-list-top {
+        margin-top: 39px;
+    }*/
+    
+}
+@media screen and (min-width: 540px) and (max-width: 767px) {
+    /*** common css for 2 asset ***/
+    .asset-holder {
+        text-align: left;
+    }
+    .right-sec ul.asset-list {
+        text-align: left;
+        padding-bottom: 11px;
+        display: block;
+        padding-left: 0px; 
+        padding-right: 0px;
+        width: 434px;
+        margin: 0px auto;
+    }
+    .right-sec ul.asset-list li {
+        float: none; 
+        margin: 0px;
+        margin-top: 49px;
+        display: inline-block;
+        margin-bottom: 22px;
+    }
+    .right-sec ul.asset-list li.asset-list-top {
+        margin-top: 38px;
+    }
+
+    .right-sec ul.asset-list li:nth-child(2n) {
+        margin-left: 30px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 994px) {
+    .asset-holder {
+
+        text-align: center;
+
+    }
+
+    .right-sec ul.asset-list {
+
+        text-align: center;
+
+        padding-bottom: 11px;
+
+        padding-left: 2%;
+
+    }
+
+    .right-sec ul.asset-list li.asset-list-top {
+
+        margin-top: 36px;
+
+    }
+
+    .right-sec ul.asset-list li {
+
+        float: none; 
+        display: inline-block;
+        margin-top: 70px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 4%;
+
+    }
+}
+
+@media screen and (min-width: 240px) and (max-width: 480px) {
+    .asset-detail .desc-cont {
+        width: auto;
+        min-width: initial;
+        max-width: initial;
+    }
+    .asset-detail .desc-cont-tlft {
+        float: none;
+    }
+    .asset-detail .desc-cont-trig {
+        float: none;
+    }
+    .asset-detail .desc-cont-trig ul li {
+        float: none; display:inline-block;
+        margin-top: 10px;
+    }
+    .comment-box span, .comment-item span {
+        display: none;
+    }
+    .comment-box form {
+        width: auto;
+        float: none;
+    }
+    .comment-box .form-submit {
+        margin-top: 10px;
+    }
+    .action-left p {
+        clear: both;
+        margin: 5px 0px;
+    }
+    .action-left p, .action-left .asset-rate, .action-left .asset-like {
+        margin: 5px 0px;
+    }
+    .asset-detail .desc-left {
+        width: 240px;
+        padding-left: 37px;
+    }
+    .asset-shade .shade-bg {
+        display: none;
+    }
+    .asset-detail .desc-img-rgt {
+        padding-right: 37px;
+    }
+    .comment-success {
+        padding-left: 0px;
+    }
+
+
+    /*** common css for 1 asset ***/
+    .asset-holder {
+        text-align: center;
+    }
+    .right-sec ul.asset-list {
+        text-align: center;
+        padding-bottom: 11px;
+        display: inline-block;
+    }
+    .right-sec ul.asset-list li {
+        float: none; 
+        margin: 0px;
+        margin-top: 51px;
+        margin-bottom: 20px;
+    }
+    .right-sec ul.asset-list li:first-child {
+        margin-top: 37px;
+    }
+}
+@media screen and (min-width: 240px) and (max-width: 767px) {
+    .container {
+        margin-top: 111px;
+    }
+    .header .top-sec {
+        height: 52px;
+    }
+
+    .header .top-sec .logo {
+        background-size: 35px 40px;
+        width: 35px;
+    }
+
+    .menu_sec {
+        margin-right: 10px;
+    }
+
+    .menu_sec ul li {
+        margin: 12px 0 0 14px;
+    }
+
+    .menu_sec ul li a {
+        width: 32px;
+        height: 32px;
+    }
+
+    .search_sec input {
+        width: 88px;
+        background-size: 25px 25px;
+    }
+
+    /*.left-sec{
+		z-index:9;
+		margin-top: -8px;
+		left: 0;
+		width:300px;
+		position:fixed;
+	}
+
+    .left-sec.menu-collapse {
+        left: -300px;
+    }
+
+    .left-sec ul.slide_menu li {
+        width: 48%;
+    }
+
+    .left-sec ul.slide_menu li#menu-btn {
+        display: block;
+        width: 2%;
+        border-left: 0 none;
+    }
+
+    .left-sec ul.slide_menu li#menu-btn img.expand {
+        height: 20px;
+        margin: 8px 0 0 -5px;
+        width: 20px;
+        position: absolute;
+        right: -20px;
+    }*/
+
+
+    .right-sec p {
+        /*margin-left:0px;*/
+    }
+
+    .right-sec {
+        padding: 0px 0px;
+    }
+
+    /*.right-sec ul.asset-list li {
+        margin: 38px 0 13px 25px;
+    }*/
+
+    ul.asset_list {
+        padding: 30px 5px;
+    }
+
+    .right-sec {
+        padding: 0px 0px;
+        float: none;
+    }
+
+        .right-sec .asset-holder {
+            background-position: center 8px;
+        }
+
+    /*ios player */
+    div.asset_action {
+        width: 60px;
+    }
+
+    .prev {
+        right: 60px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .top-div {
+        height: 164px;
+    }
+
+    .top-div .sec1 p {
+        font-size: 14px;
+    }
+
+    .tabs-stage p {
+        padding: 10px 0;
+    }
+
+    .top-div .sec1 .thumb_url img {
+        height: 80px;
+    }
+
+    .top-div .sec2 .rating {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .top-div .sec2 .myRating {
+        font-size: 14px;
+        line-height: 14px;
+        margin-top: 10px;
+    }
+
+    .rate-div {
+        height: auto;
+    }
+
+    .rate-div, #ratingThankyou {
+        font-size: 14px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+
+    .rate-div ul li a {
+        background-size: 15px 15px;
+        height: 20px;
+        margin-right: 10px;
+        width: 20px;
+    }
+
+    .rate-div, #ratingThankyou {
+        font-size: 14px;
+        margin-bottom: 20px;
+        margin-top: 5px;
+    }
+
+    .like-div a.like {
+        background-size: 44px 20px;
+        height: 28px;
+        width: 44px;
+    }
+
+    .like-div a.dislike {
+        background-size: 27px 20px;
+        height: 28px;
+        width: 35px;
+        margin-left: 9px;
+    }
+
+    .like-div a {
+        font-size: 14px;
+    }
+
+    #watch7-views-info {
+        font-size: 14px;
+    }
+
+    .watch-view-count {
+        font-size: 20px;
+        line-height: 29px;
+    }
+
+    .video-extras-sparkbars {
+        height: 5px;
+    }
+
+    #watch7-views-info .video-extras-sparkbars {
+        margin: 5px 0;
+    }
+
+    .video-extras-sparkbar-likes {
+        height: 2px;
+    }
+
+    .video-extras-sparkbar-dislikes {
+        height: 2px;
+    }
+
+    #watch7-views-info .video-extras-likes-dislikes .yt-sprite {
+        width: 11px;
+    }
+
+    .share {
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    #tab-2 .border {
+        border-width: 1px;
+    }
+
+    /*end of ios player */
+    .asset-detail .desc-right h2 {
+        font-size: 22px;
+        line-height: 32px;
+    }
+    .asset-detail .desc-right span {
+        font-size: 12px;
+        line-height: 20px;
+    }
+    .asset-detail .desc-cont-tags ul li a {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .bread-crum {
+        padding-left: 20px;
+    }
+    .bread-crum li {
+        font-size: 16px;
+        line-height: 37px;
+    }
+
+    .asset-action {
+        padding-bottom: 10px;
+    }
+    .asset-desc .desc-image {
+        float: none;
+    }
+    .asset-detail .desc-cont-tags {
+        padding-top: 0px;
+    }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rxbook</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    
+    <link href="css/RxBook/font-awesome/font-awesome.css" rel="stylesheet" />
+    <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="css/RxBook/mobile.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="css/RxBook/tab.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="../online/footer.css" />
+    <link rel="stylesheet" href="css/RxBook/LeftPanel.css" />
+</head>
+
+<body id="mainBody">
+    <div id="page">
+        <div class="side">
+            <ul>
+                <li class="profileName" ><a href="#" ><img id="pProfilePic"/><p id="pUserName"></p ><p id="pUserMood"></p></a></li>
+                <!-- <li class="bookshelf"><a href="#"><span class="fa fa-book"></span>Asset Library</a></li>-->
+				<li class="feed active"><a href="Index.Mobile.html"><span class="list-icon fa fa-home"></span><span class="list-label">My Feed</span></a></li>
+                <li class="profile"><a href="UserProfile.Mobile.html"><span class="list-icon fa fa-user"></span><span class="list-label">My Profile</span></a></li>
+				<li class="friend"><a href="Friends.Mobile.html"><span class="list-icon fa fa-child"></span><span class="list-label">Friends</span></a></li>
+				<li class="astream"><a href="ActivityStream.Mobile.html"><span class="list-icon fa fa-bars"></span><span class="list-label">Activity Stream</span></a></li>
+				<li class="jobs"><a href="#"><span class="list-icon fa fa-suitcase"></span><span class="list-label">Jobs</span></a></li>
+				<li class="events"><a href="#"><span class="list-icon fa fa-calendar"></span><span class="list-label">Events</span></a></li>
+				<li class="polls"><a href="#"><span class="list-icon fa fa-check-square-o"></span><span class="list-label">Polls</span></a></li>
+                <li class="pugroup" id="menu-alerts"><a href="#"><span class="list-icon fa fa-warning"></span><span class="list-label">Alerts</span></a></li>
+			</ul>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../../cordova.js"></script>
+<script src="../../jquery/jquery-1.9.1.min.js"></script>
+<!--constants Js -->
+<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+<script src="js/RxBook/restHandler.js"></script>
+<script src="js/RxBook/ajaxHandler.js"></script>
+<script src="js/RxBook/jquery.form.js"></script>
+<script src="js/RxBook/Services.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/RxBook/rxBookInit.js"></script>
+<script src="js/RxBook/autolink.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+<script src="js/RxBook/mobile.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript">
+    $(".side").height($(window).height());
+    function fnBindCss() {
+        var page = window.location.pathname;
+        page = (page.charAt(page.length - 1) == '/' ? page.substr(0, page.length - 1) : page);
+        
+        if (page == "/RxBook") {
+            $("#mainBody").addClass("page-home")
+        }
+        else {
+            if ($("#mainBody").hasClass("page-home")) {
+                $("#mainBody").removeClass("page-home")
+            }
+        }
+    }
+
+    document.addEventListener('deviceready', function() {
+        footerdiv($('body'));
+        rxBookInit.defaults.userId = rxBookInit.parse('userId');
+        rxBookInit.enableCurUserInfo(function(){
+            $("#pUserName").text(Services.defaults.displayName);
+            $("#pProfilePic").attr("src", Services.defaults.myProfileURL);
+            app.addAlertTopic();
+        }, function(e){ });
+        fnBindCss();
+        $('.bookshelf').bind('click',function(){
+            eLearnUser = window.localStorage.getItem('user');
+            window.location.href = '../eLearningOnline.html?currentUser=' + encodeURIComponent(eLearnUser);
+        });
+        $('.profileName').bind('click', function() {
+            window.location.href = 'UserProfile.Mobile.html';
+        });
+    }, function() {});
+</script>

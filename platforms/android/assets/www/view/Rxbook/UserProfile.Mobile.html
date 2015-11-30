@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    
+        <link rel="stylesheet" href="css/RxBook/default.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/RxBook/default.date.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/jquery-ui-1.8.21.custom.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/RxBook/mobile.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/RxBook/profile.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/RxBook/font-awesome/font-awesome.css" type="text/css" media="screen" />
+        
+        <link rel="stylesheet" href="../online/footer.css" />
+
+		<link type="text/css" rel="stylesheet" href="js/RxBook/cropjs/jquery.cropbox.css" />
+        
+        <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+        <script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+        
+        
+        <style>
+            #body-settings-arrow-div:after {
+                margin-left: 64px !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="body">
+            <header>
+                <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                <ul class="header-menu">
+                    <li><a href="../homePage.html" title="home" class="fa fa-home"></a></li>
+                    <li><a href="../notificationhub/Notificationhub.html" title="notificationhub" class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                    <!-- <li><a href="Index.Mobile.html" title="menu" class="fa fa-home"></a></li>
+                    <li>
+						<a href="#" title="menu" class="fa fa-user"></a>
+						<span id="notf-count"></span>
+					</li>
+					<li>
+						<a href="RightPanel.Friends.html" title="menu" class="fa fa-weixin"></a>
+						<span id="msg-count"></span>
+					</li> -->
+                    <!--<li><a href="#" title="menu" id="pop-settings" class="fa fa-gear"></a></li>-->
+                </ul>
+            </header>
+            <!-- Content begin -->
+            <div id="content">
+                <div class="left">
+                    <div class="doctor">
+                        <div class="doctor-img">
+                            <img src="#" alt="">
+                                <div class="transparent"> </div>
+                                <div class="doctor-detail">
+                                    <div class="doctor-picture">
+                                        <img src="#" alt="">
+                                            </div>
+                                    <div class="doctor-info">
+                                        <h2 id="doctor-name"></h2>
+                                        <p id="doctor-designation"></p>
+                                        <div class="user-location"><span class="fa fa-map-marker"></span></div>
+                                    </div>
+                                    <a class="upload-picture" href="#">
+                                        <span class="fa fa-camera"></span>
+                                    </a>
+                                </div>
+                                </div>
+                        <div class="doctor-speciality">
+                            <div class="col-two speciality">
+                                <p class="label">I Specialize in</p>
+                                <p class="value">Urology</p>
+                            </div>
+                            <div class="col-two years">
+                                <p class="label">Been in practice since</p>
+                                <p class="value">2012</p>
+                            </div>
+                        </div>
+                        <!--<div class="doctor-contact">
+                            <ul>
+                                <li>
+                                    <a href="mailto:manikandan@gmail.com" title="" ><span class="fa fa-envelope-square"> </span><h2 id="doctor-email"></h2></a>
+                                </li>
+                                
+                                <li>
+                                    <a href="" title="" ><span class="fa fa-phone-square"> </span><h2 id="doctor-mobile"></h2></a>
+                                </li>
+                            </ul>
+                        </div>-->
+                    </div>
+                    <div class="option">
+                        <span class="tags">About Me</span>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="doctor-profile">
+                        <h3>
+                            <span class="headingcontent fa fa-user"></span>
+                            <span class="heading">About Me</span></a>
+                            <!--<a class="fa fa-plus add-list add-educ" href="#"><span class="add">&nbsp;Add</span></a>-->
+                            <a href="#" class="fa fa-pencil edit-list" id="aboutme-edit"><span class="edit-btn" id="aboutme-edit">&nbsp;Edit</span></a>
+                        </h3>
+                        <div class="contents about-me">
+                            <div class="two-col-field">
+                                <div class="field" id="empName">
+                                    <b>Employee Name</b>
+                                    <p>Loading...</p>
+                                    <input type="text" />
+                                </div>
+                                <div class="field" id="empDesig">
+                                    <b>Designation</b>
+                                    <p>Loading...</p>
+                                    <input type="text" />
+                                </div>
+                                <div class="field" id="empRegion">
+                                    <b>Region Name</b>
+                                    <p>Loading...</p>
+                                    <input type="text" />
+                                </div>
+                                <div class="field" id="empDob">
+                                    <b>Date of Birth</b>
+                                    <p>Loading...</p>
+                                    <input type="text" name="emp-dob"/>
+                                    <!--<a href="#" class="fa fa-pencil"></a>-->
+                                </div>
+                                <div class="field" id="empDoa">
+                                    <b>Date of Wedding</b>
+                                    <p>Loading...</p>
+                                    <input type="text" name="emp-doa" />
+                                    <!--<a href="#" class="fa fa-pencil"></a>-->
+                                </div>
+                            </div>
+                            <div class="save-list" style="display:none">
+                                <a title="save" class="save" href="#">Save</a>
+                                <a title="Cancel" class="cancel" href="#">Cancel</a>
+                            </div>
+                            
+                        </div>
+                        
+                        <h3>
+                            <span class="headingcontent fa fa-university"></span>
+                            <span class="heading">Education</span>
+                            <a class="fa fa-plus add-list add-educ" href="#"><span class="add">&nbsp;Add</span></a>
+                        </h3>
+                        <div class="contents education">
+                        </div>
+                        
+                        <h3>
+                            <span class="headingcontent fa fa-graduation-cap"></span>
+                            <span class="heading">Work Details</span>
+                            <a class="fa fa-plus add-list add-work" href="#"><span class="add">&nbsp;Add</span></a>
+                        </h3>
+                        <div class="contents work">
+                            <ul></ul>
+                        </div>
+                        
+                        <h3>
+                            <span class="headingcontent fa fa-trophy"></span>
+                            <span class="heading">Interests</span>
+                            <a class="fa fa-plus add-list add-interest" href="#"><span class="add">&nbsp;Add</span></a>
+                            <a class="fa fa-pencil edit-list edit-interest" href="#"><span class="edit">&nbsp;Edit</span></a>
+                        </h3>
+                        <div class="contents intrest">
+                        </div>
+                        
+                        <h3>
+                            <span class="headingcontent fa fa-calendar"></span>
+                            <span class="heading">Events</span>
+                            <a class="fa fa-plus add-list add-events" id="lifeevent-add" href="#"><span class="add">&nbsp;Add</span></a>
+                        </h3>
+                        <div class="contents events">
+                            <div class="add-lifeevent" style="display: none;">
+                                <div class="two-col-field">
+                                    <div class="field" id="eventName">
+                                        <b>Event Name</b>
+                                        <input type="text" style="display: block;" />
+                                    </div>
+                                    <div class="field" id="eventDate">
+                                        <b>Date</b>
+                                        <div class="date-year-selector">
+                                            <div class="year-selector">
+                                                <a href="#">Add Year</a>
+                                                <select style="display: none;">
+                                                    <option>--Year--</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="save-list">
+                                    <a title="save" class="save" href="#">Save</a>
+                                    <a title="Cancel" class="cancel" href="#">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <!-- end of Content -->
+        </div>
+        
+        <script src="../../cordova.js"></script>
+        <script src="../../jquery/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui-1.8.24.min.js"></script>
+        <!--constants Js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+        <script src="js/RxBook/restHandler.js"></script>
+        <script src="js/RxBook/Services.js"></script>
+        <script src="js/RxBook/rxBookInit.js"></script>
+        <script src="js/RxBook/typeahead.js"></script>
+        <script src="js/RxBook/picker.js"></script>
+        <script src="js/RxBook/mobile.js" type="text/javascript"></script>
+        <script src="js/RxBook/picker.date.js"></script>
+        
+        <script src="js/RxBook/rxCommon.js"></script>
+        
+        <!--crop picture -->
+        <script type="text/javascript" src="js/RxBook/jquery.form.js"></script>
+        <script type="text/javascript" src="js/RxBook/cropjs/hammer.js"></script>
+        <script type="text/javascript" src="js/RxBook/cropjs/jquery.mousewheel.js"></script>
+        <script type="text/javascript" src="js/RxBook/cropjs/jquery.cropbox.js"></script>
+        <script type="text/javascript" src="js/RxBook/cropjs/mcrop_image.js"></script>
+        <script src="js/RxBook/profile.js" type="text/javascript"></script>
+
+<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            rxBookInit.defaults.userId = rxBookInit.parse('userId');
+            $(document).ready(function(){
+                footerdiv($('body'));
+				Services.defaults.companyId =  window.localStorage.getItem('companyId');
+				Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+                rxBookInit.enableCurUserInfo(function(){
+                    app.getUnreadCounts();
+                    app.dropMenu();
+                    app.getNotifications();
+                    curUserId = rxBookInit.parse('userId');
+                         //alert(curUserId);
+                     if(curUserId == null || curUserId == Services.defaults.userId){
+                         isAdmin = true;
+                         curUserId = Services.defaults.userId;
+                     }else {
+                         isAdmin = false;
+                     }
+                     if(isAdmin){
+                     $('.upload-picture').show();
+                     }else{
+                     $('.upload-picture').hide();
+                     }
+                     $('a.upload-picture').attr('href','ProfilePicture.html?userId='+ curUserId);
+                     profile.isAdmin = isAdmin;
+                     profile.init();
+                     //rxCommon.init();
+                },function(){});
+        });
+    </script>
+</body>
+</html>
+
+<!-- profile mobilejs
+ 
+ $(document).ready(function () {
+ rxBookInit.defaults.userId = @Html.Raw(Json.Encode(ViewBag.User_Id));
+ var curUserId = @Html.Raw(Json.Encode(ViewBag.User_Id));
+ $(document).ready(function(){
+ rxBookInit.enableCurUserInfo(function(){
+ var isAdmin = @Html.Raw(Json.Encode(ViewBag.isAdmin));
+ isAdmin = (isAdmin == 0 ? false : true);
+ profile.isAdmin = isAdmin;
+ profile.init();
+ rxCommon.init();
+ },function(){});
+ });
+ 
+ });-->
+
+<!-- user
+ 
+ $(document).ready(function(){
+ if(isUserAdmin){
+ $('.upload-picture').show();
+ }else{
+ $('.upload-picture').hide();
+ }
+ 
+ $('a.upload-picture').attr('href','../../User/ProfilePicture/'+ @Html.Raw(Json.Encode(ViewBag.User_Id)));
+ rxBookInit.enableCurUserInfo(function(){
+ var isAdmin = @Html.Raw(Json.Encode(ViewBag.isAdmin));
+ isAdmin = (isAdmin == 0 ? false : true);
+ profile.isAdmin = isAdmin;
+ profile.init();
+ },function(){});
+ });
+ 
+ 
+ -->

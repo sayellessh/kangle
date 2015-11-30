@@ -1,0 +1,541 @@
+.share-body-wrapper {
+    background-color: #CBCACB;
+    height: 100%;
+    left: 0;
+    margin-top: 55px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.share-body-wrapper .share-body-header {
+    background-color: #3f51b5;
+    height: 50px;
+    width: 100%;
+}
+.share-body-wrapper .share-body-header .fa.fa-chevron-left:before {
+    background: url("imgs/ic_navigate_before_white.png") no-repeat scroll -15px 0px rgba(0, 0, 0, 0);
+    content: "";
+    display: inline-block;
+    height: 54px;
+    width: 20px;
+}
+.share-body-wrapper .share-body-header .fa-chevron-left {
+    float: left;
+}
+.share-body-wrapper .share-body-header h2 {
+    float: left;
+    padding-left: 10px;
+    font-family: "OpenSansRegular",Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    line-height: 52px;
+    color: white;
+}
+
+.share-body-container {
+    float: left;
+    width: 100%;
+}
+.share-tab {
+    float: left;
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    margin-top: -5px;
+}
+.share-tab > span {
+    border-right: 1px solid #888;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    font-size: 18px;
+    height: 40px;
+    line-height: 38px;
+    text-align: center;
+    width: 50%;
+}
+.share-tab > span:last-child {
+    border-right: none;
+}
+.share-tab span.selected {
+    border-bottom: 5px solid #3f51b5;
+    color: #3f51b5;
+}
+.share-tab-body {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    padding: 10px;
+    width: 100%;
+    overflow: auto;
+}
+.share-tab-body .input {
+    background-color: #3f51b5;
+    border: medium none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+}
+.share-tab-body li {
+    padding: 10px;
+    border-bottom: 1px solid #888;
+}
+.share-tab-body.nopadding > ul {
+    margin-top: 10px;
+}
+.share-tab-body li {
+    background-color: white;
+    /*padding: 15px;*/
+    padding: 15px 15px 25px 15px;
+}
+.share-tab-body span {
+    font-size: 14px;
+}
+.toright {
+    float: right;
+    cursor: pointer;
+}
+.nopadding {
+    padding: 0px;
+}
+.form-block .input-group {
+    padding-right: 0px;
+}
+
+.share-pop-alert-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #888;
+    opacity: 0.7;
+}
+.share-pop-alert {
+    box-shadow: 0 0 5px 1px;
+    height: 150px;
+    margin: 10px;
+    position: absolute;
+    width: 300px;
+}
+
+.share-pop-alert-head {
+    background-color: #3f51b5;
+    padding: 10px;
+    color: white;
+}
+.share-pop-alert-body {
+    background-color: white;
+    height: 93px;
+    overflow: hidden;
+    padding: 10px;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+.share-pop-alert-action {
+    bottom: 15px;
+    display: block;
+    float: right;
+    position: absolute;
+    text-align: right;
+}
+.share-pop-alert-action > input {
+    background-color: #EEEEEE;
+    border: medium none;
+    color: #009688;
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+    margin-left: 205px;
+    padding: 10px 25px;
+}
+.share-tab-body span.text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 80%;
+}
+
+/* css changes for share with template */
+.form-block {
+    position: relative;
+}
+.form-block .form-field {
+    position: relative;
+}
+.form-block .form-field-btn {
+    /*display: none;*/
+}
+.form-block:hover .form-field-btn,
+.form-block:focus .form-field-btn,
+.form-block:active .form-field-btn {
+    display: block;
+}
+.form-block .form-field-btn .share-pop-btn-wrapper {
+    background-color: #000000;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    bottom: 0;
+    height: 50px;
+    margin-left: -10px;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+}
+.form-block .form-field-btn .share-pop-btn {
+    bottom: 0;
+    margin-left: -10px;
+    opacity: 1;
+    margin-bottom: 19px;
+    position: absolute;
+    text-align: center;
+    width: 70%;
+}
+.form-block .form-field-btn .share-pop-btn.preview {
+    border-left: 1px solid white;
+    padding-left: 5px;
+    padding-right: 5px;
+    right: 0;
+    width: 30%;
+}
+
+.share-pop-btn > a,
+.share-pop-btn > a:hover,
+.share-pop-btn > a:active,
+.share-pop-btn > a:focus {
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.share-tab-body .input {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-block .form-field-btn .share-pop-btn-fullwrapper {
+    background-color: #000000;
+    border-radius: 0 0 5px 5px;
+    bottom: 0;
+    height: 65px;
+    margin-left: -10px;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+}
+.form-block .form-field-btn .share-pop-btn-full {
+    bottom: 0;
+    margin-left: -10px;
+    opacity: 1;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 65px;
+}
+.share-pop-btn-full > span {
+    border-right: 1px solid white;
+    color: white;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 20px;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+    width: 49%;
+    margin-top: 1px;
+}
+.share-pop-btn-full > span:last-child {
+    border-right: none;
+}
+
+.share-pop-btn-full span > a,
+.share-pop-btn-full span > a:hover,
+.share-pop-btn-full span > a:active,
+.share-pop-btn-full span > a:focus {
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    width: 100%;
+    /*padding-top: 95px;*/
+}
+.share-pop-btn-full span > a.fonticon {
+    font-size: 36px;
+}
+/* css changes for share with template */
+
+/* copied from assetmobile style.css */
+/** Form elements **/
+.file-wrapper {
+    /*position: fixed;
+     top: 0px;
+     left: 0px;
+     height: 100%;
+     width: 100%;
+     overflow-y: scroll;
+     overflow-x: hidden;*/
+    background: #cbcacb;
+    /*z-index: 9;
+     padding-top: 54px;*/
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: none;
+}
+.form-block {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0px 2px 1px 0px #bcbcbc;
+    -moz-box-shadow: 0px 2px 1px 0px #bcbcbc;
+    -webkit-box-shadow: 0px 2px 1px 0px #bcbcbc;
+}
+
+.form-block .input-group {
+    height: 32px;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.form-block .form-label {
+    color: #111;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 20px;
+    padding-bottom: 5px;
+}
+
+.form-block .input-group input {
+    height: 28px;
+    width: 100%;
+    float: left;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    background: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid rgb(228, 228, 228);
+    -webkit-appearance: none;
+}
+
+.form-block .input-group span {
+    float: left;
+    width: 30px;
+    height: 28px;
+    line-height: 26px;
+    padding: 0px 5px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: rgb(228, 228, 228);
+}
+
+.form-block textarea {
+    height: 50px;
+    width: 100%;
+    padding: 0px 5px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid rgb(228, 228, 228);
+}
+
+.form-select {
+    height: 30px;
+    width: 100%;
+    border: 1px solid rgb(228, 228, 228);
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.form-select.select-tags {
+    min-height: 30px;
+    height: auto;
+}
+.form-block select {
+    border: 0px;
+    height: 28px;
+    width: 100%;
+    background: #fff;
+}
+
+.form-select .select-btn {
+    width: 30px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.form-block.block-check {
+    background: none;
+    padding: 0px;
+    box-shadow: none;
+}
+
+.form-block .input-check {
+    display: block;
+    clear: both;
+    line-height: 20px;
+}
+
+.form-block .input-check input {
+    opacity: 0;
+    margin-right: 5px;
+    position: absolute;
+}
+
+.form-block .input-check label {
+    position: relative;
+    padding-left: 30px;
+}
+.form-block .input-check label:before {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 1px solid #000;
+    position: absolute;
+    text-align: center;
+    line-height: 15px;
+    left: 0px;
+    top: 0px;
+    content: "";
+}
+.form-block .input-check input:checked + label:before {
+    background: #3e94f1;
+    border: 1px solid #3e94f1;
+    color: #fff;
+    font-family: 'FontAwesome';
+    content: '\f00c';
+}
+/* copied from assetmobile style.css */
+
+::-webkit-input-placeholder {
+    font-style: italic;
+    color: #C1C1C1;
+}
+:-moz-placeholder {
+    font-style: italic;
+    color: #C1C1C1;
+}
+::-moz-placeholder {
+    font-style: italic;
+    color: #C1C1C1;
+}
+:-ms-input-placeholder {
+    font-style: italic;
+    color: #C1C1C1;
+}
+
+.form-block .input-group input {
+    height: 33px;
+}
+.form-block .form-label {
+    font-size: 16px;
+    white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.form-block .input-group input.inline-input {
+    width: 70%;
+}
+.form-block .input-check label {
+    padding-left: 25px;
+    font-size: 14px;
+}
+.form-block .input-check label::before {
+    border: 3px solid #000;
+    height: 13px;
+    width: 13px;
+}
+.inline-button {
+    background-color: #3F51B5;
+    border: medium none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    top: 0;
+    margin-left: 5px;
+    padding: 4px 0;
+    width: 27%;
+    border-radius: 5px 5px 5px 5px;
+    float:right;
+    display:block;
+}
+
+/* for html mail template */
+.html-form-content {
+    overflow: hidden;
+}
+.static-height {
+    /*height: 250px;*/
+}
+@media screen and (min-width: 768px) {
+	.newwidth{
+		width:30%;
+		left:35%;
+		height:300px;
+		top:10px;
+	}
+	.newthumbimage{
+		width:100%;
+		height:250px;
+	}
+}
+@media screen and (max-width: 600px) {
+    .html-form-content > div {
+        transform: scale(0.8);
+        transform-origin: 50% 0;
+    }
+    .html-form-content div {
+        margin: 0 !important;
+    }
+    
+    .html-form-content img {
+        width: 100% !important;
+    }
+    .static-height {
+        height: 250px;
+    }
+    .html-form-content.noscale > div {
+        transform: none;
+        transform-origin: 0;
+    }
+}
+
+.form-block-updated {
+    background-color: white;
+    -webkit-animation-name: templateupdated; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+    animation-name: templateupdated;
+    animation-duration: 4s;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes templateupdated {
+    0%   {background-color: #DCEA46;}
+    25%  {background-color: #E8F279;}
+    50%  {background-color: #F6FCBA;}
+    100% {background-color: #FCFFE5;}
+}
+
+/* Standard syntax */
+@keyframes templateupdated {
+    0%   {background-color: #DCEA46;}
+    25%  {background-color: #E8F279;}
+    50%  {background-color: #F6FCBA;}
+    100% {background-color: #FCFFE5;}
+}
+/* for html mail template */

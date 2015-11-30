@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>Friends</title>
+            <meta name="description" content="">
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+        		
+                    <script src="../../jquery/jquery-1.9.1.min.js"></script>
+                    <!--constants Js -->
+                    <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+                    <script src="js/RxBook/restHandler.js"></script>
+                    <script src="js/RxBook/ajaxHandler.js"></script>
+                    <script src="js/RxBook/jquery.form.js"></script>
+                    <script src="js/RxBook/jquery.nicescroll.min.js" type="text/javascript" charset="utf-8"></script>
+                    <script src="js/RxBook/Services.js" type="text/javascript" charset="utf-8"></script>
+                    <script src="js/RxBook/rxBookInit.js"></script>
+                    <script src="js/RxBook/autolink.js" type="text/javascript" charset="utf-8"></script>
+                    <script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+                    
+                    
+                    <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+
+                    <script src="js/RxBook/mobile.js" type="text/javascript" charset="utf-8"></script>
+                    <script src="js/RxBook/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
+                    <link href="css/RxBook/font-awesome/font-awesome.css" rel="stylesheet" />
+
+                    <link rel="stylesheet" href="css/RxBook/mobile.css" type="text/css" media="screen" charset="utf-8" />
+                    <link rel="stylesheet" href="css/RxBook/tab.css" type="text/css" media="screen" charset="utf-8"/>
+                    <link rel="stylesheet" href="../online/footer.css" />
+
+    </head>
+    
+    <body id="mainBody">
+        <div id="page">
+            <div id="main">
+                <header>
+                    <div class="side-menu left" style="display:none;"><a href="LeftPanel.html" title="" class="fa fa-bars fa-ellipsis-v"></a></div>
+                    <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                    <ul class="header-menu">
+                        <li id="helpanytime"><a class="fa fa-question-circle"></a></li>
+	                    <li id="pop-home" ><a class="fa fa-home"></a></li>
+	                    <li id="Notificationbell"><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                        <!-- <li>
+                            <a href="#" title="menu" class="fa fa-user"></a>
+                            <span id="notf-count"></span>
+                        </li> -->
+                        <li>
+                            <a href="RightPanel.Friends.html" title="menu" class="fa fa-weixin"></a>
+                            <span id="msg-count"></span>
+                        </li>
+                        <li id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li> 
+                        <!--<li><a href="#" title="menu" id="pop-settings" class="fa fa-gear"></a></li>-->
+                    </ul>
+                </header>
+                <!--content-->
+                <div id="content">
+                    <div class="search-friend friend-new" style="display: none;">
+                        <input class="search-text" type="text" value="" placeholder="Search by name" />
+                        <span class="search-actn fa fa-search"> </span>
+                        <span class="search-clear fa fa-remove"></span>
+                    </div>
+                    <div class="search-view friend-detail">
+                        <ul></ul>
+                    </div>
+                </div>
+                <!-- end of content-->
+            </div>
+            
+            <div class="loading"><div class="img"></div></div>
+        </div>
+<script src="js/RxBook/mUserSearch.js"></script>
+
+<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+                      footerdiv($('body'));
+                      //rxBookInit.defaults.userId = @Html.Raw(Json.Encode(ViewBag.UserId));
+                      rxBookInit.defaults.userId = rxBookInit.parse('userId');
+                        Services.defaults.companyId =  window.localStorage.getItem('companyId');
+						Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+                      rxBookInit.enableCurUserInfo(function() {
+                                                   friends.init(); app.init();
+                                                   $('.side.left ul li').removeClass('active');
+                                                   $('.side.left ul li.friend').addClass('active');
+                                                   }, function(e){
+                                                   //alert(e.message)
+                                                   });
+                      fnBindCss();
+                      $('.bookshelf').bind('click',function(){
+                                           eLearnUser = window.localStorage.getItem('user');
+                                           window.location.href = '../eLearningOnline.html?currentUser=' + encodeURIComponent(eLearnUser);
+                                           });
+                      $('.profileName').bind('click', function(){
+                                             window.location.href = 'UserProfile.Mobile.html';
+                                             });
+                      $('#Notificationbell').bind('click',function(){
+              			window.location.href = "../notificationhub/Notificationhub.html";
+              		  });
+                      });
+                      
+                      function fnBindCss() {
+                          var page = window.location.pathname;
+                          page = (page.charAt(page.length - 1) == '/' ? page.substr(0, page.length - 1) : page);
+                          
+                          if (page == "/RxBook") {
+                              $("#mainBody").addClass("page-home")
+                          }
+                          else {
+                              if ($("#mainBody").hasClass("page-home")) {
+                                  $("#mainBody").removeClass("page-home")
+                              }
+                          }
+                      }
+</script>
+    </body>
+</html>

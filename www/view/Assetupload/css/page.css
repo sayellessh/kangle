@@ -1,0 +1,55 @@
+/** Page wise - index **/
+.upload-block {
+	padding: 20px 30px;
+	border-bottom: 1px solid #F2F0F0;
+}
+
+.filter-block {
+	padding: 0px 30px 20px;
+	border-bottom: 1px solid #F2F0F0;
+}
+
+.filter-block .au-btn {
+	margin-bottom: 5px;
+}
+
+.block-title {
+	font-size: 18px;
+	line-height: 28px;
+	color: #000;
+	padding: 10px 0px 10px 10px;
+}
+
+/** Asset list pages **/
+.list-cont {
+	padding: 10px 7px 10px;
+}
+.list-cont.show-result {
+    padding-top: 60px;
+}
+.list-cont.show-result .list-result {
+    display: block;
+}
+
+/** File properties **/
+.prop-cont {
+	padding: 10px;
+}
+
+.prop-cont .select-note {
+	font-style: italic;
+	font-size: 12px;
+	padding-top: 5px;
+	color: #b2b2b2;
+}
+.select2-container {
+    width: auto !important;
+    display: block;
+}
+.form-select.select-tags {
+    border: 0px;
+}
+.select2-container--default .select2-selection--multiple {
+    border-radius: 0px;
+    border:1px solid rgb(228, 228, 228);
+}

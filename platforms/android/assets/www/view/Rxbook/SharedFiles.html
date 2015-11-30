@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Kangle</title>
+	<link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<link rel="stylesheet" href="css/RxBook/font-awesome/font-awesome.css" />
+	<link media="screen" rel="stylesheet" href="../online/ArrowPopup.css" />
+	<link media="screen" type="text/css" href="css/RxBook/mobile.css" rel="stylesheet">
+	<link media="screen" type="text/css" href="css/RxBook/tab.css" rel="stylesheet">
+	<link rel="stylesheet" href="../online/footer.css" />
+	
+	<script src="../../cordova.js"></script>
+	<script src="../../jquery/jquery-1.9.1.min.js"></script>
+	<!--constants Js -->
+	<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+	<script src="js/RxBook/MobileServices.Web-1.2.5.js" ></script>
+	<script src="js/RxBook/restHandler.js" ></script>
+	<script src="js/RxBook/ajaxHandler.js" ></script>
+	<script src="js/RxBook/jquery.form.js"></script>
+	<script charset="utf-8" type="text/javascript" src="js/RxBook/jquery.nicescroll.min.js"></script>
+	<script charset="utf-8" type="text/javascript" src="js/RxBook/Services.js"></script>
+	<script src="js/RxBook/rxBookInit.js"></script>
+	<script charset="utf-8" type="text/javascript" src="js/RxBook/autolink.js"></script>
+	<script src="../online/js/ArrowPopup.js" charset="utf-8" type="text/javascript"></script>
+	<script charset="utf-8" type="text/javascript" src="js/RxBook/mobile.js" /></script>
+	<script src="../online/js/elCommon.js"></script>
+	<script src="../online/js/AjaxGlobalHandler.js"></script>
+	<script src="js/RxBook/mChat.js"></script>
+	<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+	</head>
+	<style type="text/css">
+    .dvDocSharedHeader {
+        padding: 10px;
+        background-color: #304FFE;
+    }
+    .dvDocSharedHeader .heading {
+        color: white;
+    }
+    .dvDocSharedBody {
+        background-color: #F2F1F1;
+        padding-right: 40px;
+        padding-left: 10px;
+        max-width: 300px;
+        margin: 0px auto;
+        position: relative;
+    }
+    .dvDocSearch {
+        width: 92%;
+        height: 42px;
+        position: relative;
+        padding-top: 7px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .dvDocSearch input {
+        font-size: 12px;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    .dvDocFilter {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        text-align: right;
+        height: 34px;
+    }
+    .dvFilterOptions {
+        height: 22px;
+        display: none;
+    }
+    .dvDocSearch input {
+        padding: 5px;
+        width: 100%;
+        border: 1px solid #dedcdc;
+        background-color:#fff;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    .dvDocSearch input:-moz-placeholder,
+    .dvDocSearch input::-moz-placeholder,
+    .dvDocSearch input::-webkit-input-placeholder,
+    .dvDocSearch input:-webkit-placeholder,
+    .dvDocSearch input:-ms-input-placeholder { 
+        font-style: italic;      
+    }
+    .dvDocSearch span {
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        top: 6px;
+        font-size: 18px;
+        padding: 4px;
+        color: #727272;
+        margin-left: -35px;
+    }
+    .dvDocFilter span {
+        padding: 0px 10px;
+        cursor: pointer;
+    }
+    
+    .dvDocSearchResult {
+        padding-top: 10px;
+        overflow: auto;
+        width: 100%;
+        font-family: "OpenSansRegular", Arial, Helvetica, sans-serif;
+    }
+
+    /* start thumbnail view */
+    .docsThumbnailView .dvDocSearchElement.docListHeading {
+        display: none;
+    }
+    .docsThumbnailView .dvDocSearchElement {
+        padding-top: 5px;
+        height: 60px;
+        padding-right: 40px;
+        position: relative;
+        z-index:1;
+    }
+    .docsThumbnailView .dvDocSearchThumb {
+        float: left;
+        width: 50px;
+        height: 50px;
+    }
+    .docsThumbnailView .dvDocSearchThumb img {
+        width: 50px;
+        height: 50px;
+    }
+    .docsThumbnailView .dvDocSearchElement p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 16px;
+        padding-left: 10px;
+    }
+    .docsThumbnailView .dvDocSearchElement .title {
+        font-weight: bold;
+        font-size: 13px;
+        line-height: 18px;
+    }
+    .docsThumbnailView .title .fa.fa-file {
+        display: none;
+    }
+    .docsThumbnailView .docType {
+        display: none;
+    }
+    .docsThumbnailView .dvDocSearchElement .dateTime,
+    .docsThumbnailView .dvDocSearchElement .userName {
+        font-size: 11px;
+        color: #757575;
+    }
+
+    /* start list view */
+    .docsListView .dvDocSearchElement.docListHeading {
+        background: linear-gradient(#fefefe, #E5E4E3) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        display: block;
+    }
+    .docsListView .dvDocSearchElement.docListHeading .title .fa.fa-file {
+        display: none;
+    }
+    .docsListView .dvDocSearchElement {
+        float: left;
+        width: 100%;
+        padding: 3px;
+    }
+    .docsListView .dvDocSearchThumb {
+        display: none;
+    }
+    .docsListView .dvDocSearchThumb img {
+        display: none;
+    }
+    .docsListView .dvDocSearchElement p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-left: 10px;
+        float: left;
+    }
+    .docsListView .dvDocSearchElement .title {
+        font-weight: bold;
+        width: 365px;
+    }
+    .docsListView .title .fa {
+        padding-right: 5px;
+        color: #333;
+    }
+    .docsListView .title .fa.fa-file {
+        display: inline-block;
+        padding: 0px 10px;
+    }
+    .docsListView .docType {
+        display: block;
+        width: 100px;
+    }
+    document-type {
+        text-transform: capitalize;
+    }
+    .docsListView .dvDocSearchElement .dateTime,
+    .docsListView .dvDocSearchElement .userName {
+        color: #757575;
+        width: 135px;
+    }
+    .userName {
+        text-transform:capitalize;  
+    }
+</style>
+</head>
+<body id="mainBody">
+	<div id="page">
+		<div id="main">
+			<header>
+				<div class="side-menu left" style="display:none"><a href="LeftPanel.html" title="" class="fa fa-bars fa-ellipsis-v"></a></div>
+				<div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+				<ul class="header-menu">
+					<li><a class="fa fa-question-circle"></a></li>
+                    <li id="pop-home" ><a class="fa fa-home"></a></li>
+                    <li id="Notificationbell"><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+					<li><a href="#" title="menu" class="fa fa-user"></a><span id="notf-count"></span></li>
+					<li><a href="RightPanel.Friends.html" title="menu" class="fa fa-weixin"></a><span id="msg-count"></span></li>
+					<li id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+				</ul>
+			</header>
+
+		<!-- Content -->
+			<div id="content">
+  
+				<div class="dvDocSharedBody">
+				<div class="click_back fa fa-chevron-left" style="font-size: 20px; width: 20px; height: 20px; position: absolute; padding-top: 14px;"></div>
+					<div class="dvDocSearch">
+						<input type="text" style="" placeholder="Search files(Type file name to search)">
+						<span class="fa fa-search"></span>
+					</div>
+					<div class="dvDocFilter">
+						<span class="fa fa-filter" style="font-size: 20px; line-height: 38px;"></span>
+					</div>
+
+					<div class="dvFilterOptions">
+						<label><input type="checkbox" name="file-type" value="DOCUMENT"/>Document</label>
+						<label><input type="checkbox" name="file-type" value="IMAGE"/>Image</label>
+						<label><input type="checkbox" name="file-type" value="VIDEO"/>Video</label>
+						<label><input type="checkbox" name="file-type" value="AUDIO"/>Audio</label>
+					</div>
+    
+				</div>
+    
+				<div class="dvDocSearchResult docsThumbnailView"></div>
+
+			</div>
+
+			<!-- content end -->
+		</div>
+		<div class="loading" style="display:none;"><div class="img"></div>
+		</div>
+	</div>
+
+<script>
+    Services.defaults.companyId = window.localStorage.getItem('companyId');
+    Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+    rxBookInit.defaults.userId = window.localStorage.getItem('userId');
+    var topicId = rxBookInit.parse('topicId');
+    
+    $(document).ready(function(){
+     clientLogoURL_g = window.localStorage.getItem("companyLogoUrl");
+     $('.logo a').css({'background-image':'url('+clientLogoURL_g+')',
+				        'background-position': '0% 50%',
+				        'background-repeat': 'no-repeat',
+				        'background-size': '100%'});
+        
+        rxBookInit.enableCurUserInfo(function(){
+            app.init();				
+            chat.topicId = topicId;
+            chat.showFileShared();
+            fnBindCss();
+        },function(){});
+        
+        $('.click_back').bind('click',function() {
+        	window.location.href = 'Messages.Mobile.html?topicId=' + topicId ;
+        });
+        $('#Notificationbell').bind('click',function(){
+			window.location.href = "../notificationhub/Notificationhub.html";
+		});
+    });
+    
+   
+    
+    function fnBindCss() {
+        var page = window.location.pathname;
+        page = (page.charAt(page.length - 1) == '/' ? page.substr(0, page.length - 1) : page);
+
+        if (page == "/RxBook") {
+            $("#mainBody").addClass("page-home")
+        }
+        else {
+            if ($("#mainBody").hasClass("page-home")) {
+                $("#mainBody").removeClass("page-home")
+            }
+        }
+    }   
+</script>
+</body>
+</html>		

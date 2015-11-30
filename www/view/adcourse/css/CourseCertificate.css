@@ -1,0 +1,109 @@
+﻿
+.certificate-wrapper * {
+    font-family: "Times New Roman";
+}
+.certificate-wrapper {
+    margin: 0 auto;
+    width: 960px;
+}
+.certificate-container {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-image: linear-gradient(#ffffff, #fff, #dde4f4, #cdd9ef);
+    background-repeat: repeat;
+    background-size: auto auto;
+    border: 1px solid #515151;
+    color: #1e2b1b;
+    margin: 15px;
+    text-align: center;
+}
+.certificate-container {
+    margin-bottom: 30px;
+}
+.certificate-company-logo img {
+    border: 1px solid #cdd9ef;
+    box-shadow: 1px 1px 3px 0 #cdd9ef;
+    height: 100px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    width: 200px;
+}
+.certificate-company-name {
+    font-family: "calibri";
+    font-size: 25px;
+    margin-right: 10px;
+    padding: 15px 0;
+    text-align: right;
+}
+.certificate-company-title {
+    background-color: #719ac6;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    padding: 10px;
+}
+.certificate-italic {
+    font-size: 25px;
+    font-style: italic;
+}
+.certificate-start {
+    line-height: 55px;
+    margin-top: 30px;
+    padding: 10px;
+}
+b, .certificate-dynamic {
+    border-bottom: 1px solid #719ac6;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px;
+    padding-bottom: 5px;
+}
+.certificate-end {
+    font-size: 25px;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+.a-btn {
+    background: linear-gradient(#026cd0, #0057aa) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 1px 0 1px 0 #80b5f7;
+    color: #fff;
+    font-family: Arial;
+    margin-left: 20px;
+    padding: 4px 18px;
+    text-decoration: none;
+}
+.a-btn:hover {
+    color: white;
+    text-decoration: none;
+}
+.stamp {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 204px auto;
+    border-radius: 5px;
+    height: 153px;
+    margin-left: 25px;
+    margin-top: 295px;
+    position: absolute;
+    transform: rotate(-20deg);
+    width: 200px;
+}
+@media print {
+.certificate-container {
+    margin: 0;
+}
+.footer, #headersection, #buttonsDiv {
+    display: none;
+}
+#dvcertificate {
+    display: block;
+    width: 900px;
+}
+.certificate-company-title {
+    background-color: #719ac6;
+}
+}

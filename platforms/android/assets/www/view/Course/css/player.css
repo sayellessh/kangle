@@ -1,0 +1,210 @@
+/*** IOS PLayer ***/
+.page-player .container.player_container {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    padding: 0px;
+    z-index: 9998;
+}
+
+.page-player .panel {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 96%;
+    /*bottom: 110px;*/
+    background-color: white;
+}
+
+.page-player .tabs-nav {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    list-style: none;
+    border-bottom: 1px solid #bbb;
+    z-index: 9999;
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,242,242,1)), color-stop(100%, rgba(233,233,233,1)));
+    background: -webkit-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -o-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -ms-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: linear-gradient(to right, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e9e9e9', GradientType=1 );
+}
+
+.page-player .tabs-stage {
+    border-top: 0 none;
+    box-sizing: border-box;
+    clear: both;
+    margin-bottom: 20px;
+    position: relative;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.page-player .tray {
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(242,242,242,1)), color-stop(100%, rgba(233,233,233,1)));
+    background: -webkit-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -o-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: -ms-linear-gradient(left, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    background: linear-gradient(to right, rgba(242,242,242,1) 0%, rgba(233,233,233,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e9e9e9', GradientType=1 );
+    border-top: 1px solid #bbb;
+    bottom: 0;
+    clear: both;
+    height: 90px;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.tabs-cont#tab-1 {
+    text-align: center;
+}
+
+.asset_slider {
+    float: left;
+    margin-left:90px;
+}
+    .asset_slider li {
+        width: 75px;
+        list-style: none;
+    }
+
+        .asset_slider li img {
+            width: 74px;
+            cursor: pointer;
+        }
+
+.tray .copy_right {
+    line-height: 14px;
+}
+
+.copy_right {
+    bottom: 0;
+    box-sizing: border-box;
+    color: #474747;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 5px 0 0;
+    padding-right: 10px !important;
+    position: fixed;
+    text-align: right;
+    width: 100%;
+}
+
+.item_div {
+    padding-top: 8px;
+}
+
+.tray .toggle-tray:before {
+    background-color: #888;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-bottom: 7px;
+    width: 34px;
+}
+
+.tray .toggle-tray {
+    background: none repeat scroll 0 0 #e9e9e9;
+    border-color: #888;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    display: inline-block;
+    height: 14px;
+    left: 50%;
+    margin-left: -12px;
+    position: absolute;
+    top: -16px;
+    width: 34px;
+}
+
+div.asset_action {
+    width: 75px;
+    float: left;
+    padding: 30px 0px;
+    /*padding-top: 5px;*/
+}
+
+    div.asset_action #player_back,
+    div.asset_action #tab_flip {
+        margin: 2px auto;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+
+    div.asset_action #tab_flip {
+        margin-top: 10px;
+        background: url('../../online/iosplayer/flip.png') no-repeat center center;
+        text-indent: -99999px;
+    }
+
+    div.asset_action #player_back {
+        background: url('../../online/iosplayer/close_player.png') no-repeat center center;
+    }
+
+.likeOrDislikeText {
+    clear: both;
+    font: 14px/34px "robotoregular", Arial, Helvetica, sans-serif;
+    color: #353535;
+    padding: 10px;
+}
+
+.like_sec {
+    float: right;
+    margin: 10px;
+    font-size: 25px;
+}
+.dislike_sec {
+    float: right;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.comment-success {
+    clear: both;
+    padding-left: 12%;
+    font: 14px/32px "robotolight", Arial, Helvetica, sans-serif;
+}
+
+
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: "";
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+#video {
+    display: none;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    div.asset_action {
+        width: 45px;
+    }
+}

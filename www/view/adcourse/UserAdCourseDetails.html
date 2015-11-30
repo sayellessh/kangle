@@ -1,0 +1,161 @@
+
+<html>
+    <head>
+    <title>Kangle</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    
+    <link href="../online/footer.css" rel="stylesheet" />
+    <link href="../online/ArrowPopup.css" rel="stylesheet" />
+    <link href="../online/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Rxbook/css/RxBook/bxslider/jquery.bxslider.css" rel="stylesheet" />
+    <link href="../Course/css/player.css" rel="stylesheet" />
+    <link href="css/UserAdCourseDetails.css" rel="stylesheet" />
+    <link href="css/HeaderLayoutCommon.css" rel="stylesheet" />
+    
+    <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../online/js/pgwbrowser.min.js"></script>
+
+    <script type="text/javascript" src="../online/js/constants.js"></script>
+    
+    <script src="../Rxbook/js/RxBook/restHandler.js"></script>
+    <script type="text/javascript" src="../eLearningAPP.js"></script>
+    <script src="../Rxbook/js/RxBook/Services.js"></script>
+    <script src="js/AdCourse_Service.js"></script>
+    <script src="../Rxbook/js/RxBook/rxBookInit.js"></script>
+    <script src="../Rxbook/js/RxBook/ajaxHandler.js"></script>
+    <script src="../online/js/ArrowPopup.js"></script>
+    
+    <!-- settings -->
+    <script src="js/adcourseSettings.js"></script>
+    
+    <script src="../online/js/AjaxGlobalHandler.js"></script>
+    
+    <script src="js/jquery.highlight-4.closure.js"></script>
+    <script src="../Course/bxslider/jquery.bxslider.min.js"></script>
+    <script src="../Course/js/course_player.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../online/js/kaHeader.js"></script>
+    <script src="js/UserAdCourseDetails.js"></script>
+    <script src="../online/js/elCommon.js"></script>
+
+<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+	<!-- helper -->
+        <script type="text/javascript" src="../../helper/Helper.js"></script>
+        <link rel="stylesheet" href="../../helper/Helper.css" />
+        
+    <style>
+        .item_div {
+            margin: 0px;
+            padding-top: 0 !important;
+        }
+        #body-home-arrow-div.arrow-wrapper{
+            z-index: 99999;
+        }
+        #body-settings-arrow-div.arrow-wrapper{
+            z-index: 99999;
+        }
+    </style>
+    </head>
+    
+    <body>
+    <div id="body">
+        <header>
+			<div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+			<ul class="header-menu">
+				<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                <li class="pull-right newfontsize" id="Notificationbell" ><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                <li class="pull-right newfontsize"><a class="fa fa-home" id="" style="" href="../homePage.html"></a></li>
+				<li class="pull-right newfontsize" id="helpanytime" ><a class="fa fa-question-circle"></a></li>
+				<!-- <li class="menu-asset"><a href="#" title="Asset Library" class="fa fa-book"></a></li>
+				<li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li> -->
+			</ul>
+		</header>
+        <div class="sub-wrapper">
+            <div class="k-logo">
+	            <div class="expand"></div>
+	            <!-- <img style="height: 38px; margin-left: 5px" src="../online/images/Kanglelogo.png"> -->
+            </div>
+        </div>
+        <div class="wrapper">
+            
+            <!-- UserAdcourseDetails Start-->
+            <div class="pushmenu pushmenu-left">
+                <div id="li-dvUserName">Loading Details...</div>
+                <div class="upper-menu-sec">
+                    <ul>
+                    <li class="active" id="tabCategories">Categories</li>
+                    <li id="tabTags">Tags</li>
+                    </ul>
+                </div>
+                <div id="categories" style="display: block;" class="bottom-menu-sec">
+                    <ul></ul>
+                </div>
+                <div id="tags" style="display: none;" class="bottom-menu-sec">
+                    <ul></ul>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="main">
+                    <div class="content">
+                        <h3>Loading...</h3>
+                        <div class="materials" id="courseDetailsList"></div>
+                    </div>
+                <!-- END END content -->
+                </div>
+            <!-- END main -->
+            </div>
+            <!-- END container -->
+            
+            <div class="wrapper pushmenu-push"></div>
+        </div>
+    </div>
+    
+    <script>
+    $(document).ready(function () {
+        var userName_g = "";
+        var profilePic_g = "";
+        Services.defaults.userId = window.localStorage.getItem('userId');
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        
+        /*common for adcourse*/
+        footerdiv($('body'));
+        setting.init();
+        var helpdiv = window.localStorage.getItem("adcoursehelp");
+    	if(helpdiv == null || helpdiv == ''){
+    		assetHelp.showHelpText();
+    		window.localStorage.setItem("adcoursehelp",1);
+    	}
+        companyLogo_div();
+        kaHeader.startCommonThread();
+        
+        insertUserTrack(PAGE_NAMES.advancedCourse, function(d) { }, function(e) { });
+                      
+        
+        rxBookInit.enableCurUserInfo(function (data) {
+         if (data != null) { //&& data.length > 0) {
+             var userInfo = data[0];
+             userCourseDetails.init();
+             userName_g = userInfo.Employee_Name.toProperCase();
+         
+             if (userInfo.Profile_Photo_BLOB_URL != null && userInfo.Profile_Photo_BLOB_URL != '')
+             profilePic_g = userInfo.Profile_Photo_BLOB_URL;
+             setLeftSecUserName('li-dvUserName', userName_g, profilePic_g);
+         }
+        }, false);
+        $('#helpanytime').bind('click',function() {
+			assetHelp.showHelpText();
+        });
+        $('#Notificationbell').bind('click',function(){
+			window.location.href = "../notificationhub/Notificationhub.html";
+		});
+    });
+    </script>
+    </body>
+</html>
+

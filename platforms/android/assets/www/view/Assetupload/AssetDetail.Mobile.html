@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+        
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+        
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+		
+		<style type="text/css">
+			body {
+				background: #fff;
+			}
+		</style>
+	</head>
+    <body>
+		<div class="wrapper">
+			<header></header>
+			<div class="content">
+				<div class="asset-detail">
+					<div class="asset-thumb">
+						<img id="asset-url" src="" alt="" />
+						<div class="asset-details">
+							<div class="detail-left">
+								<div class="detail-type"><img src="" alt="" /></div>
+								<div class="detail-name">
+									<h3></h3>
+									<p></p>
+								</div>
+							</div>
+							<div class="detail-right">
+						
+							</div>
+						</div>
+					</div>
+					<div class="detail-content">
+						<div class="detail-propt">
+							<div class="detail-size">
+								<span class="size-span asset-size"></span>
+							</div>
+							<div class="detail-name">
+								<ul>
+									<li class="asset-upload-name"></li>
+									<li class="asset-upload-date"></li>
+								</ul>
+							</div>
+						</div>
+						<h2>File Description</h2>
+						<div class="detail-desc">
+							<p></p>
+						</div>
+						<h2>Tags</h2>
+						<ul class="asset-tags"></ul>
+						<h2 class="show-assign" style="background: #fff;">List of users who can view this asset</h2>
+						<div style="background: #fff;" class="show-assign user-list">
+							<div class="user-search">
+								<input type="text" value="" placeholder="search by username" />
+								<span class="fa fa-search"></span>
+							</div>
+							<ul class="list-items list-items-2">
+						
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        <div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>
+<script src="js/asset_detail.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        
+            var href = window.location.href;
+            href = href.substr(href.indexOf('?') + 1, href.length);
+            var nAry = href.split('_');
+            var IsUnassign = nAry[1];
+            var stagingId = nAry[0];
+                      
+        assetDetail.init(userId, stagingId, IsUnassign);
+    });
+</script>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+        
+        <script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+        <!-- constants js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+        
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+
+	</head>
+    <body>
+		<div class="wrapper">
+			<header>
+				<h3>Upload Assets</h3>
+			</header>
+			<div class="content">
+				<div class="upload-block">
+					<a href="UploadAssets.Mobile.html" class="au-btn au-btn-block" title="Upload">
+						<span class="au-btn-inn">
+							<span class="fa fa-cloud-upload"></span>
+							<span class="au-label">Upload Assets</span>
+						</span>
+					</a>
+				</div>
+				<h2 class="block-title">Digital Assets</h2>
+				<div class="filter-block">
+					<a href="InProgressAssets.Mobile.html" class="au-btn au-btn-block" title="in-progress">
+						<span class="au-btn-inn">
+							<span class="fa fa-progress"></span>
+							<span class="au-label">In Progress Assets <b class="au-count">(0)</b></span>
+						</span>
+					</a>
+					<a href="UnAssignedAssets.Mobile.html" class="au-btn au-btn-block" title="unassigned">
+						<span class="au-btn-inn">
+							<span class="fa fa-list"></span>
+							<span class="au-label">Not Yet Shared Assets <b class="au-count">(0)</b></span>
+						</span>
+					</a>
+					<a href="AssignedAssets.Mobile.html" class="au-btn au-btn-block" title="assigned">
+						<span class="au-btn-inn">
+							<span class="fa fa-check-circle"></span>
+							<span class="au-label">Shared Assets <b class="au-count">(0)</b></span>
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="loader-image">
+            <img src="images/loader_new.gif"/>
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var details = JSON.parse(window.localStorage.getItem('user'));
+        var userCode = details.userCode,
+            userId = window.localStorage.getItem('userId');
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+                      
+        var inProgressCount = 0, unAssgCount = 0, assgCount = 0;
+        Services.getAssetsCount(userId, userCode, function (data) {
+            if (data != null && data != undefined) {
+                $('.filter-block a[title="in-progress"] .au-count').text('(' + data.InProgressAssets_Count + ')');
+                $('.filter-block a[title="unassigned"] .au-count').text('(' + data.UnassignedAssets_Count + ')');
+                $('.filter-block a[title="assigned"] .au-count').text('(' + data.AssignedAssets_Count + ')');
+            }
+        }, function () { });
+        
+        var hdrOptions = [
+                { className: 'fa-home' },
+                { className: 'fa-bell' },
+                { className: 'fa-ellipsis-v' }
+        ];
+
+        var hdrEl = new header();
+        hdrEl.hdrElActions = function (index) {
+
+        };
+        hdrEl.onBackClick = function () {
+            window.location.href = '../homePage.html';
+        };
+        hdrEl.createHeaderWithIcons(hdrOptions, 'Upload Assets');
+        $('.wrapper header').replaceWith(hdrEl.el);
+        
+        $('.fa.fa-home').bind('click',function(){
+            window.location.href = '../homePage.html';
+        });
+        $('.fa.fa-bell').bind('click',function(){
+            window.location.href = '../notificationhub/Notificationhub.html';
+        });
+    });
+</script>

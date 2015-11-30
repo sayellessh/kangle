@@ -1,0 +1,99 @@
+<head>
+    <meta charset="utf-8" />
+    <title>Error page</title>
+    <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <link rel="stylesheet" href="online/font-awesome/font-awesome.css" type="text/css" media="screen" />
+    <link href="online/fonts/fonts.css" rel="stylesheet" />
+    <link href="HeaderLayoutCommon.css" rel="stylesheet" />
+    <link href="online/ArrowPopup.css" rel="stylesheet" />
+    <link href="errorpage.css" rel="stylesheet" />
+    <link href="online/footer.css" rel="stylesheet" />
+    
+    <!-- cordova, jquery js -->
+ 
+   <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+   <script src="../jquery/jquery-1.9.1.min.js"></script>
+   <script type="text/javascript" charset="utf-8" src="online/js/constants.js"></script>
+   <script type="text/javascript" src="Rxbook/js/RxBook/restHandler.js"></script>
+   <script type="text/javascript" src="Rxbook/js/RxBook/Services.js"></script>
+   <script type="text/javascript" src="online/js/ArrowPopup.js"></script>
+   <script type="text/javascript" src="online/js/elCommon.js"></script>
+   <script type="text/javascript" src="eLearningAPP.js"></script>
+   <script type="text/javascript" src="eLearningOfflineAPP.js"></script>
+   <script type="text/javascript" src="Rxbook/js/RxBook/rxBookInit.js"></script>
+   <!-- <script type="text/javascript" src="errorPage.js"></script> -->
+   <style>
+   		.toast {
+			display: none !important;
+		}
+		.progressPercent{
+			display: none !important;
+		}
+   </style>
+</head>
+<body id="body">
+    <div class="main">
+    	<!-- <div class="bannertop">Change Password</div> -->
+        <div class="subdiv">
+    		<div class="content">	
+    			<div class="labelName">
+    				<span id="symbol" class="fa fa-exclamation-triangle"></span>
+    				<span class="text">Please connect to Internet and retry</span>
+    			</div>
+    		</div>
+    		<span id="retry"><button class="retry" type="submit">Retry</button></span>
+    	</div>
+    </div>
+<script>
+document.addEventListener("deviceready", function() {  
+	function checkNetworkConnection (success, failure) {
+        var file = 'http://' + DOMAIN
+				+ '/Images/Kangle/Knowledge_Evaluation.png';
+		
+		$.ajax({
+			url : file + '?timestamp=' + new Date().getTime(),
+			method : "GET",
+			timeout : 10000,
+			complete : function(data, status) {
+				if (status == 'success' || status == 'abort') {
+					success();
+				} else {
+					failure();
+				}
+			}
+		});
+	}
+	$('.retry').unbind('click').bind('click',function() {
+			checkNetworkConnection(function() {
+				userLocalDAO.get(function(data){
+					var result = userRemoteDAO.login(data.userName, data.password, data.url);
+					if(result == false){
+						alert(kangleaccessrevoked);
+						eLearningUpsyncService.startUpsync(function(isUploadSuccess){
+							trainingRequestUpsyncService.startTrainingRequestUpsyncProcess(eLearningAPP, {}, function(data){
+								trainingRequestLocalDAO.remove();
+								formatDeviceService.deletePhysicalDirectory(function(e) {
+									var user = JSON.parse(window.localStorage.getItem("user"));
+			                    	var pushNotification = window.plugins.pushNotification;
+			                    	pushNotification.unregister(function(success) {
+			                    		window.location.href = 'login.html';
+			                    		alert("Kangle reset successfully, app will now exit.");
+			                    		navigator.app.exitApp();
+			                    	}, function(e) { alert('Unable to delete push notification settings.'); }, {
+			                        	"channelName": user.userName
+			                    	});
+								}, function() {});
+							}, function() {});
+							//	after data uploaded overall progress will be 25%		
+						});  
+					} else {
+						window.location.href = "homePage.html";
+					}
+				},function(){});
+			}, function(data){});	
+	});	
+}, false);
+</script>
+
+</body>
+</html>

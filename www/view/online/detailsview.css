@@ -1,0 +1,130 @@
+
+.tag_ul li.active_div{
+	background-color:#757575;
+	color:#fff;	
+}
+.actions{
+	width:50px;
+	height:100%;
+	position: absolute; 
+	top:0px; 
+	right:-1px; 
+	/*background-color:#a5a5a5;*/
+	background-color:#757575;
+}
+.actions ul li {
+	width: 50px; 
+	height: 40px; 
+	padding-top:10px; 
+	border-bottom:1px solid #fff;
+}
+.actions ul li:last-child {
+    border: none;
+}
+#asset-view{
+	width:50px; 
+	height:32px; 
+	display:inline-block; 
+	background: url('imgs/play.png') 10px 0 no-repeat;
+}
+#asset-download {
+	width:50px; 
+	height:32px; 
+	display:inline-block; 
+	padding:5px; 
+	background: url('imgs/download.png') 13px 0 no-repeat;
+}
+/*online style*/
+.tab {
+	margin-left:5px; padding-top:10px; height:40px; width:100%; padding-bottom:10px;
+}
+.tab .tag_ul {
+	width:100%; 
+	height:32px;
+}
+.tab ul #Details {
+	float:left; 
+	width:32%; 
+	height:25px; 
+	padding-top:10px; 
+	border: 1px solid #000; 
+	text-align:center; 
+	border-radius:3px 0px 0px 3px;
+}
+.tab ul #Discuss {
+	float:left; 
+	width:32%; 
+	height:25px; 
+	padding-top:10px; 
+	border-top: 1px solid #000; 
+	border-bottom: 1px solid #000; 
+	text-align:center;
+}
+.tab ul #Related {
+	float:left; 
+	width:32%; 
+	height:25px; 
+	padding-top:10px; 
+	border: 1px solid #000; 
+	text-align:center; 
+	border-radius:0px 3px 3px 0px;
+}
+.comment_div {
+	display:none;
+}
+.categ-sec{
+	display:none;
+}
+
+/*offline share*/
+.tab_offline {
+	margin-left:0px; 
+	padding-top:10px; 
+	height:40px; 
+	width:100%;
+	padding-bottom:10px;
+}
+.tab_offline .tag_ul {
+	width:100%; 
+	height:40px;
+}
+.tab_offline ul #Details_offline{
+	float:left; 
+	width:49%; 
+	height:26px; 
+	padding-top:8px; 
+	border: 1px solid #000; 
+	text-align:center; 
+	border-radius:3px 0px 0px 3px;
+}
+.tab_offline ul #Discuss_offline{
+	float:left; 
+	width:49%; 
+	height:26px; 
+	padding-top:8px; 
+	border: 1px solid #000;  
+	text-align:center;
+	border-radius:0px 3px 3px 0px;
+}
+.action-right{
+	display:none;
+}
+.asset-view-btn{
+	width: 50px;
+	height: 40px;
+	margin-top: 60px;
+	bottom: 50px;
+	display: inline-block;
+	background: url('imgs/play.png') 10px 0 no-repeat;
+}
+
+.actions #line li{
+	width: 50px;
+	height: 100%;
+	padding-top: 0px;
+	border-bottom:none;
+}
+
+#line{
+	height: 100%;
+}

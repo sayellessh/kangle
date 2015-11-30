@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>MeetingPlayer</title>
+        <!--<meta name="viewport" content="width=device-width" />-->
+		<!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">  -->
+        <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <!-- cordova, jquery js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+    	<!-- <script src="../jquery/jquery-1.9.1.min.js"></script> -->
+        <script src="JS/jquery.min.js"></script>
+        <script src="../Rxbook/js/RxBook/restHandler.js"></script>
+        
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link href="bxslider/jquery.bxslider.css" rel="stylesheet" />
+        <link href="css/bootstrap-datetime.css" rel="stylesheet" />
+        <link href="css/canvas.css" rel="stylesheet" />
+        <link href="css/select2.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="../online/footer.css" rel="stylesheet" />
+        
+        <script type="text/javascript" src="JS/common.js"></script>
+		<script type="text/javascript" src="JS/services.js"></script>
+		<script src="bxslider/jquery.bxslider.min.js" type="text/javascript"></script>
+		<script src="JS/pubnub.min.js" type="text/javascript"></script>
+		<script src="JS/canvas.js" type="text/javascript"></script>
+
+        
+        <!-- need to change -->
+        <!-- <script src="~/Scripts/KA/elCommon.js"></script>
+        <link href="~/Content/footer.css" rel="stylesheet" /> -->
+        
+        <!-- meeting player style-->
+        <style type="text/css">
+     		.col-menu .fa.fa-power-off {
+      	   		border: 0px;
+     		}
+     		.col-menu .fa.fa-play-circle {
+         		border-bottom: 1px solid #555;
+     		}
+ 		</style>
+    </head>
+    <body>
+        <div id="wrapper">
+		    <div id="meeting-block" style="position: relative;">
+			    <div class="col-menu">
+				    <ul>
+					    <!-- <li id="meeting-create"><a title="Create Meeting" href="CreateMeeting.html"><span class="fa fa-plus"></span></a></li> -->
+                        <li id="meeting-lists"><a title="My Meeting" href="MeetingHome.html"><span class="fa fa-list"></span></a></li>
+					    <!-- <li id="meeting-upload"><a title="Upload files" href="UploadFiles.html"><span class="fa fa-upload"></span></a></li> -->
+					    <li id="player-leave" class="active"><a title="Leave chat" href="#"><span class="fa fa-power-off"></span></a></li>
+					    <!-- <li id="player-back"><a title="Back" href="../homePage.html"><span class="fa fa-chevron-circle-left"></span></a></li> -->
+				    </ul>
+			    </div>
+			    <div class="col-content" style="height: 336px;">
+					<!-- content -->
+					<div class="bubble" id="unsub">
+    					<span id="occupancy">0</span>
+    					<span id="unit">online</span>
+					</div>
+					<div class="loaderImg"></div>
+					<div class="canvas-container" id="canvas-container">
+    					<img id="imgDiv" src="" alt="Loading image..." />
+    					<canvas id="drawCanvas" width="400" height="400"></canvas>
+					</div>
+					<section id="colorSwatch" style="position: absolute;">
+    					<input type="radio" name="color" id="color01" data-color="gold" checked>
+    					<label for="color01"></label>
+    					<input type="radio" name="color" id="color02" data-color="darkorange">
+    					<label for="color02"></label>
+    					<input type="radio" name="color" id="color03" data-color="navy">
+    					<label for="color03"></label>
+					    <input type="radio" name="color" id="color04" data-color="yellowgreen">
+					    <label for="color04"></label>
+					    <input type="radio" name="color" id="color05" data-color="firebrick">
+					    <label for="color05"></label>
+					    <input type="radio" name="color" id="color06" data-color="powderblue">
+					    <label for="color06"></label>
+					</section>
+					<div class="slider-container" id="slider-container"></div>
+					<div class="chat-container" id="chat-container">
+    					<p>Welcome<span></span></p>
+    					<span class="close" id="close-btn">X</span>
+    					<ul class="user-list">
+    					</ul>
+    					<div class="chat-list">
+	        				<p>Chat</p>
+	        				<ul id="chat-output" class="list-group">
+	        				</ul>
+							<div class="form-panel">
+	            				<form id="chat-form">
+	                				<div class="form-div">
+	                    				<input type="text" class="chat-input" id="chat-input" />
+	                    				<span class="send-txt">
+	                        				<button type="submit" class="send-btn">Send</button>
+	                    				</span>
+	                				</div>
+	            				</form>
+	        				</div>
+    					</div>
+					</div>
+					<a href="#" class="open-chat"><span class="fa fa-comments"></span></a>
+					<span id="hold-canvas-draw"><span class="fa fa-pencil"></span></span>
+					<span id="reset-attend"><span class="fa fa-refresh"></span></span>
+					<!-- end of content -->
+				</div>
+                <div id="loader-img">
+                    <img src="bxslider/images/loader_new.gif" />
+                </div>
+		    </div>
+		</div>			
+<!-- scripts -->
+<script src="JS/MeetingPlayer.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+            $(document).ready(function () {
+            	footerdiv($('body'));
+                //fnSetFooter($('body'));
+                var userObj = {
+        			UserId: window.localStorage.getItem('userId'),
+        			Company_Id: window.localStorage.getItem('companyId'),
+        			sudDomainName:  window.localStorage.getItem('domainName')
+    			};
+    			common.init(userObj);
+                
+    			function createMeetingAccess() {
+                    Services.createMeetingAccess(common.defaults.userId, function (data) {
+                        if (data == 1) {
+                            $('#meeting-create').show();
+                            $('#meeting-upload').show();
+                        } else {
+                            $('#meeting-create').hide();
+                            $('#meeting-upload').hide();
+                        }
+                    }, function (e) { });
+                }
+                createMeetingAccess();
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>Course Test</title>
+	<meta name="description" content="">
+	<meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+	
+	<link href="../online/font-awesome/font-awesome.css" rel="stylesheet" media="screen"/>
+    <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+	<link href="css/course.css" rel="stylesheet" media="screen"/>
+	<link href="../online/footer.css" rel="stylesheet" />
+	
+	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+	<script type="text/javascript" src="../../jquery/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/json-path.js"></script>
+	<script type="text/javascript" src="../online/js/constants.js"></script>
+	<script type="text/javascript" src="../Rxbook/js/RxBook/restHandler.js"></script>
+	<script type="text/javascript" src="js/ajaxHandler.js"></script>
+	<script type="text/javascript" src="../eLearningAPP.js"></script>
+    <script type="text/javascript" src="../online/js/ArrowPopup.js"></script>
+    
+    <!-- settings -->
+    <script type="text/javascript" src="js/settings.js"></script>
+    
+    <script type="text/javascript" src="../Rxbook/js/RxBook/Services.js"></script>
+    <script type="text/javascript" src="../Rxbook/js/RxBook/mobile.js"></script>
+	<script type="text/javascript" src="js/course_service.js"></script>
+	<style>
+		#page-home-arrow-div.arrow-wrapper{
+            z-index: 99;
+        }
+        #page-settings-arrow-div.arrow-wrapper{
+            z-index: 99;
+        }
+	</style>
+</head>
+<body>
+
+	 <div id="page">
+		<header>
+			<div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+			<ul class="header-menu">
+				<li class="pull-right newfontsize" id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                <li class="pull-right newfontsize" id="" ><a class="fa fa-bell"></a></li>
+                <li class="pull-right newfontsize"><a class="fa fa-home" id="pop-home" style="" href="#"></a></li>
+				<li class="pull-right newfontsize" id="" ><a class="fa fa-question-circle"></a></li>
+				<!-- <li class="menu-asset"><a href="" title="Asset Library" class="fa fa-book"></a></li>
+				<li class="menu-rxbook"><a href="#" title="Messages" class="fa fa-weixin"></a><span class="notf-count" id="messagesCount"></span></li> -->
+			</ul>
+		</header>
+		<div id="content">
+			<input type="hidden" value="" name="hdnPassPercentage" id="hdnPassPercentage"/>
+			<div id="dvTotalQues"></div>
+			<div id="dvResInfo"></div>
+			<div id="question-block">
+				
+			</div>
+		</div>
+	</div>
+	<div class="loading"><div class="img"></div></div>
+	<script type="text/javascript" src="js/course_file.js"></script>
+	<script type="text/javascript" src="js/course_test.js"></script>
+	<script type="text/javascript" src="../online/js/kaHeader.js"></script>
+	<script type="text/javascript">
+		var isAppTesting = true;
+		//if(isAppTesting) {
+		/*	Services.defaults.companyId = 1;
+			Services.defaults.subdomainName = 'swaas.kangle.me';
+			$(document).ready(function(){
+				course_test.init(isAppTesting);
+			});*/
+		//} else {
+		Services.defaults.companyId = window.localStorage.getItem('companyId');
+		Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+		document.addEventListener('deviceready', function(){ 
+			footerdiv($('body'));
+			setting.init();
+			kaHeader.startCommonThread();
+			course_test.init(isAppTesting);
+			
+		}, false);
+
+		document.addEventListener('backbutton', function(){
+			return false;
+		}, false);
+		//}
+	</script>
+</body>
+</html>

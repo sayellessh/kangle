@@ -1,0 +1,16 @@
+@media screen and (min-width: 640px) {
+	.list-items:before,
+	.list-items:after {
+		content: "",
+		display: table;
+	}
+	.list-items:after {
+		clear: both;
+	}
+	
+	.list-items li {
+		width: 48%;
+		margin: 0px 1% 7px;
+		float: left;
+	}
+}

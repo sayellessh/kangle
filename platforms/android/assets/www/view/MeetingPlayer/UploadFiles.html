@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>UploadFiles</title>
+        <!--<meta name="viewport" content="width=device-width" />-->
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">  -->
+        <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <!-- cordova, jquery js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+    	<!-- <script src="../jquery/jquery-1.9.1.min.js"></script> -->
+        
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datetime.css" rel="stylesheet" />
+        <link href="css/select2.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/responsive.css" media="screen" rel="stylesheet"/>
+
+        <script src="JS/jquery.min.js"></script>
+        <script src="JS/restHandler.js"></script>
+        <link rel="stylesheet" href="../online/footer.css" />
+
+        <!-- need to change -->
+        <!-- <script src="~/Scripts/KA/elCommon.js"></script>
+        <link href="~/Content/footer.css" rel="stylesheet" /> -->
+    </head>
+    <body>
+        <div id="wrapper">
+		    <div id="meeting-block" style="position: relative;">
+			    <div class="col-menu">
+				    <ul>
+					    <!-- <li id="meeting-create"><a title="Create Meeting" href="CreateMeeting.html"><span class="fa fa-plus"></span></a></li> -->
+                        <li id="meeting-lists" class="active"><a title="My Meeting" href="MeetingHome.html"><span class="fa fa-list"></span></a></li>
+					    <!-- <li id="meeting-upload"><a title="Upload files" href="UploadFiles.html"><span class="fa fa-upload"></span></a></li> -->
+					    <!--<li id="player-back"><a title="Back" href="../homePage.html"><span class="fa fa-chevron-circle-left"></span></a></li>-->
+				    </ul>
+			    </div>
+			    <div class="col-content" style="height: 336px;">
+							<!-- contents -->
+							<div class="top-logo">
+								<a class="left" href="../homePage.html" title="Home Page"></a>
+								<a class="right" href="../homePage.html" title="Kangle"></a>
+							</div>
+							<h2 class="title">Choose or upload new Materials</h2>
+							<div class="success-msg" id="no-meet">Currently No meetings found. Please create any meeting.</div>
+							<form action="#" class="meeting-form" style="display:none;">
+								<div class="form-row">
+									<label>Meeting Name</label>
+									<div class="form-control">
+										<select name="meeting-name" id="meeting-list">
+										</select>
+									</div>
+								</div>
+								<div class="form-row">
+									<label>Presentation Material</label>
+									<div class="form-control">
+										<!--<label class="form-radio"><input type="radio" class="input-radio" name="material" value="E"/> Choose from earlier meetings</label>-->
+										<!-- <label class="form-radio"><input type="radio" class="input-radio" name="material" value="N"/> Upload new</label> -->
+										<span>To upload meeting material, please use browser version of Kangle</span>
+									</div>
+								</div>
+								<!-- <div class="form-row" id="form-upload">
+									<label>Upload Files</label>
+									<div class="form-control">
+										<input id="file-upload-btn" type="file" value="" name="postedFile"/>
+							            <input type="button" id="upload-btn" value="Upload File" style="display: none;"/>
+							        </div>
+								</div> -->
+							    <div class="form-row" style="min-height:28px;">
+									<label>&nbsp;&nbsp;</label>
+									<div class="form-control">
+										<a href="#" id="show-files" title="Refresh to see the slides">Refresh to see the slides</a>
+							            <div id="process-msg"style="color:#f00; display:none">Material not yet Processed</div>
+							        </div>
+								</div>
+								<div class="form-row" id="form-files">
+									<label>Select Meeting</label>
+									<div class="form-control"></div>
+								</div>
+								<div class="form-row">
+									<label>Choose your slides</label>
+									<div class="form-control">
+										<div class="form-grid" id="select-slides">
+											<div class="form-grid-hdr">
+												<div class="col col-chk"><input type="checkbox" class="input-check"  name="all-slides" value=""/></div>
+												<div class="col col-name">File Name</div>
+											</div>
+											<div class="form-grid-row">
+												<div class="col col-chk"></div>
+												<div class="col col-name">No slides selected</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<label>Selected for this meeting</label>
+									<div class="form-control">
+										<div class="form-grid" id="slides-chosen">
+											<div class="form-grid-hdr">
+												<div class="col col-chk"></div>
+												<div class="col col-name">File Name</div>
+											</div><!--
+											<div class="form-grid-row">
+												<div class="col col-chk"></div>
+												<div class="col col-name">Please choose one or more slides for meeting</div>
+											</div>-->
+										</div>
+									</div>
+								</div>
+								<div class="form-row row-submit">
+									<label> </label>
+									<div class="form-control">
+										<input type="submit" value="Start Meeting" disabled class="create-meeting disabled"/>
+									</div>
+								</div>
+							</form>
+							<!-- end of contents -->
+				</div>
+               <div id="loader-img">
+                   <!--<img src="bxslider/images/bx_loader.gif" />-->
+                   <img src="bxslider/images/loader_new.gif" />
+               </div>
+			</div>
+		</div>
+<!-- scripts begin upload -->
+<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript">
+    
+</script>
+<script type="text/javascript" src="JS/services.js"></script>
+<script type="text/javascript" src="JS/jquery.form.js"></script>
+<script type="text/javascript" src="JS/Meeting.js"></script>
+
+<!-- scripts -->
+<script type="text/javascript">
+            $(document).ready(function () {
+            	var urlLogo = window.localStorage.getItem('companyLogoUrl');
+            	$('.top-logo a.left').css({'background-image': 'url('+urlLogo+')','backgroud-size':'100%'});
+            	footerdiv($('body'));
+                //fnSetFooter($('body'));
+                var userObj = {
+					UserId: window.localStorage.getItem('userId'),
+        			Company_Id: window.localStorage.getItem('companyId'),
+        			sudDomainName:  window.localStorage.getItem('domainName')
+    			};
+    			common.init(userObj);
+                
+    			function createMeetingAccess() {
+                    Services.createMeetingAccess(common.defaults.userId, function (data) {
+                        if (data == 1) {
+                            $('#meeting-create').show();
+                            $('#meeting-upload').show();
+                        } else {
+                            $('#meeting-create').hide();
+                            $('#meeting-upload').hide();
+                        }
+                    }, function (e) { });
+                }
+                createMeetingAccess();
+                $('.col-content').addClass('hidden-scroll');
+  		      	$('#meeting-upload').addClass('active');
+  		      	
+                
+                $('.col-content').addClass('hidden-scroll');
+        		function fitWindow() {				
+        			var hgt = $(window).height() -  40;
+        			$('#meeting-block').height(hgt);
+        			$('.col-content').height($('#meeting-block').height());
+        		}	
+        		fitWindow();
+        		$(window).resize(function(){
+        			fitWindow();
+        		});
+        			
+        		meeting.init();
+            });
+        </script>
+    </body>
+</html>
+
+<!-- end of scripts -->

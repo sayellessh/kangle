@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rxbook</title>
+        <meta name="description" content="">
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    
+        <link href="css/RxBook/font-awesome/font-awesome.css" rel="stylesheet" />
+        <link href="../online/ArrowPopup.css" rel="stylesheet" media="screen" />
+        <link rel="stylesheet" href="css/RxBook/mobile.css" type="text/css" media="screen" charset="utf-8" />
+        <link rel="stylesheet" href="css/RxBook/tab.css" type="text/css" media="screen" charset="utf-8"/>
+        <link rel="stylesheet" href="../online/footer.css" />
+        <!-- helper -->
+    	<link rel="stylesheet" href="../../helper/Helper.css" />
+    </head>
+    
+    <body id="mainBody">
+        <div id="page">
+            <div id="main">
+                <header>
+                    <div class="side-menu left" style="display:none;"><a href="LeftPanel.html" title="" class="fa fa-bars fa-ellipsis-v"></a></div>
+                    <div class="logo"><a href="../homePage.html" title="" class=""></a></div>
+                    <ul class="header-menu">
+                        <li id="helpanytime"><a class="fa fa-question-circle"></a></li>
+                        <li id="pop-home" ><a class="fa fa-home"></a></li>
+                        <li id="Notificationbell"><a class="fa fa-bell"></a><span class="notificationhub-count" style="display:none;"></span></li>
+                        <!-- <li>
+                            <a href="#" title="menu" class="fa fa-user"></a>
+                            <span id="notf-count"></span>
+                        </li> -->
+                        <li>
+                            <a href="RightPanel.Friends.html" title="menu" class="fa fa-weixin"></a>
+                            <span id="msg-count"></span>
+                        </li>
+                        <li id="pop-settings" ><a class="fa fa-ellipsis-v"></a></li>
+                        <!--<li><a href="#" title="menu" id="pop-settings" class="fa fa-gear"></a></li>-->
+                    </ul>
+                </header>
+                <!--content-->
+                <div id="content" class="search-friend">
+                    <!-- Friends Search View -->
+                    <div class="friend-search">
+                        <ul class="tabs">
+                            <li class="active"><a href="#tab-friend" title="Colleagues">Friends</a></li>
+                            <li><a href="#tab-group" title="Colleagues">Groups</a></li>
+                        </ul>
+                        <div class="tabs-cont">
+                            <div class="tabs-item" id="tab-friend">
+                                <div class="search-form">
+                                    <label for="">Search by Employee Name (OR) Region Name</label>
+                                    <div class="search-field">
+                                        <input id="friend-string" type="text" name="friend-name" value=""/>
+                                        <a href="#" class="btn" title="Search">Search</a>
+                                    </div>
+                                </div>
+                                <div class="search-view">
+                                    <ul>
+                                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabs-item" id="tab-group">
+                                <div class="search-form">
+                                    <div class="group-accordance">
+                                        <h2><span class="fa fa-lock"></span> Private Groups <span class="fa fa-chevron-down pull-right"></span><span class="fa fa-chevron-right pull-right"></span></h2>
+                                        <div class="accord-cont">
+                                            <div class="search-field">
+                                                <input class="group-name" type="text" id="private-group" name="private-group" value=""/>
+                                                <a href="#" class="btn" title="Search">Create group</a>
+                                            </div>
+                                            <div class="search-view">
+                                                <div class="green-info">group deleted successfully</div>
+                                                <ul id="private-groups">
+                                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <h2><span class="fa fa-group"></span> Public Groups <span class="fa fa-chevron-down pull-right"></span><span class="fa fa-chevron-right pull-right"></span></h2>
+                                        <div class="accord-cont">
+                                            <div class="search-field">
+                                                <input class="group-name" type="text" id="public-group" name="public-group" value=""/>
+                                                <a href="#" class="btn" title="Search">Create group</a>
+                                            </div>
+                                            <div class="search-view">
+                                                <div class="green-info">group deleted successfully</div>
+                                                <ul id="public-groups">
+                                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="group-friend-list">
+                                    <h2 class="group-friend-header"></h2>
+                                    <div class="search-view">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of content-->
+            </div>
+        </div>
+        
+        <script src="../../cordova.js"></script>
+		<script src="../../jquery/jquery-1.9.1.min.js"></script>
+		<!--constants Js -->
+		<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+		<script src="js/RxBook/restHandler.js"></script>
+		<script src="js/RxBook/ajaxHandler.js"></script>
+		<script src="js/RxBook/jquery.form.js"></script>
+		<script src="js/RxBook/jquery.nicescroll.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/RxBook/Services.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/RxBook/rxBookInit.js"></script>
+		<script src="js/RxBook/autolink.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8" src="../online/js/ArrowPopup.js"></script>
+		<script src="js/RxBook/mobile.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/RxBook/jquery.touchSwipe.min.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!--<script src="js/RxBook/mRxMain.js"></script>-->
+		<script src="js/RxBook/mUserSearch.js" type="text/javascript" charset="utf-8"></script>
+		
+		<!-- Notificationhub -->
+		<script src="../notificationhub/js/NotificationHub.js" type="text/javascript"></script>
+		<!-- helper -->
+        <script type="text/javascript" src="../../helper/Helper.js"></script>
+    
+		<script type="text/javascript">
+			document.addEventListener("deviceready", function() {
+				footerdiv($('body'));
+		        rxBookInit.defaults.userId = rxBookInit.parse('userId');
+				Services.defaults.companyId =  window.localStorage.getItem('companyId');
+				Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+		        rxBookInit.enableCurUserInfo(function(){
+		            app.init();
+		            userSearch.init();
+		        },function(){
+		        	app.bindUserErrorFeed($("#private-groups"), networkProblemError);
+		        	app.bindUserErrorFeed($("#public-groups"), networkProblemError);
+		        	app.bindUserErrorFeed($(".search-view ul"), networkProblemError);
+		        });
+		        fnBindCss();
+		        $('#Notificationbell').bind('click',function(){
+					window.location.href = "../notificationhub/Notificationhub.html";
+				});
+			}, function() { });
+		    
+		    function fnBindCss() {
+		        var page = window.location.pathname;
+		        page = (page.charAt(page.length - 1) == '/' ? page.substr(0, page.length - 1) : page);
+		        
+		        if (page == "/RxBook") {
+		            $("#mainBody").addClass("page-home")
+		        }
+		        else {
+		            if ($("#mainBody").hasClass("page-home")) {
+		                $("#mainBody").removeClass("page-home")
+		            }
+		        }
+		    }
+		</script>
+    </body>
+</html>

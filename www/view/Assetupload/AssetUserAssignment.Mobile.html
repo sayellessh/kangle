@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AssetUpload</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/> 
+		<link rel="apple-touch-icon" href="favicon-114.png" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		
+		<link type="text/css" rel="stylesheet" href="css/font-awesome.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/responsive.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/select2.css" media="screen" />
+		<link type="text/css" rel="stylesheet" href="css/page.css" media="screen" />
+
+		<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+		<!-- constants js -->
+		<script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="../MeetingPlayer/JS/jquery.form.js"></script>
+        <script type="text/javascript" src="js/restHandler.js"></script>
+        <script type="text/javascript" src="js/Services.js"></script>
+        <script type="text/javascript" src="js/select2.js"></script>
+        <script type="text/javascript" src="js/mousehold.js"></script>
+		<script type="text/javascript" src="js/action_popup.js"></script>
+		<script type="text/javascript" src="js/filter.js"></script>
+		<script type="text/javascript" src="js/list.js"></script>
+        <script type="text/javascript" src="js/settings.js"></script>
+        <script type="text/javascript" src="js/header.js"></script>
+		
+		<style type="text/css">
+			.fa-search {
+				border-radius: 0px 25px 25px 0px;
+			}
+			.warn-message {
+				font-size: 15px;
+				margin-top: 10%;
+				line-height: 18px;
+				text-align: center;
+			}
+			.wrapper .list-items {
+				display: none;
+			}
+			.form-block.block-check {
+				position: fixed;
+				bottom: 0px;
+				padding-left: 20px;
+			}
+		</style>
+	</head>
+    <body>
+		<div class="wrapper">
+			<header></header>
+			<div class="content user-list-items">
+				<p class="warn-message">Please click (+) button to add users.</p>
+				<ul class="list-items"></ul>
+			</div>
+			<!-- @if (ViewBag.IsUnassign == "N")
+			{ -->
+				<div class="form-block block-check">
+					<label class="input-check">
+						<input type="checkbox" name="retainuser" id="retain-user" checked/>
+						<label for="retain-user">Retain all the user assignments</label>
+					</label>
+				</div>
+		<!--} -->
+		</div>
+		<div class="wrapper-user">
+			<header></header>
+			<div class="content user-list user-list-items">
+				<ul class="list-items items-user">
+
+				</ul>
+			</div>
+		</div>
+	<div class="loader-image">
+            <img src="images/loader_new.gif" />
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript" src="js/properties.js"></script>
+<script type="text/javascript" src="js/userassign.js"></script>
+<script type="text/javascript" src="js/assign.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var details = JSON.parse(window.localStorage.getItem('user'));
+        var userCode = details.userCode,
+            userId = window.localStorage.getItem('userId'),
+            companyCode = details.companyCode;
+            //stagingId = '@ViewBag.AssetId',
+            //isUnassign = '@ViewBag.IsUnassign';
+
+        Services.defaults.companyId = window.localStorage.getItem('companyId');
+        Services.defaults.userId = userId;
+        Services.defaults.subdomainName = window.localStorage.getItem('domainName');
+        Services.defaults.userCode = userCode;
+        Services.defaults.companyCode = companyCode;
+        Services.defaults.regionCode = details.regionCode;
+                      
+        var href = window.location.href;
+        href = href.substr(href.indexOf('?') + 1, href.length);
+        var nAry = href.split('_');
+        var isUnassign = nAry[1];
+        var stagingId = nAry[0];
+                      
+        userassign.init(userId, isUnassign, stagingId);
+    });
+</script>

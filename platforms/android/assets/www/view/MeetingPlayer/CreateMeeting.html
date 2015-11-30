@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CreateMeeting</title>
+        <!--<meta name="viewport" content="width=device-width" />-->
+        <!-- <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">  -->
+        <meta http-equiv="Content-type" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        
+        <!-- cordova, jquery js -->
+        <script type="text/javascript" charset="utf-8" src="../online/js/constants.js"></script>
+    	<script type="text/javascript" charset="utf-8" src="../../cordova.js"></script>
+    	<!-- <script src="../jquery/jquery-1.9.1.min.js"></script> -->    
+            <script src="JS/jquery.min.js"></script>
+    
+        <link href="css/font-awesome.min.css" rel="stylesheet" />
+        <link href="css/bootstrap-datetime.css" rel="stylesheet" />
+        <link href="css/datetime/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <link href="css/select2.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="../online/footer.css" rel="stylesheet" />
+        <link href="css/responsive.css" media="screen" rel="stylesheet"/>
+        
+        <script src="JS/restHandler.js"></script>
+        
+        
+<script type="text/javascript" src="JS/common.js"></script>
+<script type="text/javascript" src="JS/services.js"></script>
+<script type="text/javascript" src="JS/jquery.validate.min.js"></script>
+<script type="text/javascript" src="JS/select2.js"></script>
+<script type="text/javascript" src="JS/datetime/bootstrap.min.js"></script> 
+<script type="text/javascript" src="JS/datetime/bootstrap-datetimepicker.min.js"></script>  
+
+        <!-- need to change -->
+        <!-- <script src="~/Scripts/KA/elCommon.js"></script> 
+        <link href="~/Content/footer.css" rel="stylesheet" /> -->
+    </head>
+    <body>
+        <div id="wrapper">
+		    <div id="meeting-block" style="position: relative;">
+			    <div class="col-menu">
+				    <ul>
+					    <!-- <li id="meeting-create"><a title="Create Meeting" href="CreateMeeting.html"><span class="fa fa-plus"></span></a></li> -->
+                        <li id="meeting-lists"><a title="My Meeting" href="MeetingHome.html"><span class="fa fa-list"></span></a></li>
+					    <!-- <li id="meeting-upload"><a title="Upload files" href="UploadFiles.html"><span class="fa fa-upload"></span></a></li> -->
+					    <!--<li id="player-back"><a title="Back" href="../homePage.html"><span class="fa fa-chevron-circle-left"></span></a></li> -->
+				    </ul>
+			    </div>
+			    <div class="col-content" style="height: 336px;">
+					<!-- content -->
+					<div class="top-logo">
+						<a class="left" href="../homePage.html" title="Home Page"></a>
+						<a class="right" href="../homePage.html" title="Kangle"></a>
+					</div>
+					<h2 class="title">Create Meeting</h2>
+					<form action="#" id="" class="meeting-form">
+	    				<div class="form-row">
+		    				<label>Name</label>
+		    				<div class="form-control">
+			    				<input type="text" name="meeting-name" class="form-input meeting-name" value=""/>
+		    				</div>
+	    				</div>
+	    				<div class="form-row">
+	    					<label>From Date</label>
+							    <div class="form-control">
+								    <!--<input type="text" name="meeting-date-from" class="form-input date" value=""/>-->
+						            <div class='input-group date'>
+						                <input type="text" name="meeting-date-from" class="form-input date meeting-date-from" value=""/>
+						                <span class="input-group-addon"><span class="fa fa-calendar"></span>
+						                </span>
+						            </div>
+							    </div>
+						</div>
+					    <div class="form-row">
+						    <label>To Date</label>
+						    <div class="form-control">
+							    <!--<input type="text" name="meeting-date-to" class="form-input date" value=""/>-->
+					            <div class='input-group date'>
+					                <input type="text" name="meeting-date-to" class="form-input date meeting-date-to" value=""/>
+					                <span class="input-group-addon"><span class="fa fa-calendar"></span>
+					                </span>
+					            </div>
+						    </div>
+					    </div>
+	    				<div class="form-row">
+		    				<label>Description</label>
+		    				<div class="form-control">
+			    				<textarea name="meeting-desc" class="meeting-desc" maxlength="500"></textarea>
+		    				</div>
+	    				</div>
+	    				<div class="form-row">
+		    				<label>Agenda</label>
+		    				<div class="form-control">
+			    				<textarea name="meeting-agenda" class="meeting-agenda" maxlength="500"></textarea>
+		    				</div>
+	    				</div>
+	    				<div class="form-row">
+		    				<label>&nbsp;</label>
+		    				<div class="form-control">
+		    					<label><input type="checkbox" name="can-anotate" class="form-input input-check" value=""/>Allow participants to annotate</label>
+		    				</div>
+	    				</div>
+	    				<div class="form-row">
+		    				<label>Participant List</label>
+		    				<div class="form-control">
+			    				<!--<select name="participant-list" multiple></select>-->
+			    				<input type="text" class="search" name="user-search"/>
+		    				</div>
+	    				</div>			
+	    				<div class="form-row row-submit">
+		    				<label> </label>
+		    				<div class="form-control">
+			   					<input type="submit" value="Create Meeting"/>
+		    				</div>
+	    				</div>
+					</form>
+					<!-- end of content -->
+				</div>
+                <div id="loader-img">
+                    <img src="bxslider/images/loader.gif" />
+                </div>
+			</div>
+		</div>
+<!-- CRM script -->      
+<script type="text/javascript" src="JS/CreateMeeting.js"></script>
+<!-- html script -->
+		<script type="text/javascript">
+		  $(document).ready(function () {
+			  var urlLogo = window.localStorage.getItem('companyLogoUrl');
+          	$('.top-logo a.left').css({'background-image': 'url('+urlLogo+')','backgroud-size':'100%'});
+			  footerdiv($('body'));
+			  //fnSetFooter($('body'));
+				var userObj = {
+    				UserId: window.localStorage.getItem('userId'),
+    				Company_Id: window.localStorage.getItem('companyId'),
+    				subDomainName: window.localStorage.getItem('domainName')
+    			};
+				common.init(userObj);	
+				
+			function createMeetingAccess() {
+		          Services.createMeetingAccess(common.defaults.userId, function (data) {
+		              if (data == 1) {
+		                  $('#meeting-create').show();
+		                  $('#meeting-upload').show();
+		              } else {
+		                  $('#meeting-create').hide();
+		                  $('#meeting-upload').hide();
+		              }
+		          }, function (e) { });
+		      }
+		      createMeetingAccess();
+		      $('.col-content').addClass('hidden-scroll');
+		      $('#meeting-create').addClass('active');
+		      
+		      function fitWindow() {				
+					var hgt = $(window).height() -  40;
+					$('#meeting-block').height(hgt);
+					$('.col-content').height($('#meeting-block').height());
+				}
+				
+			    fitWindow();
+			    
+			$(window).resize(function(){
+				fitWindow();
+			});
+			anotate.init();
+		});
+		</script>
+    </body>
+</html>

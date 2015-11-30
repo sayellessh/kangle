@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kangle welcomes you!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link href="materialize.css" rel="stylesheet" />
+    <link href="loginnew.css" rel="stylesheet" />
+    <link href="online/fonts/fonts.css" rel="stylesheet" media="screen"/>
+    <link href="online/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        
+<!--    <script src="../../jquery/jquery-1.9.1.min.js"></script>-->
+    <script src="jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="online/js/constants.js"></script>
+    <script src="Rxbook/js/RxBook/MobileServices.Web-1.2.5.js" type="text/javascript" charset="utf-8"></script>
+    <script src="materialize.js"></script>
+    <script src="Rxbook/js/RxBook/restHandler.js"></script>
+    
+    <script type="text/javascript" charset="utf-8" src="online/js/azureHandler.js"></script>
+    <script type="text/javascript" charset="utf-8" src="online/js/NotificationHub.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../core/SSORemoteDAO.js"></script>
+    <script type="text/javascript" src="eLearningAPP.js"></script>
+    <script type="text/javascript" src="eLearningOfflineAPP.js"></script>
+    <script src="errorPage.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8" src="login.js"></script>
+
+<!--    <script type="text/javascript" src="loginnew.js"></script>-->
+
+        
+<!--    @*<a href="~/Scripts/modernizr.js.txt">~/Scripts/modernizr.js.txt</a>*@-->
+<!--    @*<script src="~/Scripts/loginint.js"></script>*@-->
+
+<script>
+     document.addEventListener("deviceready", function(){
+          $('.version').append(VERSION);
+        //window.MacAddress.getMacAddress(function(macAddress) {
+            userLogin.init();
+            //newLogin.init();
+        //},function(fail) { alert(fail); });
+    }, false);
+</script>
+<style>
+    #loadingProgress {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        font-size: 25px;
+        top:0px !important; 
+        color:#fff;
+        /*bottom:0px !important;*/
+        text-align:center;
+        /*color:#fff;*/
+        background-image: url("loginimgs/screen.png");
+        background-position: center;
+    }
+    /* .contenttext{
+    	text-align: center;
+		bottom: 0px;
+		position: absolute;
+		margin-left: -50px;
+    } */
+
+</style>
+</head>
+<!-- <body class="newlayout" style="background-color:#00AEF4"> -->
+<body class="newlayout" style="background-image: url('loginimgs/backgroundscreen.png');background-position: center;">
+    <div id="loadingProgress" class="loadingProgress">
+    <!-- <span class="contenttext"></span> -->
+    </div>
+    <div class="section no-pad-bot" id="index-banner" style="display:none;">
+        <div class="paddingbottom">
+
+            <div class="row paddingbottom">
+                <div class="col s12 center clsleft clsrow">
+                    <img class="logo-img" src="loginImages/Kangle_logo_white.png" />
+                </div>
+
+                <div class="col s12 center clsrow">
+                    <h6 class="light white-text text-lighten-3 center-on-small-only">Upload | Share | Engage</h6>
+                </div>
+                <div class="col s10 card-panel offset-s1 clsrow">
+                    <form action="../homePage.html" method="post">
+                        <div class="row clsrow toppad">
+                            <div class="input-field col s12 clsrow" tabindex="1">
+                                <input id="first_name" type="text" class="validate">
+                                <label for="first_name" class="name-input clswidth">User Name or Email ID</label>
+                            </div>
+                        </div>
+                        <div class="row clsrow">
+                            <div class="input-field col s12 clsrow" tabindex="2">
+                                <input id="company_name" type="text" class="validate">
+                                <label for="company_name" class="company-input clswidth">Company Name</label>
+                            </div>
+                        </div>
+                        <div class="row clsrow">
+                            <div class="input-field col s12 clsrow" tabindex="3">
+                                <input id="input-password" type="password" class="validate">
+                                <label for="input-password" class="password-input clswidth">Password</label>
+                            </div>
+                        </div>
+                        <div class="row clsrow " tabindex="5" id="btnsubmit">
+                            <div class="input-field col s12 center clsrow">
+                                <a class="waves-effect waves-light btn btn-color " onclick="newLogin.fnSubmit();"><i class="material-icons center"></i>LOGIN</a>
+                            </div>
+                        </div>
+                        <div class="row clsrow col s12 center" id="dvload" style="display: none;height:50px;">
+
+                            <div class="preloader-wrapper small active">
+                                <div class="spinner-layer spinner-green-only">
+                                    <div class="circle-clipper left">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="gap-patch">
+                                        <div class="circle"></div>
+                                    </div>
+                                    <div class="circle-clipper right">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col s1"></div>
+
+            </div>
+            <div class="margintop">
+                <div class="row s10 offset-s1 center" style="margin-bottom: 0px !important;">
+                    <div class="col s6 center">
+                        <p class="right text_w">Powered by</p>
+                    </div>
+                    <div class="col s6 center">
+                        <!-- <a class="imgpadding" href="http://www.swaas.net/" target="_blank">-->
+                            <a class="imgpadding" href="#" target="_blank">
+                                <img class="left" src="loginImages/SwaaS_logo_with_border.png" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 center" id="version">
+                    <span>Version : <span class="version"> <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Display Header</h4>
+
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+        </div>
+    </div>
+</body>
+</html>
